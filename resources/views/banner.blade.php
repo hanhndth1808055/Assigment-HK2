@@ -1,5 +1,4 @@
 	<section class="banner-slider">
-		<!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
 			<div id="wowslider-container1">
 			<div class="ws_images"><ul>
 				<li><img src="lib/banner-slider/data1/images/banner1.jpg" alt="banner-1" title="banner-1" id="wows1_0"/></li>
@@ -15,10 +14,8 @@
 				<a href="#" title="banner-4"><span><img src="lib/banner-slider/data1/tooltips/banner4.jpg" />4</span></a>
 				<a href="#" title="banner-5"><span><img src="lib/banner-slider/data1/tooltips/banner5.jpg" />5</span></a>
 			</div>
-			<div class="ws_shadow"></div>
 			</div>
 			<script type="text/javascript" src="lib/banner-slider/engine1/jquery.js"></script>
 			<script type="text/javascript" src="lib/banner-slider/engine1/wowslider.js"></script>
 			<script type="text/javascript" src="lib/banner-slider/engine1/script.js"></script>
-		<!-- End WOWSlider.com BODY section -->
 	</section>

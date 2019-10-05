@@ -151,10 +151,21 @@ nav.nav-horizontal a{
 }
 .nav-horizontal-content{
 	position: absolute;
-	top: 0px;
 	left: 15px;
 	z-index: 99;
-	width: 100%;
+    width: 100%;
+    top: 20px;
+    background: #fff;
+    padding: 10px 50px;
+}
+.nav-horizontal-active-2 .nav-horizontal-content{
+	position: absolute;
+	left: 15px;
+	z-index: 99;
+    width: 100%;
+    top: 0px;
+    background: #fff;
+    padding: 0px 10px;
 }
 .nav-horizontal-content ul.nav-ul-lv-1{
 	margin-bottom: 0;
@@ -350,8 +361,8 @@ section.banner-slider-active-1{
 /*---------------------------------------Menu-mobile---------------------------------------*/
 .menu-mobile-button{
 	position: absolute;
-	top: 5px;
-	right: 0;
+    top: 25px;
+    right: 55px;
 	font-size: 20px;
 	line-height: 40px;
 	background: #e25b00;
@@ -359,7 +370,7 @@ section.banner-slider-active-1{
 	z-index: 101;
 	padding: 0 12px;
 	cursor: pointer;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 	-webkit-transition: 0.3s all;
 	-moz-transition: 0.3s all;
 	-ms-transition: 0.3s all;
@@ -452,9 +463,14 @@ section.menu-mobile-active{
 .menu-left-content{
 	width: 100%;
 }
-ul.menu-left-ul-lv-1{}
+ul.menu-left-ul-lv-1{
+    padding-left: 10px !important;
+}
 ul.menu-left-ul-lv-1 li{
-	position: relative;
+    position: relative;
+    list-style: none;
+    padding: 10px;
+
 }
 ul.menu-left-ul-lv-1>li>a{
 	padding: 0 10px;
@@ -561,12 +577,13 @@ section.back-to-top{
 	z-index: 999;
 }
 .back-to-top-button{
-    position: absolute;
-	background: #ff6900;
+    position: fixed;
+    background: #ff6900;
+    right: 20px;
+    bottom: 40px;
 	color: #fff;
 	font-size: 20px;
 	padding: 0 10px;
-	border-radius: 100px;
 	cursor: pointer;
 	-webkit-transition: 0.3s all;
 	-moz-transition: 0.3s all;
@@ -580,3 +597,11 @@ section.back-to-top{
 }
 
 /*---------------------------------------Breadcrumb---------------------------------------*/
+.logo span {
+    font-size : 25px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.nav-horizontal-active-2  .menu-mobile-button {
+    top : 10px;
+}
