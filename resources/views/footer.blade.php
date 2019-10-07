@@ -1,62 +1,132 @@
-	<footer class="container-fluid">
-	    <div class="container-fluid">
-	        <div class="container">
-	            <div class="map">
-	                <iframe
-	                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0955246324597!2d105.77940071457924!3d21.028863493151476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b32ecb92db%3A0x3964e6238a3bd088!2zOCBUw7RuIFRo4bqldCBUaHV54bq_dCwgTeG7uSDEkMOsbmgsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1570283542899!5m2!1svi!2s"
-	                    width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+<!-- Footer -->
+
+<footer class="footer">
+    <div class="container">
+
+        <!-- Newsletter -->
+
+        <div class="newsletter">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title text-center">
+                        <h1>Subscribe to newsletter</h1>
+                    </div>
                 </div>
-                <div class="border-bottom"></div>
-	            <div class="row">
-	                <div class="col-md-3">
-	                    <div class="logo mb-5" style="margin-top:10px">
-	                        <img src="images/logo.png" alt="">
-	                        <span class="text-white mt-1">EduPan</span>
-	                    </div>
-	                    <span class="mt-5 text-white">
-	                        EduPan là tổ chức giáo dục lớn trên thế giới. Chuyên nghiên cứu các hình thức giáo dục tiên
-	                        tiến, hỗ trợ tạo ra các phương pháp dạy học tốt cho các trường học, trung tâm
-	                    </span>
-	                </div>
-	                <div class="col-md-3 d-flex flex-column">
-	                    <h4 class="text-white mb-5 mt-3">Menu</h4>
-	                    <a class="link" href="">Home</a>
-	                    <a class="link" href="">About Word</a>
-	                    <a class="link" href="">Donate</a>
+            </div>
 
-	                </div>
-	                <div class="col-md-2 d-flex flex-column">
-	                    <h4 class="text-white mb-5 mt-3">Policy</h4>
-	                    <a class="link" href="">Scholar Ship</a>
-	                    <a class="link" href="">Course</a>
-	                    <a class="link" href="">Reseach</a>
-	                    {{-- <a class="link" href="">Scholar Ship</a> --}}
-	                </div>
-	                <div class="col-md-4 d-flex flex-column">
-	                    <h4 class="text-white mb-5 mt-3">Contact</h4>
-	                    <a class="link" href="">Phone : <span>013423432423</span></a>
-	                    <a class="link" href="">Mail : <span>EduPan@Gmail.com</span></a>
-	                    <a class="link" href="">Location : <span class="text-capitalize">8-Ton That Thuyet - Cau Giay - ha
-	                            noi</span> </a>
-	                    {{-- <a class="link" href="">Scholar Ship</a> --}}
-	                </div>
-	            </div>
-	            <div class="border-bottom"></div>
-	            <div class="d-flex justify-content-between">
-	                <span>Copyright ©2019 All rights reserved</span>
-	                <div class="contact-icon">
-	                    <a href=""><i class="fab fa-facebook-f"></i></a>
-	                    <a href=""><i class="fab fa-twitter"></i></a>
-	                    <a href=""><i class="fab fa-instagram"></i></a>
-	                    <a href=""><i class="fas fa-at"></i></a>
-	                </div>
-	            </div>
-	        </div>
+            <div class="row">
+                <div class="col text-center">
+                    <div class="newsletter_form_container mx-auto">
+                        <form action="post">
+                            <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
+                                <input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
+                                <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-	    </div>
-	</footer>
+        </div>
 
-	<section class="back-to-top">
-	    <div class="back-to-top-button"><i class="fas fa-angle-double-up"></i></div>
-	</section>
-	<script type="text/javascript" src="js/backtotop.js"></script>
+        <!-- Footer Content -->
+
+        <div class="footer_content">
+            <div class="row">
+
+                <!-- Footer Column - About -->
+                <div class="col-lg-3 footer_col">
+
+                    <!-- Logo -->
+                    <div class="logo_container">
+                        <div class="logo">
+                            <img src="images/logo.png" alt="">
+                            <span>course</span>
+                        </div>
+                    </div>
+
+                    <p class="footer_about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum, tempor lacus.</p>
+
+                </div>
+
+                <!-- Footer Column - Menu -->
+
+                <div class="col-lg-3 footer_col">
+                    <div class="footer_column_title">Menu</div>
+                    <div class="footer_column_content">
+                        <ul>
+                            <li class="footer_list_item"><a href="#">Home</a></li>
+                            <li class="footer_list_item"><a href="#">About Us</a></li>
+                            <li class="footer_list_item"><a href="courses.html">Courses</a></li>
+                            <li class="footer_list_item"><a href="news.html">News</a></li>
+                            <li class="footer_list_item"><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Column - Usefull Links -->
+
+                <div class="col-lg-3 footer_col">
+                    <div class="footer_column_title">Usefull Links</div>
+                    <div class="footer_column_content">
+                        <ul>
+                            <li class="footer_list_item"><a href="#">Testimonials</a></li>
+                            <li class="footer_list_item"><a href="#">FAQ</a></li>
+                            <li class="footer_list_item"><a href="#">Community</a></li>
+                            <li class="footer_list_item"><a href="#">Campus Pictures</a></li>
+                            <li class="footer_list_item"><a href="#">Tuitions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Footer Column - Contact -->
+
+                <div class="col-lg-3 footer_col">
+                    <div class="footer_column_title">Contact</div>
+                    <div class="footer_column_content">
+                        <ul>
+                            <li class="footer_contact_item">
+                                <div class="footer_contact_icon">
+                                    <img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                </div>
+                               Ton That Thuyet - My Dinh - Ha Noi
+                            </li>
+                            <li class="footer_contact_item">
+                                <div class="footer_contact_icon">
+                                    <img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                </div>
+                                0123456678
+                            </li>
+                            <li class="footer_contact_item">
+                                <div class="footer_contact_icon">
+                                    <img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                </div>edupan@gamil.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Copyright -->
+
+        <div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+            <div class="footer_copyright">
+                <span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+            </div>
+            <div class="footer_social ml-sm-auto">
+                <ul class="menu_social">
+                    <li class="menu_social_item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li class="menu_social_item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="menu_social_item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</footer>
