@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('pages.home');
 });
+Route::get('/scholars-ship', function () {
+    return view('pages.scholar-ship');
+});
