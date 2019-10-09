@@ -19,9 +19,10 @@
     <link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="css/gallery.css">
+    <script src="https://kit.fontawesome.com/1ed7b1f4b0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="lib/bootstrap_4.0.0/js/bootstrap.min.js"></script>
-
 </head>
 <body>
 

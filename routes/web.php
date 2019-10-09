@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('pages.trangchu');
 });
+
+Route::get('gallery', 'GalleryController@showGallery');
+
