@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('pages.trangchu');
+    return view('pages.home');
 });
 
 Route::get('gallery', 'GalleryController@showGallery');
