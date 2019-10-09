@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('pages.home');
 });
+
+Route::get('gallery', 'GalleryController@showGallery');
+
