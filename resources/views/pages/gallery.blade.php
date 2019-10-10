@@ -1,6 +1,5 @@
-@extends('master-layout')
+@extends('masterlayout')
 @section('content')
-    @include('banner')
     <div class="container pb-5 pt-5">
         <div class="row">
             <div class="col-1">
@@ -80,5 +79,4 @@
             </div>
         </div>
     </div>
-    </section>
 @endsection

@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('gallery', 'GalleryController@showGallery');
 
+Route::get('admin', function (){
+    return view('admin.gallery-admin');
+});
