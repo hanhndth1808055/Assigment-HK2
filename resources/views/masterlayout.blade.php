@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
     {{--  <link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">  --}}
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
 @include('header')

@@ -11,22 +11,27 @@
 </div>
 <div class="container-fluid py-5 bg-light">
     <div class="container">
-        <div class="row">
+        @foreach ($scholarships as $scholarship)
+        <div class="row py-4 text-dark">
             <div class="col-md-6">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTygVv7fcLd76jMD8XQ3pR7uBvyCOWS-IZOI6FL_e49TT9emt-y"
-                    width="100%" height="100%" style="" alt="">
+                <img class="scholar-img" src="{{asset('images/scholarship').'/'.$scholarship->image}}">
             </div>
             <div class="col-md-6 d-flex flex-column box-scholar">
-                <h2>Fulbright Foreign Student Program (USA)</h2>
-                <span>The Fulbright Foreign Student Program are prestigious scholarships for international students who
-                    wants to pursue a Master’s or PhD degree in the United States. Generally, the grant funds tuition,
-                    airfare, a living stipend, and health insurance, etc. The Fulbright program provides funding for the
-                    duration of the study.</span>
+                <h2 class="text-dark">{{ $scholarship->title }} <span>{{ $scholarship->created_at }}</span> </h2>
+                <h3 class="text-uppercase d-flex justify-content-between">
+                     <span>{{ $scholarship -> unit_id }}</span>
+                     <span>{{ $scholarship->country_id}}</span></h3>
+                <h3 class="">
+                    <span>Award Amount : {{ $scholarship->pay }}</span>
+                </h3>
+                <span>{{ $scholarship->content }}</span>
+
                 <div class="scholar-link">
                     <a href="" class="btn btn-outline-dark" style="pading : 0 10px;float: right">Detail</a>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 
 </div>

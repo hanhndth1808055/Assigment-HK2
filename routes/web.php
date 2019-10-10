@@ -10,10 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('pages.home');
 });
-Route::get('/scholars-ship', function () {
-    return view('pages.scholar-ship');
-});
+Route::get('/scholars-ship', "Client@viewScholarship") ;
+
+Route::get('admin/scholars-ship' , "MyController@SCLList");
+
+Route::get('addcountry',"MyController@addCountry");
+Route::post('addcountry',"MyController@saveCountry");
+
+Route::get('addunit',"MyController@addUnit");
+Route::post('addunit',"MyController@saveUnit");
+
+Route::get('add-scholarship',"MyController@addScholar");
+Route::post('add-scholarship',"MyController@saveScholar");
+

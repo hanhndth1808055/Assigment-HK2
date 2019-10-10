@@ -29,15 +29,7 @@
             </div>
 
             <!-- Hero Slide -->
-            <div class="hero_slide">
-                <div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
-                <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
-                    <div class="hero_slide_content text-center">
-                        <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                            <span>Education</span> today!</h1>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
 
@@ -488,59 +480,59 @@
         </div>
 
     </div>
-    {{--  <!-- Milestones -->
-    <div class="milestones">
-        <div class="milestones_container">
-            <div class="milestones_background" style="background-image:url(images/milestones_background.jpg)"></div>
+        {{--  <!-- Milestones -->
+        <div class="milestones">
+            <div class="milestones_container">
+                <div class="milestones_background" style="background-image:url(images/milestones_background.jpg)"></div>
 
-            <div class="container">
-                <div class="row">
+                <div class="container">
+                    <div class="row">
 
-                    <!-- Milestone -->
-                    <div class="col-lg-3 milestone_col">
-                        <div class="milestone text-center">
-                            <div class="milestone_icon"><img src="images/milestone_1.svg"
-                                    alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
-                            <div class="milestone_counter" data-end-value="750">0</div>
-                            <div class="milestone_text">Current Students</div>
+                        <!-- Milestone -->
+                        <div class="col-lg-3 milestone_col">
+                            <div class="milestone text-center">
+                                <div class="milestone_icon"><img src="images/milestone_1.svg"
+                                        alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+                                <div class="milestone_counter" data-end-value="750">0</div>
+                                <div class="milestone_text">Current Students</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Milestone -->
-                    <div class="col-lg-3 milestone_col">
-                        <div class="milestone text-center">
-                            <div class="milestone_icon"><img src="images/milestone_2.svg"
-                                    alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
-                            <div class="milestone_counter" data-end-value="120">0</div>
-                            <div class="milestone_text">Certified Teachers</div>
+                        <!-- Milestone -->
+                        <div class="col-lg-3 milestone_col">
+                            <div class="milestone text-center">
+                                <div class="milestone_icon"><img src="images/milestone_2.svg"
+                                        alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+                                <div class="milestone_counter" data-end-value="120">0</div>
+                                <div class="milestone_text">Certified Teachers</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Milestone -->
-                    <div class="col-lg-3 milestone_col">
-                        <div class="milestone text-center">
-                            <div class="milestone_icon"><img src="images/milestone_3.svg"
-                                    alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
-                            <div class="milestone_counter" data-end-value="39">0</div>
-                            <div class="milestone_text">Approved Courses</div>
+                        <!-- Milestone -->
+                        <div class="col-lg-3 milestone_col">
+                            <div class="milestone text-center">
+                                <div class="milestone_icon"><img src="images/milestone_3.svg"
+                                        alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+                                <div class="milestone_counter" data-end-value="39">0</div>
+                                <div class="milestone_text">Approved Courses</div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Milestone -->
-                    <div class="col-lg-3 milestone_col">
-                        <div class="milestone text-center">
-                            <div class="milestone_icon"><img src="images/milestone_4.svg"
-                                    alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
-                            <div class="milestone_counter" data-end-value="3500" data-sign-before="+">0</div>
-                            <div class="milestone_text">Graduate Students</div>
+                        <!-- Milestone -->
+                        <div class="col-lg-3 milestone_col">
+                            <div class="milestone text-center">
+                                <div class="milestone_icon"><img src="images/milestone_4.svg"
+                                        alt="https://www.flaticon.com/authors/zlatko-najdenovski"></div>
+                                <div class="milestone_counter" data-end-value="3500" data-sign-before="+">0</div>
+                                <div class="milestone_text">Graduate Students</div>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>  --}}
+        </div>  --}}
 </div>
 
 @endsection
