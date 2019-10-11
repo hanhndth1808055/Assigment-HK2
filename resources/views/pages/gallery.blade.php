@@ -1,7 +1,7 @@
 @extends('masterlayout')
 @section('content')
     <div class="container pb-5 pt-5">
-        <div class="row">
+        <div class="row pt-5">
             <div class="col-1">
                 <h2>GALLERY</h2>
             </div>
