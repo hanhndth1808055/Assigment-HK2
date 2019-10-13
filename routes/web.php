@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Route::get('gallery', 'GalleryController@showGallery');
 
+
+Route::get('campaigns', function (){
+    return view('pages.campaigns');
+});
+
+
 Route::get('admin', function (){
     return view('admin.gallery-admin');
 });
