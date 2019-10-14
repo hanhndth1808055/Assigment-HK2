@@ -17,6 +17,16 @@ class UpdateTableScholarship extends Migration
             $table->foreign('country_id')->references('country_id')->on('country');
             $table->foreign('unit_id')->references('unit_id')->on('unit');
         });
+        // Schema::table('scholarship_detai',function(Blueprint $table){
+        //     $table->foreign('id')->references('id')->on('scholarship');
+        // });
+        Schema::table('scholarship_coment',function(Blueprint $table){
+            $table->foreign('id')->references('id')->on('scholarship');
+        });
+        Schema::table('register_scholarship',function(Blueprint $table){
+            $table->foreign('id')->references('id')->on('scholarship');
+        });
+
     }
 
     /**

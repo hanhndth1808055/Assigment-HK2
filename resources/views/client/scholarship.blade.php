@@ -1,11 +1,11 @@
 @extends('masterlayout')
 @section('content')
 <div class="hero_slide">
-    <div class="hero_slide_background" style="background-image:url(images/scholar.jpg)"></div>
+    <div class="hero_slide_background" style="background-image:url({{ asset('images/slider_background.jpg') }})"></div>
     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
         <div class="hero_slide_content text-center">
             <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">
-                <span>Scholar Ship</span></h1>
+                <span>Scholarship</span></h1>
         </div>
     </div>
 </div>
@@ -24,10 +24,11 @@
                 <h3 class="">
                     <span>Award Amount : {{ $scholarship->pay }}</span>
                 </h3>
-                <span>{{ $scholarship->content }}</span>
-
+                <span>{{ $scholarship->brief_content }}</span>
+                <span>Deadline : {{ $scholarship -> enddate }}</span>
                 <div class="scholar-link">
-                    <a href="" class="btn btn-outline-dark" style="pading : 0 10px;float: right">Detail</a>
+                    <a href="{{ url('registerScholarship/'.$scholarship->id) }}" class="btn btn-outline-primary mr-1">Register</a>
+                    <a href="{{ url('/detai/'.$scholarship->id) }}" class="btn btn-outline-dark" style="pading : 0 10px;float: right">Detail</a>
                 </div>
             </div>
         </div>

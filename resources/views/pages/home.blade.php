@@ -1,6 +1,6 @@
 @extends('masterlayout')
 @section('content')
-<div class="home">
+<div class="home" style="height: 100vh;">
 
     <!-- Hero Slider -->
     <div class="hero_slider_container">
@@ -86,7 +86,7 @@
         <div class="row">
             <div class="col">
                 <div class="section_title text-center">
-                    <h1>Popular Courses</h1>
+                    <h1>Popular Scholarship</h1>
                 </div>
             </div>
         </div>
@@ -94,61 +94,35 @@
         <div class="row course_boxes">
 
             <!-- Popular Course Item -->
+            @foreach ($scholarships as $scholarship )
             <div class="col-lg-4 course_box">
                 <div class="card">
-                    <img class="card-img-top" src="images/course_1.jpg" alt="https://unsplash.com/@kellybrito">
+                    <img class="card-img-top"
+                        style="    width: 100%;height: 200px;object-fit: cover"
+                        src="{{asset('images/scholarship').'/'.$scholarship->image}}"
+                        alt="https://unsplash.com/@kellybrito">
                     <div class="card-body text-center">
-                        <div class="card-title"><a href="courses.html">A complete guide to design</a></div>
-                        <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
+                        <div style="height:55px;overflow-y: hidden;" class="card-title">
+                            <a href="{{ url('detai/'.$scholarship->id) }}">{{ $scholarship->title }}</a>
+                        </div>
+                        <div style="height:100px;overflow-y: hidden;" class="card-text">
+                            {{ $scholarship->brief_content }}</div>
                     </div>
                     <div class="price_box d-flex flex-row align-items-center">
                         <div class="course_author_image">
-                            <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
+                            <img src="images/author.jpg" alt="">
                         </div>
-                        <div class="course_author_name">Michael Smith, <span>Author</span></div>
-                        <div class="course_price d-flex flex-column align-items-center justify-content-center">
-                            <span>$29</span></div>
+                        <div class="course_author_name">{{ $scholarship->unit_id }}, <span>Unit</span></div>
+                        {{--  <div class="course_price d-flex flex-column align-items-center justify-content-center">
+                                <span>$29</span></div>  --}}
                     </div>
                 </div>
+            </div>
+            @endforeach
+            <div class="d-flex justify-content-end" style="width : 100%">
+                    <a style="float : right" class="mt-4 mr-4" href="{{ url('scholars-ship') }}">Show More </a>
             </div>
 
-            <!-- Popular Course Item -->
-            <div class="col-lg-4 course_box">
-                <div class="card">
-                    <img class="card-img-top" src="images/course_2.jpg" alt="https://unsplash.com/@cikstefan">
-                    <div class="card-body text-center">
-                        <div class="card-title"><a href="courses.html">Beginners guide to HTML</a></div>
-                        <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
-                    </div>
-                    <div class="price_box d-flex flex-row align-items-center">
-                        <div class="course_author_image">
-                            <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-                        </div>
-                        <div class="course_author_name">Michael Smith, <span>Author</span></div>
-                        <div class="course_price d-flex flex-column align-items-center justify-content-center">
-                            <span>$29</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Popular Course Item -->
-            <div class="col-lg-4 course_box">
-                <div class="card">
-                    <img class="card-img-top" src="images/course_3.jpg" alt="https://unsplash.com/@dsmacinnes">
-                    <div class="card-body text-center">
-                        <div class="card-title"><a href="courses.html">Advanced Photoshop</a></div>
-                        <div class="card-text">Adobe Guide, Layes, Smart Objects etc...</div>
-                    </div>
-                    <div class="price_box d-flex flex-row align-items-center">
-                        <div class="course_author_image">
-                            <img src="images/author.jpg" alt="https://unsplash.com/@mehdizadeh">
-                        </div>
-                        <div class="course_author_name">Michael Smith, <span>Author</span></div>
-                        <div class="course_price d-flex flex-column align-items-center justify-content-center">
-                            <span>$29</span></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -186,15 +160,22 @@
                     <div class="search_content text-center">
                         {{--  <h1 class="search_title">Search for your course</h1>  --}}
                         <h1 class="search_title">Registration</h1>
-                        <form id="search_form" class="search_form" action="post">
-                            <input id="search_form_name" class="input_field search_form_name" type="text"
-                                placeholder="Name" required="required" data-error="Course name is required.">
-                            <input id="search_form_category" class="input_field search_form_category" type="email"
-                                placeholder="Email">
-                            <input id="search_form_degree" class="input_field search_form_degree" type="number"
-                                placeholder="Phone">
-                            <button id="search_submit_button" type="submit" class="search_submit_button trans_200"
-                                value="Submit">Submit</button>
+                        <form role="form" action="{{route('scholarship.register')}}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
+
+                            <input name="name" id="comment_form_name" class="input_field contact_form_name" type="text"
+                                placeholder="Name" required="required" data-error="Name is required.">
+                            <input name="email" id="comment_form_email" class="input_field contact_form_email"
+                                type="email" placeholder="E-mail" required="required"
+                                data-error="Valid email is required.">
+                            <input name="phone" id="comment_form_email" class="input_field contact_form_email"
+                                type="number" placeholder="Phone" required="required"
+                                data-error="Valid phone is required.">
+                            <textarea name="note" id="" class="text_field contact_form_message mt-4"
+                                placeholder="Note">Note</textarea>
+                            <button id="comment_send_btn" type="submit" class="comment_send_btn trans_200"
+                                value="submit">Register Now</button>
                         </form>
                     </div>
                 </div>
@@ -480,7 +461,7 @@
         </div>
 
     </div>
-        {{--  <!-- Milestones -->
+    {{--  <!-- Milestones -->
         <div class="milestones">
             <div class="milestones_container">
                 <div class="milestones_background" style="background-image:url(images/milestones_background.jpg)"></div>

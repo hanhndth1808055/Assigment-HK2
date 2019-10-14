@@ -19,7 +19,6 @@
                     </option>
                     @endforeach
                 </select>
-                <small id="helpId" class="text-muted">Help text</small>
             </div>
             <div class="form-group text-right">
                 <button class="btn btn-danger" type="submit">SUBMIT</button>
