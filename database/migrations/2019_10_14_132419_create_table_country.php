@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Unit extends Migration
+class CreateTableCountry extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class Unit extends Migration
      */
     public function up()
     {
-        Schema::create('unit', function (Blueprint $table) {
-            $table -> bigIncrements('unit_id');
-            $table -> unsignedBigInteger('country_id');
-            $table -> string('unit_name');
+        Schema::create('country', function (Blueprint $table) {
+            $table->bigIncrements('country_id');
+            $table->string('country_name');
+            $table->string('short_name');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -27,6 +28,6 @@ class Unit extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('unit');
+        Schema::dropIfExists('country');
     }
 }

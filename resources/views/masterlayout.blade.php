@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EduPan</title>
+	<title></title>
 	<base href="{{asset('')}}">
+    <base src="{{asset('')}}">
 	<link rel="stylesheet" href="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="stylesheet" href="css/gallery.css">
     {{--  <link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">  --}}
     <link rel="stylesheet" type="text/css" href="styles/style.css">

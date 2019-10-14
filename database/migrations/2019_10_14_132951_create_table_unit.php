@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Country extends Migration
+class CreateTableUnit extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class Country extends Migration
      */
     public function up()
     {
-        Schema::create('country',function(Blueprint $table){
-            $table -> bigIncrements('country_id');
-            $table -> string('country_name');
-            $table -> string('short_name');
+        Schema::create('unit', function (Blueprint $table) {
+            $table -> bigIncrements('unit_id');
+            $table -> unsignedBigInteger('country_id');
+            $table -> string('unit_name');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class Country extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('country');
+        Schema::dropIfExists('unit');
     }
 }
