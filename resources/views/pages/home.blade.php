@@ -103,7 +103,7 @@
                         alt="https://unsplash.com/@kellybrito">
                     <div class="card-body text-center">
                         <div style="height:55px;overflow-y: hidden;" class="card-title">
-                            <a href="{{ url('detai/'.$scholarship->id) }}">{{ $scholarship->title }}</a>
+                            <a style="font-size:16px" href="{{ url('detai/'.$scholarship->id) }}">{{ $scholarship->title }}</a>
                         </div>
                         <div style="height:100px;overflow-y: hidden;" class="card-text">
                             {{ $scholarship->brief_content }}</div>
@@ -120,7 +120,7 @@
             </div>
             @endforeach
             <div class="d-flex justify-content-end" style="width : 100%">
-                    <a style="float : right" class="mt-4 mr-4" href="{{ url('scholars-ship') }}">Show More </a>
+                    <a style="float : right" class="mt-4 mr-4" href="{{ url('scholars-ship') }}">Show All</a>
             </div>
 
         </div>
@@ -163,7 +163,15 @@
                         <form role="form" action="{{route('scholarship.register')}}" method="post"
                             enctype="multipart/form-data">
                             @csrf
-
+                            <div class="form-group">
+                                <select  class="form-control"  name="id" id="">
+                                    @foreach ($scholarships as $scholarship)
+                                        <option value="{{ $scholarship->id }}">
+                                            {{ $scholarship->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <input name="name" id="comment_form_name" class="input_field contact_form_name" type="text"
                                 placeholder="Name" required="required" data-error="Name is required.">
                             <input name="email" id="comment_form_email" class="input_field contact_form_email"
@@ -172,7 +180,7 @@
                             <input name="phone" id="comment_form_email" class="input_field contact_form_email"
                                 type="number" placeholder="Phone" required="required"
                                 data-error="Valid phone is required.">
-                            <textarea name="note" id="" class="text_field contact_form_message mt-4"
+                            <textarea name="note" id="" style="height: 100px" class="text_field contact_form_message mt-4"
                                 placeholder="Note">Note</textarea>
                             <button id="comment_send_btn" type="submit" class="comment_send_btn trans_200"
                                 value="submit">Register Now</button>

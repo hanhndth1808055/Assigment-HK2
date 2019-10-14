@@ -1,18 +1,18 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
- * This file is part of the Symfony package.
- *
- * (c) Fabien Potencier <fabien@symfony.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-namespace Symfony\Component\Console\Tests\CommandLoader;
-
-use PHPUnit\Framework\TestCase;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
-use Symfony\Component\DependencyInjection\ServiceLocator;
-
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});

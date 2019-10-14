@@ -58,38 +58,6 @@
     transition: .5s ease;
 }
 
-.fusion-blog-layout-grid.fusion-blog-layout-grid-3 .post {
-    width: 33.3333%;
-    display: inline-block;
-    float: left;
-}
-
-.fusion-blog-shortcode-1 .fusion-blog-layout-grid .fusion-post-grid {
-    padding: 20px;
-}
-
-
-.fusion-blog-layout-grid .fusion-post-grid {
-    margin-bottom: 0;
-    box-sizing: border-box;
-    border: none;
-}
-
-#reviews #comments > h2, #wrapper .fusion-tabs-widget .tab-holder .news-list li .post-holder .meta, #wrapper .meta, .fusion-blog-timeline-layout .fusion-timeline-date, .fusion-main-menu .fusion-custom-menu-item-contents, .fusion-rollover .price .amount, .post .post-content, .post-content blockquote, .project-content .project-info h4, .review blockquote div, .search input, .sidebar .fusion-tabs-widget .tab-holder .tabs li a, .sidebar .jtwt, .sidebar .widget .recentcomments, .sidebar .widget_archive li, .sidebar .widget_categories li, .sidebar .widget_layered_nav li, .sidebar .widget_links li, .sidebar .widget_meta li, .sidebar .widget_nav_menu li, .sidebar .widget_pages li, .sidebar .widget_product_categories li, .sidebar .widget_recent_entries li, .title-row, body, body .sidebar .fusion-tabs-widget .tab-holder .tabs li a {
-    color: #747474;
-}
-#slidingbar-area .slide-excerpt h2, #slidingbar-area ul, .counter-box-content, .fusion-alert, .fusion-blog-layout-timeline .fusion-timeline-date, .fusion-footer-widget-area .slide-excerpt h2, .fusion-footer-widget-area ul, .fusion-progressbar .progress-title, .fusion-tabs-widget .tab-holder .news-list li .post-holder .meta, .fusion-tabs-widget .tab-holder .news-list li .post-holder a, .gform_wrapper .gfield_description, .gform_wrapper label, .jtwt .jtwt_tweet, .post-content blockquote, .project-content .project-info h4, .review blockquote q, .sidebar .jtwt .jtwt_tweet, .sidebar .slide-excerpt h2, body {
-    font-size: 13px;
-}
-#nav ul li ul li a, #reviews #comments > h2, #side-header .fusion-contact-info, #side-header .header-social .top-menu, #sticky-nav ul li ul li a, #wrapper #nav ul li ul li > a, #wrapper #sticky-nav ul li ul li > a, .avada-container h3, .comment-form input[type="submit"], .ei-title h3, .fusion-accordian .panel-body, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-categories, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-title, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .price, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content a, .fusion-main-menu .sub-menu, .fusion-main-menu .sub-menu li a, .fusion-megamenu-widgets-container, .fusion-megamenu-wrapper .fusion-megamenu-submenu > a:hover, .fusion-megamenu-wrapper li .fusion-megamenu-title-disabled, .fusion-page-title-bar h3, .gform_page_footer input[type=button], .meta .fusion-date, .more, .post-content blockquote, .review blockquote div strong, .review blockquote q, .ticket-selector-submit-btn[type=submit], body {
-    line-height: 1.5;
-}
-#nav ul li ul li a, #reviews #comments > h2, #sticky-nav ul li ul li a, #wrapper #nav ul li ul li > a, #wrapper #sticky-nav ul li ul li > a, .avada-container h3, .comment-form input[type="submit"], .ei-title h3, .fusion-blog-shortcode .fusion-timeline-date, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-categories, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .fusion-rollover-title, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content .price, .fusion-image-wrapper .fusion-rollover .fusion-rollover-content a, .fusion-load-more-button, .fusion-main-menu .sub-menu, .fusion-main-menu .sub-menu li a, .fusion-megamenu-widgets-container, .fusion-megamenu-wrapper .fusion-megamenu-submenu > a:hover, .fusion-megamenu-wrapper li .fusion-megamenu-title-disabled, .fusion-page-title-bar h3, .gform_page_footer input[type="button"], .gform_page_footer input[type=button], .gform_wrapper .button, .gform_wrapper .gfield_description, .gform_wrapper .gform_button, .gform_wrapper label, .meta .fusion-date, .more, .post-content blockquote, .review blockquote div strong, .review blockquote q, .ticket-selector-submit-btn[type=submit], .wpcf7-form input[type="submit"], body {
-    font-family: "Open Sans";
-    font-weight: 400;
-    letter-spacing: 0px;
-}
-
 .container-img:hover .overlay {
     height: 40%;
     opacity: 0.8;
@@ -146,9 +114,6 @@
     color: #ccc;
     padding: 10px 0;
     height: 150px;
-    font-size: 22px;
-    opacity: 0.8;
-    font-family: "Open Sans";
 }
 
 /* Add Animation - Zoom in the Modal */

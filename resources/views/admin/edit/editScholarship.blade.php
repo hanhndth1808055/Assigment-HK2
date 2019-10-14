@@ -19,6 +19,13 @@
             @endif
         </div>
         <div class="form-group">
+            <label for="">Brief Content</label>
+            <input type="text" name="brief_content" value="{{  $scholarships->brief_content  }}" class="form-control" placeholder="">
+            @if($errors -> has("brief_content"))
+            <p class="error">{{ $errors -> first("brief_content") }}</p>
+            @endif
+        </div>
+        <div class="form-group">
             <label for="">Organizational Unit</label>
             <select class="form-control" name="unit_id">
                 @foreach($units as $unit)

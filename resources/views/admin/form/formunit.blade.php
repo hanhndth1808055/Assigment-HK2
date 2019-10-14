@@ -11,6 +11,13 @@
                 @endif
             </div>
             <div class="form-group">
+                <label for="">Email Unit</label>
+                <input type="email" name="email" id="" class="form-control" value="{{old('email')}}">
+                @if($errors -> has("email"))
+                <p class="error">{{ $errors -> first("email") }}</p>
+                @endif
+            </div>
+            <div class="form-group">
                 <label for="">Country</label>
                 <select class="form-control" name="country_id">
                     @foreach ($countrys as $country)

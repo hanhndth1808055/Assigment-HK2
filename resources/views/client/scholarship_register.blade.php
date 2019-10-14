@@ -68,7 +68,7 @@
                             <li class="contact_info_item">
                                 <div class="contact_info_icon">
                                     <img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
-                                </div>hello@company.com
+                                </div>{{ \App\scholarship::$_status[$scholarship->status] }}
                             </li>
                         </ul>
                     </div>

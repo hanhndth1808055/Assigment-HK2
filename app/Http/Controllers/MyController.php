@@ -14,6 +14,8 @@ use Illuminate\Support\Str;
 
 class MyController extends Controller
 {
+    const _LIMIT = 10;
+
     public function SCLList() {
         $scholars =
         DB::table('scholarship')
@@ -21,7 +23,7 @@ class MyController extends Controller
         ->join('country', 'country.country_id', '=', 'scholarship.country_id')
         ->orderBy("id","ASC")->paginate(20,["id","enddate","title","image","content","country_name as country_id",
         "unit_name as unit_id","pay","startdate","status","scholarship.created_at"]);
-        return view("admin.scholarlist", compact("scholars") );
+        return view("admin.list.scholarlist", compact("scholars") );
     }
 
     public function addCountry(){
@@ -55,6 +57,7 @@ class MyController extends Controller
         try{
             unit::create([
                 "unit_name"=>$request->get("unit_name"),
+                "email"=>$request->get("email"),
                 "country_id" => $request -> get("country_id")
             ])->save();
             }
@@ -89,7 +92,7 @@ class MyController extends Controller
         ];
 
         $rules = [
-            "title" => "required|string|max:255|unique:scholarship",
+            "title" => "required|string|max:150|unique:scholarship",
             "image" => "required",
             "content" => "required|string",
             "brief_content" => "required",
@@ -357,4 +360,6 @@ class MyController extends Controller
         ->paginate(20,["title as id","name","phone","email","note","register_id","contact","register_scholarship.created_at"]);
         return view('admin.list.registerScholarship',compact('registers'));
     }
+
+
 }
