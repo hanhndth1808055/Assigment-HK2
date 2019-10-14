@@ -4,7 +4,7 @@
         <div class="logo_container">
             <div class="logo">
                 <img src="images/logo.png" alt="">
-                <span>course</span>
+                <span>edupan</span>
             </div>
         </div>
 
@@ -13,18 +13,19 @@
             <div class="main_nav">
                 <ul class="main_nav_list">
                     <li class="main_nav_item"><a href="#">home</a></li>
-                    <li class="main_nav_item"><a href="#">about us</a></li>
-                    <li class="main_nav_item"><a href="courses.html">courses</a></li>
-                    <li class="main_nav_item"><a href="elements.html">elements</a></li>
-                    <li class="main_nav_item"><a href="news.html">news</a></li>
-                    <li class="main_nav_item"><a href="contact.html">contact</a></li>
+                    <li class="main_nav_item"><a href="#">Research </a></li>
+                    <li class="main_nav_item"><a href="courses.html">seminar</a></li>
+                    <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
+                    <li class="main_nav_item"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
+                    <li class="main_nav_item"><a href="contact.html">Gallery</a></li>
+                    {{--  <li class="main_nav_item"><a href="contact.html">About Work</a></li>  --}}
                 </ul>
             </div>
         </nav>
     </div>
     <div class="header_side d-flex flex-row justify-content-center align-items-center">
         <img src="images/phone-call.svg" alt="">
-        <span>+43 4566 7788 2457</span>
+        <span>Contact Us</span>
     </div>
 
     <!-- Hamburger -->
@@ -46,11 +47,12 @@
 			<div class="menu menu_mm">
 				<ul class="menu_list menu_mm">
 					<li class="menu_item menu_mm"><a href="#">Home</a></li>
-					<li class="menu_item menu_mm"><a href="#">About us</a></li>
-					<li class="menu_item menu_mm"><a href="courses.html">Courses</a></li>
-					<li class="menu_item menu_mm"><a href="elements.html">Elements</a></li>
-					<li class="menu_item menu_mm"><a href="news.html">News</a></li>
-					<li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+					<li class="menu_item menu_mm"><a href="#">Reseach</a></li>
+					<li class="menu_item menu_mm"><a href="courses.html">Serminar</a></li>
+					<li class="menu_item menu_mm"><a href="elements.html">Campaigns</a></li>
+					<li class="menu_item menu_mm"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
+                    <li class="menu_item menu_mm"><a href="contact.html">Gallery</a></li>
+                    <li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
 				</ul>
 
 				<!-- Menu Social -->

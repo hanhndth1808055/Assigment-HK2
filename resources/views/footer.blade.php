@@ -1,5 +1,4 @@
 <!-- Footer -->
-
 <footer class="footer">
     <div class="container">
 
@@ -41,7 +40,7 @@
                     <div class="logo_container">
                         <div class="logo">
                             <img src="images/logo.png" alt="">
-                            <span>course</span>
+                            <span>edupan</span>
                         </div>
                     </div>
 
@@ -56,10 +55,11 @@
                     <div class="footer_column_content">
                         <ul>
                             <li class="footer_list_item"><a href="#">Home</a></li>
-                            <li class="footer_list_item"><a href="#">About Us</a></li>
-                            <li class="footer_list_item"><a href="courses.html">Courses</a></li>
-                            <li class="footer_list_item"><a href="news.html">News</a></li>
-                            <li class="footer_list_item"><a href="contact.html">Contact</a></li>
+                            <li class="footer_list_item"><a href="#">Research</a></li>
+                            <li class="footer_list_item"><a href="">Seminar</a></li>
+                            <li class="footer_list_item"><a href="">Campaings</a></li>
+                            <li class="footer_list_item"><a href="">Scholarship</a></li>
+                            <li class="footer_list_item"><a href="">Gallery</a></li>
                         </ul>
                     </div>
                 </div>
