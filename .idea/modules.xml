@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Assigemt-HK2.iml" filepath="$PROJECT_DIR$/.idea/Assigemt-HK2.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/edupan.iml" filepath="$PROJECT_DIR$/.idea/edupan.iml" />
->>>>>>> 98894977c26bd494a1129931c623caea8170f5e5
     </modules>
   </component>
 </project>
