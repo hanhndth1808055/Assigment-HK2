@@ -15,7 +15,14 @@
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-    <link rel="stylesheet" href="css/gallery.css">
+
+    {{--  <link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">  --}}
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/news_post_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/news_post_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 </head>
 <body>
 @include('header')
@@ -34,5 +41,10 @@
     <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
     <script src="plugins/easing/easing.js"></script>
     <script src="js/custom.js"></script>
+    {{--  <script src="js/elements_custom.js"></script>
+    <script src="js/news_post_custom.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="js/contact_custom.js"></script>  --}}
 </body>
 </html>
