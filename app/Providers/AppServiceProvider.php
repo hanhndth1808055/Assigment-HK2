@@ -2,12 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-// use URL;
-
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,12 +21,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    // use URL;
-    //
     public function boot()
     {
-       URL::forceScheme('https');
         Schema::defaultStringLength(191);
     }
 }
-// hello :)))
