@@ -34,7 +34,7 @@ Website: http://www.webthemez.com/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BRILLIANT</strong></a>
+            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">   EduPan</strong></a>
             <div id="sideNav" href="">
                 <i class="fa fa-bars icon"></i>
             </div>

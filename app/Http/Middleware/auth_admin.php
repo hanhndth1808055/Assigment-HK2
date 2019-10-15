@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-class admin_scholarship
+class auth_admin
 {
     /**
      * Handle an incoming request.
