@@ -8,7 +8,8 @@
 
                 <!-- Hero Slide -->
                 <div class="hero_slide">
-                    <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                    <div class="hero_slide_background"
+                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
                             <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
@@ -19,7 +20,8 @@
 
                 <!-- Hero Slide -->
                 <div class="hero_slide">
-                    <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                    <div class="hero_slide_background"
+                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
                             <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
@@ -47,63 +49,57 @@
         </div>
         <div class="row">
             <div class="card-deck">
-                <div class="card">
-                    <img src="http://www.givnow.in/wp-content/uploads/2018/02/MVKS_featured-400x204.jpg"
-                         class="card-img-top" alt="...">
-                    <div class="card-body text-justify">
-                        <h3 class="card-title text-center">Children’s Education nomadic tribes</h3>
-                        <p class="card-text text-center">Campaign by : Swa Sahyog Sanstha
-                        </p>
-                        <p>Swa Sahyog Sanstha is a Non government Organization (NGO) registered under Rajasthan Society
-                            Registration Act 28, 1958.
-                        </p>
-                    </div>
-                    <a href="http://www.givnow.in/education-campaigns/">
-                        <div class="card-footer text-center">
-                            <small class="text-muted"><i class="fas fa-heart"
-                                                         style="font-size: 30px; color: #e53935;"></i><span
-                                    style="font-size: 20px; color: #e53935; font-weight: bolder; font-family: 'Open Sans', sans-serif;">  DONATE NOW</span></small>
+                @foreach($campaigns as $campaign)
+                    @if($loop->index < 3)
+                    <div class="card">
+                        <img src="{{$campaign->thumbnail}}"
+                             class="card-img-top" alt="...">
+                        <div class="card-body text-justify">
+                            <h3 class="card-title text-center">{{$campaign->name}}</h3>
+                            <p class="card-text text-center">Campaign by : {{$campaign->campaign_chairman}}</p>
+                            <p>{{$campaign->short_description}}
+                            </p>
                         </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <img src="http://www.givnow.in/wp-content/uploads/2018/02/MVKS_featured-400x204.jpg"
-                         class="card-img-top" alt="...">
-                    <div class="card-body text-justify">
-                        <h3 class="card-title text-center">Children’s Education nomadic tribes</h3>
-                        <p class="card-text text-center">Campaign by : Swa Sahyog Sanstha
-                        </p>
-                        <p>Swa Sahyog Sanstha is a Non government Organization (NGO) registered under Rajasthan Society
-                            Registration Act 28, 1958.
-                        </p>
+                        <a href="http://www.givnow.in/education-campaigns/">
+                            <div class="card-footer text-center">
+                                <small class="text-muted"><i class="fas fa-heart"
+                                                             style="font-size: 30px; color: #ffb606;"></i><span
+                                        style="font-size: 20px; color: #ffb606; font-weight: bolder; font-family: 'Open Sans', sans-serif;">  DONATE NOW</span></small>
+                            </div>
+                        </a>
                     </div>
-                    <a href="http://www.givnow.in/education-campaigns/">
-                        <div class="card-footer text-center">
-                            <small class="text-muted"><i class="fas fa-heart"
-                                                         style="font-size: 30px; color: #e53935;"></i><span
-                                    style="font-size: 20px; color: #e53935; font-weight: bolder; font-family: 'Open Sans', sans-serif;">  DONATE NOW</span></small>
+                    @endif
+                @endforeach
+            </div>
+            <br>
+            <br>
+            <div class="card-deck">
+                @foreach($campaigns as $campaign)
+                    @if($loop->index >=3 && $loop->index < 6)
+                    <div class="card">
+                        <img src="{{$campaign->thumbnail}}"
+                             class="card-img-top" alt="...">
+                        <div class="card-body text-justify">
+                            <h3 class="card-title text-center">{{$campaign->name}}</h3>
+                            <p class="card-text text-center">Campaign by : {{$campaign->campaign_chairman}}</p>
+                            <p>{{$campaign->short_description}}
+                            </p>
                         </div>
-                    </a>
-                </div>
-                <div class="card">
-                    <img src="http://www.givnow.in/wp-content/uploads/2018/02/MVKS_featured-400x204.jpg"
-                         class="card-img-top" alt="...">
-                    <div class="card-body text-justify">
-                        <h3 class="card-title text-center">Children’s Education nomadic tribes</h3>
-                        <p class="card-text text-center">Campaign by : Swa Sahyog Sanstha
-                        </p>
-                        <p>Swa Sahyog Sanstha is a Non government Organization (NGO) registered under Rajasthan Society
-                            Registration Act 28, 1958.
-                        </p>
+                        <a href="http://www.givnow.in/education-campaigns/">
+                            <div class="card-footer text-center">
+                                <small class="text-muted"><i class="fas fa-heart"
+                                                             style="font-size: 30px; color: #ffb606;"></i><span
+                                        style="font-size: 20px; color: #ffb606; font-weight: bolder; font-family: 'Open Sans', sans-serif;">  DONATE NOW</span></small>
+                            </div>
+                        </a>
                     </div>
-                    <a href="http://www.givnow.in/education-campaigns/">
-                        <div class="card-footer text-center">
-                            <small class="text-muted"><i class="fas fa-heart"
-                                                         style="font-size: 30px; color: #e53935;"></i><span
-                                    style="font-size: 20px; color: #e53935; font-weight: bolder; font-family: 'Open Sans', sans-serif;">  DONATE NOW</span></small>
-                        </div>
-                    </a>
-                </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-12 text-center">
+                <button class="newsletter_submit_btn trans_300">LOAD MORE</button>
             </div>
         </div>
     </div>
