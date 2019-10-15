@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="styles/news_post_responsive.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+    <link rel="stylesheet" href="css/gallery.css">
     <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
