@@ -321,19 +321,19 @@ Website: http://www.webthemez.com/
                             <a href="{{ url('admin/coment') }}">List Coment</a>
                         </li>
                         <li>
-                            <a href="{{ url('listRegister') }}">List Register</a>
+                            <a href="{{ url('admin/listRegister') }}">List Register</a>
                         </li>
                         <li>
                             <a href="#">Form<span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <li>
-                                    <a href="{{ url('add-scholarship') }}">Add Scholarship</a>
+                                    <a href="{{ url('admin/add-scholarship') }}">Add Scholarship</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('addunit') }}">Add Unit</a>
+                                    <a href="{{ url('admin/addunit') }}">Add Unit</a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('addcountry') }}">Add Country</a>
+                                    <a href="{{ url('admin/addcountry') }}">Add Country</a>
                                 </li>
 
                             </ul>
