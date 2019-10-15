@@ -31,7 +31,7 @@
                     <span class="text-dark" style="font-size : 16px">
                             {{ $detai -> content }}
                     </span><br>
-                    <a class="btn btn-primary mt-5" href="{{ url('registerScholarship/'.$detai->id) }}">Registration</a>
+                    <a class="btn btn-primary mt-5" style="float:right" href="{{ url('registerScholarship/'.$detai->id) }}">Registration</a>
                 @endforeach
                 <div class="news_post_comments">
 						<div class="comments_title">Comments</div>
@@ -53,7 +53,7 @@
                                                 <span class="comment_separator">|</span>
                                                 <span class="comment_date">{{ $coment->created_at }}</span>
                                                 <span class="comment_separator">|</span>
-                                                <span class="comment_reply_link"><a href="#">Reply</a></span>
+                                                <span class="comment_reply_link"><a >{{ $coment->email }}</a></span>
                                             </div>
                                             <p class="comment_text">{{ $coment->messager }}</p>
                                         </div>
@@ -62,8 +62,10 @@
                             </li>
                             @endforeach
                             {{-- {!! $coments -> Links() !!} --}}
-                            <a href="">Show more</a>
+
+
                         </ul>
+                        <a id="loadmore" class="btn btn-outline-dark  mt-4">Load More <span>3 in {{ $totalcomment }} Comment</span> </a>
                         <div class="leave_comment">
                                 <div class="leave_comment_title">Leave a comment</div>
                                 <div class="leave_comment_form_container">
@@ -93,19 +95,22 @@
                         <div class="latest_posts">
 
                             <!-- Latest Post -->
-                            @foreach ($detais as $detai )
+                            @foreach ($latestposts as $latestpost )
                             <div class="latest_post">
                                 <div class="latest_post_image">
-                                    <img src="images/latest_1.jpg" alt="">
+                                    <img style="object-fit:cover;height:180px" width="100%"  src="{{asset('images/scholarship').'/'.$latestpost->image}}" alt="">
                                 </div>
-                                <div class="latest_post_title"><a href="">{{ $detai->title }}</a></div>
+                                <div class="latest_post_title"><a href="">{{ $latestpost->title }}</a></div>
                                 <div class="latest_post_meta">
-                                    <span class="latest_post_author"><a href="#">{{ $detai->unit_id }}</a></span>
+                                    <span class="latest_post_author"><a href="#">{{ $latestpost->unit_id }}</a></span>
                                     <span>|</span>
                                     <span class="latest_post_comments"><a href="#">3 Comments</a></span>
                                 </div>
                             </div>
                             @endforeach
+                            <div style="width:100%">
+                                    <a style="float:right" href="{{ url('/scholars-ship') }}">Show all</a>
+                            </div>
 
                         </div>
 
@@ -132,4 +137,24 @@
         </div>
     </div>
 </div>
+<script>
+        var load = document.getElementById('loadmore');
+        var page = 1;
+        load.addEventListener('click',function LoadComent() {
+
+            $.ajax({
+                url: '{{url('/load-coment-scholarship')}}',
+                data: {
+                    page: ++page,
+                    page_id: {{ $detai->id }}
+                },
+                method: 'GET',
+                //console.log('results'),
+                success: function (result) {
+                    $(".comments_list").append(result);
+                }
+            });
+        })
+
+</script>
 @endsection

@@ -36,7 +36,7 @@ class scholarship extends Model
 
 
     public static $_status = [
-        self ::ACTIVE => 'Show',
-        self ::DEACTIVE => 'Hide',
+        self ::ACTIVE => 'Active',
+        self ::DEACTIVE => 'Deactivated',
     ];
 }

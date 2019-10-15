@@ -12,6 +12,8 @@ Website: http://www.webthemez.com/
     <meta content="" name="description" />
     <meta content="webthemez" name="author" />
     <base href="{{asset('')}}">
+    <title>EduPan | Admin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg" />
     <title>Bootstrap HTML5 Admin Template : Master - WebThemez</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -76,7 +78,7 @@ Website: http://www.webthemez.com/
                                         <em>Yesterday</em>
                                     </span>
                             </div>
-                            <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                            <div>Lorem Ipsum has been the industry's standard dummy text ever since the...'</div>
                         </a>
                     </li>
                     <li class="divider"></li>
@@ -263,14 +265,14 @@ Website: http://www.webthemez.com/
                     <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="chart.html">Charts JS</a>
+                            <a href="admin.chart.html">Charts JS</a>
                         </li>
                         <li>
                             <a href="morris-chart.html">Morris Chart</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                 </li>
 
@@ -279,10 +281,10 @@ Website: http://www.webthemez.com/
                 </li>
                 <li>
                     <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                </li>
+                </li> --}}
 
 
-                <li>
+                {{-- <li>
                     <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -308,9 +310,36 @@ Website: http://www.webthemez.com/
 
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 <li>
-                    <a class="active-menu" href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    <a href="#"><i class="fa fa-sitemap"></i>Scholarship<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/scholars-ship') }}">List Scholarships</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/coment') }}">List Coment</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('listRegister') }}">List Register</a>
+                        </li>
+                        <li>
+                            <a href="#">Form<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('add-scholarship') }}">Add Scholarship</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('addunit') }}">Add Unit</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('addcountry') }}">Add Country</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -319,7 +348,7 @@ Website: http://www.webthemez.com/
     </nav>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
-        <div class="header">
+        {{-- <div class="header">
             <h1 class="page-header">
                 Empty Page <small>Create new page.</small>
             </h1>
@@ -329,8 +358,8 @@ Website: http://www.webthemez.com/
                 <li class="active">Data</li>
             </ol>
 
-        </div>
-        <div class="row">
+        </div> --}}
+        {{-- <div class="row">
 
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -354,7 +383,7 @@ Website: http://www.webthemez.com/
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         @yield('main-content')
 

@@ -17,6 +17,7 @@ class CreateTableUnit extends Migration
             $table -> bigIncrements('unit_id');
             $table -> unsignedBigInteger('country_id');
             $table -> string('unit_name');
+            $table-> string('email');
             $table->timestamps();
         });
     }

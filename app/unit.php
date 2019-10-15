@@ -11,6 +11,7 @@ class unit extends Model
     protected $fillable = [
         'unit_name',
         'country_id',
+        'email',
         'created_at',
         'updateed_at'
     ];

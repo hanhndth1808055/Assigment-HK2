@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main_content')
+@extends('admin.admin-layout')
+@section('main-content')
     <div class="container">
         <form action="addcountry" method="POST">
             @csrf

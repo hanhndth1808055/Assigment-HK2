@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main_content')
+@extends('admin.admin-layout')
+@section('main-content')
     <div class="container-fluid">
         <table class="table">
             <thead>
@@ -20,7 +20,7 @@
                         <td>{{ $coment->name }}</td>
                         <td>{{ $coment->email }}</td>
                         <td>{{ $coment->messager }}</td>
-                        <td>{{  \App\scholarship_coment::$_status[$coment->active] }}</td>
+                        <td><a class="btn btn-danger">{{  \App\scholarship_coment::$_status[$coment->active] }}</a></td>
                         <td>{{ $coment->id }}</td>
                         <td>
                             <a href="{{ url('deletecoment/'.$coment->coment_id) }}">Delete</a>
@@ -31,5 +31,6 @@
                 @endforeach
             </tbody>
         </table>
+        <span>Total Coment : {{ $totalcomment }}</span>
     </div>
 @endsection

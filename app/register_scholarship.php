@@ -12,7 +12,6 @@ class register_scholarship extends Model
         "id",
         "name",
         "phone",
-        "note",
         "email",
         "contact",
         "created_at",

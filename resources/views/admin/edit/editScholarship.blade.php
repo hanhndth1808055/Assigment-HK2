@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main_content')
+@extends('admin.admin-layout')
+@section('main-content')
 <style>
     p {
         color: red;
@@ -16,6 +16,13 @@
             <input type="text" name="title" value="{{ $scholarships->title }}" class="form-control" placeholder="">
             @if($errors -> has("title"))
             <p class="error">{{ $errors -> first("title") }}</p>
+            @endif
+        </div>
+        <div class="form-group">
+            <label for="">Brief Content</label>
+            <input type="text" name="brief_content" value="{{  $scholarships->brief_content  }}" class="form-control" placeholder="">
+            @if($errors -> has("brief_content"))
+            <p class="error">{{ $errors -> first("brief_content") }}</p>
             @endif
         </div>
         <div class="form-group">

@@ -17,7 +17,9 @@
                 <img class="scholar-img" src="{{asset('images/scholarship').'/'.$scholarship->image}}">
             </div>
             <div class="col-md-6 d-flex flex-column box-scholar">
-                <h2 class="text-dark">{{ $scholarship->title }} <span>{{ $scholarship->created_at }}</span> </h2>
+                <h2 class="text-dark">
+                     <a class="text-dark text-capitalize" href="{{ url('/detai/'.$scholarship->id) }}">{{ $scholarship->title }}</a>
+                     <span>{{ $scholarship->created_at }}</span> </h2>
                 <h3 class="text-uppercase d-flex justify-content-between">
                      <span>{{ $scholarship -> unit_id }}</span>
                      <span>{{ $scholarship->country_id}}</span></h3>
