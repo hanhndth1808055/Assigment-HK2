@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main_content')
+@extends('admin.admin-layout')
+@section('main-content')
 <div class="container-fluid">
         <table class="table">
             <thead>
@@ -9,7 +9,6 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone</th>
-                    <th scope="col">User Note</th>
                     <th scope="col">Contact</th>
                     <th scope="col">Time request</th>
                     <th scope="col">Use</th>
@@ -23,7 +22,6 @@
                         <td>{{ $register->name }}</td>
                         <td>{{ $register->email }}</td>
                         <td>{{ $register->phone }}</td>
-                        <td>{{ $register->note }}</td>
                         <td>{{ \App\register_scholarship::$_status[$register->contact]}}</td>
                         <td>{{ $register->created_at }}</td>
                         <td>

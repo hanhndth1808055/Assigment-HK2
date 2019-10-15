@@ -31,7 +31,7 @@
                     <span class="text-dark" style="font-size : 16px">
                             {{ $detai -> content }}
                     </span><br>
-                    <a class="btn btn-primary mt-5" href="{{ url('registerScholarship/'.$detai->id) }}">Registration</a>
+                    <a class="btn btn-primary mt-5" style="float:right" href="{{ url('registerScholarship/'.$detai->id) }}">Registration</a>
                 @endforeach
                 <div class="news_post_comments">
 						<div class="comments_title">Comments</div>
@@ -65,7 +65,7 @@
 
 
                         </ul>
-                        <a id="loadmore" class="btn btn-outline-primary  mt-4">Load More </a>
+                        <a id="loadmore" class="btn btn-outline-dark  mt-4">Load More <span>3 in {{ $totalcomment }} Comment</span> </a>
                         <div class="leave_comment">
                                 <div class="leave_comment_title">Leave a comment</div>
                                 <div class="leave_comment_form_container">

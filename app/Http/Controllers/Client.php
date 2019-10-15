@@ -40,9 +40,12 @@ class Client extends Controller
         ->where('id',$id)
         ->orderBy("created_at","DESC")->take(self::_LIMIT)->get();
 
+        $totalcomment = DB::table('scholarship_coment')
+        ->where('id',$id)
+        ->count();
         // $scholarships = DB::table('scholarship')->orderBy('id','DESC')->get();
 
-        return view('client.scholarship_detais', compact("detais","coments",'latestposts'));
+        return view('client.scholarship_detais', compact("detais","coments",'latestposts','totalcomment'));
     }
     public function registerScholarship($id){
         // $register = DB::table('register_scholarship')->get();
@@ -65,7 +68,7 @@ class Client extends Controller
         "unit_name as unit_id","pay","startdate","brief_content","status","scholarship.created_at"]);
 
 
-        return view('pages.home',compact('scholarships'));
+        return view('client.home',compact('scholarships'));
     }
 
     public function loadComentScholarship(Request $request){

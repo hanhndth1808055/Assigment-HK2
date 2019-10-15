@@ -1,5 +1,5 @@
-@extends('admin.layout')
-@section('main_content')
+@extends('admin.admin-layout')
+@section('main-content')
 <style>
     p {
         color: red;
@@ -72,55 +72,6 @@
             @endif
         </div>
 
-{{--
-
-
-        <div class="form-group">
-            <label for="">number_awards</label>
-            <input type="text" name="number_awards" value="{{old('number_awards')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div>
-
-        <div class="form-group">
-            <label for="">target_group</label>
-            <input type="text" name="target_group" value="{{old('target_group')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div>
-
-        <div class="form-group">
-            <label for="">duration</label>
-            <input type="text" name="duration" value="{{old('duration')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div>
-        <div class="form-group">
-            <label for="">eligibility</label>
-            <input type="text" name="eligibility" value="{{old('eligibility')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div>
-
-        <div class="form-group">
-            <label for="">instructions</label>
-            <input type="text" name="instructions" value="{{old('instructions')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div>
-
-        <div class="form-group">
-            <label for="">link</label>
-            <input type="text" name="link" value="{{old('link')}}" class="form-control" placeholder="">
-            @if($errors -> has(""))
-            <p class="error">{{ $errors -> first("") }}</p>
-            @endif
-        </div> --}}
 
         <div class="form-group">
             <label for="">Content</label>

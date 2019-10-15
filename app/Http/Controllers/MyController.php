@@ -31,8 +31,18 @@ class MyController extends Controller
         return view("admin.form.formcountry",compact("countrys"));
     }
     public function saveCountry(Request $request){
-        // $this-> validate($request,['name' => 'required|unique:country'],
-        // ["required" => "vui lòng nhập vào thông tin","unique" => "Đã tồn tại"]);
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "max:150" => "max 150"
+        ];
+
+        $rules = [
+            "country_name" => "required|string|max:150|unique:country",
+            "short_name" => "required"
+        ];
+
+        $this->validate($request,$rules , $messages);
         try{
             country::create([
                 "country_name"=>$request->get("country_name"),
@@ -54,6 +64,18 @@ class MyController extends Controller
         return view("admin.form.formunit",compact("units","countrys"));
     }
     public function saveUnit(Request $request){
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "max:150" => "max 150"
+        ];
+
+        $rules = [
+            "unit_name" => "required|string|max:150|unique:unit",
+            "email" => "required"
+        ];
+
+        $this->validate($request,$rules , $messages);
         try{
             unit::create([
                 "unit_name"=>$request->get("unit_name"),
@@ -278,10 +300,11 @@ class MyController extends Controller
 
     public function coment(){
         $coments = DB::table('scholarship_coment')
-        // ->join('scholarship','scholarship.id','=','scholarship_coment.id')
-        // ->paginate(20,["coment_id","name as id","name","email","messager","active"]);
-        ->paginate(20);
-        return view("admin.list.coment", compact("coments"));
+        ->join('scholarship','scholarship.id','=','scholarship_coment.id')
+        ->paginate(20,["coment_id","title as id","name","email","messager","active"]);
+        // ->paginate(20);
+        $totalcomment = DB::table('scholarship_coment')->count();
+        return view("admin.list.coment", compact("coments","totalcomment"));
     }
     public function deletecoment($id){
         DB::table('scholarship_coment')->where('coment_id', '=', $id)->delete();
@@ -335,7 +358,7 @@ class MyController extends Controller
         $rules = [
             "name" => "required",
             "email" => "required",
-            "note" => "required",
+            // "note" => "required",
             "phone"=>"required"
         ];
         $this->validate($request,$rules , $messages);
@@ -345,19 +368,18 @@ class MyController extends Controller
             "name"=>$request->get("name"),
             "email"=>$request->get("email"),
             "phone" => $request->get("phone"),
-            "note"=>$request->get("note"),
         ])->save();
         }
         catch(\Exception $e){
             die($e -> getMessage());
         }
-        return redirect()->back();
+        return redirect()->back()->with("success","Register successfully!!!");
     }
 
     public function listRegister(){
         $registers = DB::table('register_scholarship')
         ->join('scholarship', 'scholarship.id', '=', 'register_scholarship.id')
-        ->paginate(20,["title as id","name","phone","email","note","register_id","contact","register_scholarship.created_at"]);
+        ->paginate(20,["title as id","name","phone","email","register_id","contact","register_scholarship.created_at"]);
         return view('admin.list.registerScholarship',compact('registers'));
     }
 

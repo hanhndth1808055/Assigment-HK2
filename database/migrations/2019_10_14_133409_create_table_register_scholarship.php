@@ -19,7 +19,6 @@ class CreateTableRegisterScholarship extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
-            $table->string('note')->default('nothing');
             $table->boolean('contact')->default(0);
             $table->timestamps();
         });

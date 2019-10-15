@@ -16,7 +16,9 @@
                 <!-- Contact Form -->
                 <div class="contact_form">
                     <div class="contact_title mb-5">Register Scholarship Now</div>
-
+                    @if(Session::has("success"))
+                    <h3 class="text-center" style="color:green">{{ Session::get("success") }}</h3>
+                    @endif
                     <div class="">
                         @foreach ($scholarships as $scholarship )
                         <h2 class="text-dark">Name Scholarship : {{ $scholarship->title }}</h2>
@@ -28,17 +30,26 @@
                             enctype="multipart/form-data">
                             @csrf
                             <input style="display : none" type="text" name="id" value="{{ $scholarship->id }}">
-                            <input name="name" id="comment_form_name" class="input_field contact_form_name" type="text"
-                                placeholder="Name" required="required" data-error="Name is required.">
+                            <input name="name" id="comment_form_name" class="input_field contact_form_name mt-2"
+                                type="text" placeholder="Name" required="required" data-error="Name is required."
+                                value="{{ old('name')}}">
+                            @if($errors -> has("name"))
+                            <p class="error">{{ $errors -> first("name") }}</p>
+                            @endif
                             <input name="email" id="comment_form_email" class="input_field contact_form_email"
                                 type="email" placeholder="E-mail" required="required"
-                                data-error="Valid email is required.">
+                                data-error="Valid email is required." value="{{ old('email')}}">
+                            @if($errors -> has("email"))
+                            <p class="error">{{ $errors -> first("email") }}</p>
+                            @endif
                             <input name="phone" id="comment_form_email" class="input_field contact_form_email"
                                 type="number" placeholder="Phone" required="required"
-                                data-error="Valid phone is required.">
-                            <textarea name="note" id="" class="text_field contact_form_message mt-4"
-                                placeholder="Note">Note</textarea>
-                            <button id="comment_send_btn" type="submit" class="comment_send_btn trans_200"
+                                data-error="Valid phone is required." value="{{ old('phone')}}">
+                            @if($errors -> has("phone"))
+                            <p class="error">{{ $errors -> first("phone") }}</p>
+                            @endif
+
+                            <button id="comment_send_btn" type="submit" class="comment_send_btn trans_200 mt-3"
                                 value="submit">Register Now</button>
                         </form>
                     </div>

@@ -55,7 +55,6 @@ Route::get('hide_coment/{id}',"MyController@hideComent");
 Route::get('show_coment/{id}',"MyController@showComent");
 
 
-
 Route::get('gallery', 'GalleryController@showGallery');
 
 //coment scholarship
@@ -63,4 +62,9 @@ Route::get('/load-coment-scholarship', "Client@loadComentScholarship");
 
 Route::get('admin', function (){
     return view('admin.gallery-admin');
+});
+
+
+Route::get('chart', function (){
+    return view('admin.chart');
 });
