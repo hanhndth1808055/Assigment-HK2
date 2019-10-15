@@ -56,6 +56,7 @@ Route::get('show_coment/{id}',"MyController@showComent");
 
 
 Route::get('gallery', 'GalleryController@showGallery');
+Route::get('campaigns', 'CampaignsController@showCampaigns');
 
 //coment scholarship
 Route::get('/load-coment-scholarship', "Client@loadComentScholarship");

@@ -114,6 +114,9 @@
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+    font-size: 22px;
+    opacity: 0.8;
+    font-family: "Open Sans";
 }
 
 /* Add Animation - Zoom in the Modal */
