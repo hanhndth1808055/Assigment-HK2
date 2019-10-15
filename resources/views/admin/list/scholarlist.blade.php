@@ -37,12 +37,12 @@
                 <td>{{ \App\scholarship::$_status[$scholar->status] }}</td>
                 <td style="display : flex">
 
-                        <a class="btn btn-outline-secondary" href="{{ url('editscholarship?id='.$scholar -> id) }}">Edit</a>
+                        <a class="btn btn-outline-secondary" href="{{ url('admin/editscholarship?id='.$scholar -> id) }}">Edit</a>
                         {{--  <a class="btn btn-outline-danger" href="{{ url('delete/'.$scholar->id) }}"  --}}
                             {{--  onclick="return confirm('You really want to delete this row??')">Delete</a>  --}}
 
-                        <a class="btn btn-danger" href="{{ url('hide_scholarship/'.$scholar->id) }}">Hide</a>
-                        <a class="btn btn-primary" href="{{ url('show_scholarship/'.$scholar->id) }}">show</a>
+                        <a class="btn btn-danger" href="{{ url('admin/hide_scholarship/'.$scholar->id) }}">Hide</a>
+                        <a class="btn btn-primary" href="{{ url('admin/show_scholarship/'.$scholar->id) }}">show</a>
                 </td>
             </tr>
             @endforeach

@@ -14,7 +14,7 @@ Auth::routes();
 
 Route::get('/', "Client@viewHome");
 
-Route::prefix('admin')->group( function () {
+Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
     Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
 
