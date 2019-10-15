@@ -8,7 +8,7 @@
 
             <!-- Hero Slide -->
             <div class="hero_slide">
-                <div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
+                <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                 <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                     <div class="hero_slide_content text-center">
                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
@@ -19,7 +19,7 @@
 
             <!-- Hero Slide -->
             <div class="hero_slide">
-                <div class="hero_slide_background" style="background-image:url(images/slider_background.jpg)"></div>
+                <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                 <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                     <div class="hero_slide_content text-center">
                         <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
@@ -156,7 +156,7 @@
                 <!-- Search -->
 
                 <div class="search_section d-flex flex-column align-items-center justify-content-center">
-                    <div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+                    <div class="search_background" style="background-image:url({{asset('images/search_background.jpg')}});"></div>
                     <div class="search_content text-center">
                         {{--  <h1 class="search_title">Search for your course</h1>  --}}
                         <h1 class="search_title">Registration</h1>
@@ -269,7 +269,7 @@
 <div class="testimonials page_section">
     <!-- <div class="testimonials_background" style="background-image:url(images/testimonials_background.jpg)"></div> -->
     <div class="testimonials_background_container prlx_parent">
-        <div class="testimonials_background prlx" style="background-image:url(images/testimonials_background.jpg)">
+        <div class="testimonials_background prlx" style="background-image:url({{asset('images/testimonials_background.jpg')}})">
         </div>
     </div>
     <div class="container">

@@ -13,7 +13,7 @@ class GallerySeeder extends Seeder
      */
     public function run()
     {
-        if (DB::table('gallery_images')->count()==0){
+        if (DB::table('gallery_images')->count() == 0) {
             $data = array(
                 array('link' => 'https://www.edc.org/sites/default/files/Early-Childhood.jpg',
                     'description' => 'EduPan supports the development of engaging and safe educational programs for young children.'),
@@ -29,7 +29,7 @@ class GallerySeeder extends Seeder
                     'description' => 'How does learning transform lives?'),
                 array('link' => 'https://pbs.twimg.com/media/EC4LS5oXoAAQhbC.jpg',
                     'description' => 'EduPan Presents at the 2019 Global Youth Economic Opportunities Summit.'),
-                array('https://media.glassdoor.com/l/08/6f/31/cd/annual-conference-dc.jpg',
+                array('link' => 'https://media.glassdoor.com/l/08/6f/31/cd/annual-conference-dc.jpg',
                     'description' => 'EduPan and the National Association for the Education of Young Children Annual Conference, June 7-10, New Orleans, LA'),
                 array('link' => 'https://kentuckyliteracy.org/wp-content/uploads/2019/10/TLI-19-TL-photo-1-1024x543.jpg',
                     'description' => 'Reading Recovery Council of North America, National Reading Recovery and K-6 Literacy Conference, Feb 7-10, Columbus, OH'),
