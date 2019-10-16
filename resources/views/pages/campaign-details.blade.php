@@ -9,11 +9,11 @@
                 <!-- Hero Slide -->
                 <div class="hero_slide">
                     <div class="hero_slide_background"
-                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                         style="background-image:url('https://www.opml.co.uk/files/Projects/Images/equip-t-banner.png')"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Reaching out
+                                <span>Show</span> your caring heart!</h1>
                         </div>
                     </div>
                 </div>
@@ -21,11 +21,11 @@
                 <!-- Hero Slide -->
                 <div class="hero_slide">
                     <div class="hero_slide_background"
-                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                         style="background-image:url('https://www.opml.co.uk/files/Blog/Images/ghana-school-banner.png')"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Give one
+                                <span>kind hand</span> to the children!</h1>
                         </div>
                     </div>
                 </div>
@@ -88,6 +88,21 @@
 
                                 <p class="news_post_text text-center" style="margin-top: 59px;">We cherish any support
                                     in terms of property, things or voices. Thank you! </p>
+                            </div>
+                            <div>
+                                <form action="campaigns/charge/{{$campaignDetail->id}}" method="POST">
+                                    {{ csrf_field() }}
+                                    <script
+                                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                        data-key="pk_test_I1D1MhFKvDaFAiuMYEq7SzeA002WFK7ORY"
+                                        data-amount="500"
+                                        data-name="Donate Now"
+                                        data-description="Donate for this campaign"
+                                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                                        data-locale="auto"
+                                        data-currency="usd">
+                                    </script>
+                                </form>
                             </div>
 
                         </div>
@@ -218,4 +233,25 @@
                 </div>
             </div>
         </div>
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            $(document).ready(function () {
+                var stripe = Stripe('pk_test_I1D1MhFKvDaFAiuMYEq7SzeA002WFK7ORY');
+                var elements = stripe.elements();
+// Custom styling can be passed to options when creating an Element.
+                var style = {
+                    base: {
+                        // Add your base input styles here. For example:
+                        fontSize: '16px',
+                        color: "#32325d",
+                    }
+                };
+
+// Create an instance of the card Element.
+                var card = elements.create('card', {style: style});
+
+// Add an instance of the card Element into the `card-element` <div>.
+                card.mount('#card-element');
+            });
+        </script>
 @endsection

@@ -69,6 +69,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 Route::get('gallery', 'GalleryController@showGallery');
 Route::get('campaigns', 'CampaignsController@showCampaigns');
 Route::get('campaigns/{id}', 'CampaignsController@showCampaignDetail');
+Route::post('campaigns/charge/{id}', 'CampaignsController@payWithStripe');
 
 //coment scholarship
 Route::get('/load-coment-scholarship', "Client@loadComentScholarship");
