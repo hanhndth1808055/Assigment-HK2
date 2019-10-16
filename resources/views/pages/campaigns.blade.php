@@ -9,11 +9,11 @@
                 <!-- Hero Slide -->
                 <div class="hero_slide">
                     <div class="hero_slide_background"
-                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                         style="background-image:url({{asset('images/campaigns/banner1.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
                             <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Find the
-                                <span>Campaigns</span> that you care!</h1>
+                                <span>Campaigns</span> you care!</h1>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 <!-- Hero Slide -->
                 <div class="hero_slide">
                     <div class="hero_slide_background"
-                         style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
+                         style="background-image:url('https://www.opml.co.uk/files/Projects/Images/nigeria-schoolchildren-banner.png')"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
                             <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Give one
