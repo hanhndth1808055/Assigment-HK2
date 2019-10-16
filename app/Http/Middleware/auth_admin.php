@@ -19,7 +19,7 @@ class auth_admin
             if(Auth::user()->isAdmin()){
                 return $next($request);
             }
-            return redirect('/');
+            return redirect('/user');
         }
         return redirect('/login');
     }

@@ -11,8 +11,15 @@
 |
 */
 Auth::routes();
+//client
 
 Route::get('/', "Client@viewHome");
+Route::get('/scholars-ship', "Client@viewScholarship") ;
+Route::get('/detai/{id}',"Client@viewDetais" );
+
+Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
+Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
+
 
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
@@ -35,8 +42,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('show_scholarship/{id}',"MyController@showScholarship");
     Route::get('registerScholarship/{id}',"Client@registerScholarship");
 
-    Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
-    Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
+
+
     Route::get('listRegister',"MyController@listRegister");
 
     Route::get('delete/{id}',"MyController@deletescholarship");
@@ -55,8 +62,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::post('/addPartnership',"MyController_2@savePartnership");
     Route::get('/listPartnership',"MyController_2@showListPartnership");
 });
-Route::get('/scholars-ship', "Client@viewScholarship") ;
-Route::get('/detai/{id}',"Client@viewDetais" );
+
 
 
 
@@ -65,6 +71,7 @@ Route::get('campaigns', 'CampaignsController@showCampaigns');
 
 //coment scholarship
 Route::get('/load-coment-scholarship', "Client@loadComentScholarship");
+
 
 Route::get('admin', function (){
     return view('admin.gallery-admin');
@@ -77,6 +84,13 @@ Route::get('chart', function (){
     return view('admin.chart');
 });
 
+Route::get('user', function (){
+    return view('auth.user');
+});
+Route::get('home', function (){
+    return view('auth.user');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->middleware('admin');;
