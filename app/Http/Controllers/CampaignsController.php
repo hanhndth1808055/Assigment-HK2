@@ -15,6 +15,13 @@ class CampaignsController extends Controller
         return view('pages.campaigns', compact('campaigns'));
     }
 
+    public function showCampaignDetail($id)
+    {
+        $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
+        $campaignDetail = Campaigns::findOrFail($id);
+        return view('pages.campaign-details', compact('campaigns', 'campaignDetail'));
+    }
+
     public function loadMore(Request $request)
     {
         $page = $request->has("page") ? $request->get("page") : 1;

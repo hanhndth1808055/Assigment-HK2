@@ -15,9 +15,9 @@
                     <li class="main_nav_item"><a href="#">home</a></li>
                     <li class="main_nav_item"><a href="#">Research </a></li>
                     <li class="main_nav_item"><a href="courses.html">seminar</a></li>
-                    <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
+                    <li class="main_nav_item"><a href="{{url('campaigns')}}">Campaigns</a></li>
                     <li class="main_nav_item"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
-                    <li class="main_nav_item"><a href="contact.html">Gallery</a></li>
+                    <li class="main_nav_item"><a href="{{url('gallery')}}">Gallery</a></li>
                     {{--  <li class="main_nav_item"><a href="contact.html">About Work</a></li>  --}}
                 </ul>
             </div>
