@@ -12,8 +12,8 @@
                          style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Find the
+                                <span>Campaigns</span> that you care!</h1>
                         </div>
                     </div>
                 </div>
@@ -24,8 +24,8 @@
                          style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Give one
+                                <span>kind hand</span> today!</h1>
                         </div>
                     </div>
                 </div>
@@ -42,11 +42,11 @@
 
     </div>
     <div class="container pb-5 pt-5">
-        <div class="row pt-5">
-            <div class="col-12">
-                <h2>CAMPAIGNS</h2>
-            </div>
-        </div>
+{{--        <div class="row pt-5">--}}
+{{--            <div class="col-12">--}}
+{{--                <h2>CAMPAIGNS</h2>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="row">
             <div class="card-deck">
                 @foreach($campaigns as $campaign)
@@ -60,7 +60,7 @@
                             <p>{{$campaign->short_description}}
                             </p>
                         </div>
-                        <a href="http://www.givnow.in/education-campaigns/">
+                        <a href="{{url('campaigns/'.$campaign->id)}}">
                             <div class="card-footer text-center">
                                 <small class="text-muted"><i class="fas fa-heart"
                                                              style="font-size: 30px; color: #ffb606;"></i><span
@@ -85,7 +85,7 @@
                             <p>{{$campaign->short_description}}
                             </p>
                         </div>
-                        <a href="http://www.givnow.in/education-campaigns/">
+                        <a href="{{url('campaigns/'.$campaign->id)}}">
                             <div class="card-footer text-center">
                                 <small class="text-muted"><i class="fas fa-heart"
                                                              style="font-size: 30px; color: #ffb606;"></i><span
