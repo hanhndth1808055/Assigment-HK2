@@ -50,6 +50,17 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('deletecoment/{id}',"MyController@deletecoment");
     Route::get('hide_coment/{id}',"MyController@hideComent");
     Route::get('show_coment/{id}',"MyController@showComent");
+
+    /* Seminar */
+
+    Route::get('/addSeminar',"MyController_2@addSeminar");
+    Route::post('/addSeminar',"MyController_2@saveSeminar");
+    Route::get('/listSeminar',"MyController_2@showListSeminar");
+
+    /* Partnership */
+    Route::get('/addPartnership',"MyController_2@addPartnership");
+    Route::post('/addPartnership',"MyController_2@savePartnership");
+    Route::get('/listPartnership',"MyController_2@showListPartnership");
 });
 
 
@@ -61,10 +72,13 @@ Route::get('campaigns', 'CampaignsController@showCampaigns');
 //coment scholarship
 Route::get('/load-coment-scholarship', "Client@loadComentScholarship");
 
-// Route::get('admin', function (){
-//     return view('admin.gallery-admin');
-// });
 
+Route::get('admin', function (){
+    return view('admin.gallery-admin');
+});
+// Seminar
+Route::get('seminar',"MyController_2@showSeminar");
+Route::get('partnership',"MyController_2@showPartnership");
 
 Route::get('chart', function (){
     return view('admin.chart');

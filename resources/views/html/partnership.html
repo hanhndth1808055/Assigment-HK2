@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
     <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="styles/courses_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/partnership_seminar_research.css">
     <link rel="stylesheet" type="text/css" href="styles/courses_responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -437,24 +437,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/scrollTo/jquery.scrollTo.min.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="js/courses_custom.js"></script>
-<script>
-    function readmoreInforLogo() {
-        var dots = document.getElementById("dots");
-        var moreText = document.getElementById("more");
-        var btnText = document.getElementById("myBtn");
-
-        if (dots.style.display === "none") {
-            dots.style.display = "inline";
-            btnText.innerHTML   = "Read more"+" &nbsp;"+"<i class=\"fa fa-arrow-down\" aria-hidden=\"true\">\n" +"</i>";
-
-            moreText.style.display = "none";
-        } else {
-            dots.style.display = "none";
-            btnText.innerHTML = "Read less &nbsp; <i class=\"fa fa-arrow-up\" aria-hidden=\"true\">\n" +
-                "                                       </i>";
-            moreText.style.display = "inline";
-        }
-    }
-</script>
+<script src="js/partnership_research_seminar.js"></script>
 </body>
 </html>
