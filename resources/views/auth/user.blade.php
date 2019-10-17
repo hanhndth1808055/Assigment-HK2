@@ -25,7 +25,7 @@
                 aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
-            <h4>You are not Admin<a href="{{ url('/') }}">Home page</a></h4>
+            <h4><a href="{{ url('/') }}">Home page</a></h4>
 
             <span style="margin-left:10px">or</span>
 
