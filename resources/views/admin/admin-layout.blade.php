@@ -253,7 +253,7 @@ Website: http://www.webthemez.com/
                      --}}
                      @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -283,7 +283,7 @@ Website: http://www.webthemez.com/
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
                  {{--   <li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>

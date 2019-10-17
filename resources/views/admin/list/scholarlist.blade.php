@@ -41,13 +41,16 @@
                         {{--  <a class="btn btn-outline-danger" href="{{ url('delete/'.$scholar->id) }}"  --}}
                             {{--  onclick="return confirm('You really want to delete this row??')">Delete</a>  --}}
 
-                        <a class="btn btn-danger" href="{{ url('admin/hide_scholarship/'.$scholar->id) }}">Hide</a>
-                        <a class="btn btn-primary" href="{{ url('admin/show_scholarship/'.$scholar->id) }}">show</a>
+                        <a class="btn btn-danger" href="{{ url('admin/hide_scholarship/'.$scholar->id) }}"
+                            onclick="return confirm('You really want to hide this row??')">Hide</a>
+                        <a class="btn btn-primary" href="{{ url('admin/show_scholarship/'.$scholar->id) }}"
+                            onclick="return confirm('You really want to active this row??')">show</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <span>Total Scholarship : {{ $totalscholarship }}</span>
     {!! $scholars -> Links() !!}
 </div>
 

@@ -23,7 +23,10 @@ class MyController extends Controller
         ->join('country', 'country.country_id', '=', 'scholarship.country_id')
         ->orderBy("id","ASC")->paginate(20,["id","enddate","title","image","content","country_name as country_id",
         "unit_name as unit_id","pay","startdate","status","scholarship.created_at"]);
-        return view("admin.list.scholarlist", compact("scholars") );
+
+        $totalscholarship = DB::table('scholarship')->count();
+
+        return view("admin.list.scholarlist", compact("scholars","totalscholarship") );
     }
 
     public function addCountry(){
@@ -101,7 +104,6 @@ class MyController extends Controller
 
     public function saveScholar(Request $request) {
         // dd($request->all());
-
         $messages = [
             "required" => "vui lòng nhập vào thông tin",
             "string" => "Phải nhập vào 1 chuỗi",
@@ -301,10 +303,16 @@ class MyController extends Controller
     public function coment(){
         $coments = DB::table('scholarship_coment')
         ->join('scholarship','scholarship.id','=','scholarship_coment.id')
+        ->where('active','=',1)
         ->paginate(20,["coment_id","title as id","name","email","messager","active"]);
         // ->paginate(20);
+        $coment_hide = DB::table('scholarship_coment')
+        ->join('scholarship','scholarship.id','=','scholarship_coment.id')
+        ->where('active','=',0)
+        ->paginate(20,["coment_id","title as id","name","email","messager","active"]);
+
         $totalcomment = DB::table('scholarship_coment')->count();
-        return view("admin.list.coment", compact("coments","totalcomment"));
+        return view("admin.list.coment", compact("coments","totalcomment","coment_hide"));
     }
     public function deletecoment($id){
         DB::table('scholarship_coment')->where('coment_id', '=', $id)->delete();

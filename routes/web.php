@@ -14,8 +14,9 @@ Auth::routes();
 //client
 
 Route::get('/', "Client@viewHome");
-Route::get('/scholars-ship', "Client@viewScholarship") ;
+Route::get('/scholarship', "Client@viewScholarship") ;
 Route::get('/detai/{id}',"Client@viewDetais" );
+Route::get('registerScholarship/{id}',"Client@registerScholarship");
 
 Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
 Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
@@ -40,7 +41,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::post('editscholarship',"MyController@updateScholarship");
     Route::get('hide_scholarship/{id}',"MyController@hideScholarship");
     Route::get('show_scholarship/{id}',"MyController@showScholarship");
-    Route::get('registerScholarship/{id}',"Client@registerScholarship");
+
 
 
 
@@ -73,9 +74,10 @@ Route::get('chart', function (){
 Route::get('user', function (){
     return view('auth.user');
 });
+
 Route::get('home', function (){
     return view('auth.user');
-});
+})->middleware('admin');
 
 Auth::routes();
 

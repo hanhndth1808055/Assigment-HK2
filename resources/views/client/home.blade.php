@@ -48,8 +48,8 @@
                     <div class="hero_box d-flex flex-row align-items-center justify-content-start">
                         <img src="images/earth-globe.svg" class="svg" alt="">
                         <div class="hero_box_content">
-                            <h2 class="hero_box_title">Online Courses</h2>
-                            <a href="courses.html" class="hero_box_link">view more</a>
+                            <h2 class="hero_box_title">Our Scholarship</h2>
+                            <a href="{{ url('scholarship') }}" class="hero_box_link">view more</a>
                         </div>
                     </div>
                 </div>
@@ -119,9 +119,9 @@
                 </div>
             </div>
             @endforeach
-            <div class="d-flex justify-content-end" style="width : 100%">
+            {{--  <div class="d-flex justify-content-end" style="width : 100%">
                     <a style="float : right" class="mt-4 mr-4" href="{{ url('scholars-ship') }}">Show All</a>
-            </div>
+            </div>  --}}
 
         </div>
     </div>
