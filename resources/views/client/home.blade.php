@@ -291,59 +291,21 @@
                     <div class="owl-carousel owl-theme testimonials_slider">
 
                         <!-- Testimonials Item -->
+                        @foreach ($feedbacks as $feedback )
                         <div class="owl-item">
-                            <div class="testimonials_item text-center">
-                                <div class="quote">“</div>
-                                <p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum
-                                    nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
-                                    fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae
-                                    tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-                                <div class="testimonial_user">
-                                    <div class="testimonial_image mx-auto">
-                                        <img src="images/testimonials_user.jpg" alt="">
+                                <div class="testimonials_item text-center">
+                                    <div class="quote">“</div>
+                                    <p class="testimonials_text text-center">{{ $feedback->messager }}</p>
+                                    <div class="testimonial_user">
+                                        <div class="testimonial_image mx-auto">
+                                            <img src="images/testimonials_user.jpg" alt="">
+                                        </div>
+                                        <div class="testimonial_name">{{ $feedback->name }}</div>
+                                        <div class="testimonial_title">{{ $feedback->id }}</div>
                                     </div>
-                                    <div class="testimonial_name">james cooper</div>
-                                    <div class="testimonial_title">Graduate Student</div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Testimonials Item -->
-                        <div class="owl-item">
-                            <div class="testimonials_item text-center">
-                                <div class="quote">“</div>
-                                <p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum
-                                    nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
-                                    fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae
-                                    tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-                                <div class="testimonial_user">
-                                    <div class="testimonial_image mx-auto">
-                                        <img src="images/testimonials_user.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial_name">james cooper</div>
-                                    <div class="testimonial_title">Graduate Student</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonials Item -->
-                        <div class="owl-item">
-                            <div class="testimonials_item text-center">
-                                <div class="quote">“</div>
-                                <p class="testimonials_text">In aliquam, augue a gravida rutrum, ante nisl fermentum
-                                    nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor
-                                    fermentum.In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae
-                                    tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum.</p>
-                                <div class="testimonial_user">
-                                    <div class="testimonial_image mx-auto">
-                                        <img src="images/testimonials_user.jpg" alt="">
-                                    </div>
-                                    <div class="testimonial_name">james cooper</div>
-                                    <div class="testimonial_title">Graduate Student</div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
 
                 </div>

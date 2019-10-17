@@ -25,7 +25,7 @@
     </div>
     <div class="header_side d-flex flex-row justify-content-center align-items-center">
         <img src="images/phone-call.svg" alt="">
-        <span>Contact Us</span>
+        <span><a href="" style="color : #fff">Contact Us</a></span>
     </div>
 
     <!-- Hamburger -->

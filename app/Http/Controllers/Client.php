@@ -67,8 +67,13 @@ class Client extends Controller
         ->paginate(3 ,["id","title","enddate","image","content","country_name as country_id" ,
         "unit_name as unit_id","pay","startdate","brief_content","status","scholarship.created_at"]);
 
+        $feedbacks = DB::table('scholarship_coment')
+        ->join('scholarship','scholarship.id','=','scholarship_coment.id')
+        ->where('active',1)
+        ->orderBy('coment_id','DESC')
+        ->paginate(6,['name','messager','title as id']);
 
-        return view('client.home',compact('scholarships'));
+        return view('client.home',compact('scholarships','feedbacks'));
     }
 
     public function loadComentScholarship(Request $request){

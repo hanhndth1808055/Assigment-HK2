@@ -21,6 +21,9 @@ Route::get('registerScholarship/{id}',"Client@registerScholarship");
 Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
 Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
 
+Route::get('emailcontact',"MyController@addContact")->name('contact');
+Route::post('emailcontact',"MyController@saveEmailContact")->name('contact');
+
 
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
@@ -62,6 +65,12 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/addPartnership',"MyController_2@addPartnership");
     Route::post('/addPartnership',"MyController_2@savePartnership");
     Route::get('/listPartnership',"MyController_2@showListPartnership");
+
+    Route::get('/listEmailContact',"MyController@listEmailContact");
+    Route::get('/emailcontacted',"Mycontroller@emailContacted");
+    Route::get('/emailnotcontacted',"Mycontroller@emailNotcontacted");
+
+    Route::get('contactEmail/{id}','MyController@contactEmail');
 });
 
 

@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\scholarship;
 use App\unit;
 use App\country;
+use App\contact;
 use App\register_scholarship;
 use App\scholarship_coment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-
+use PHPUnit\Util\Exception;
 
 class MyController extends Controller
 {
@@ -391,5 +392,47 @@ class MyController extends Controller
         return view('admin.list.registerScholarship',compact('registers'));
     }
 
+    public function saveEmailContact(Request $request){
+        // dd($request->all());
+        $this->validate($request,["email" => "required|unique:contact"] ,
+         ["required" => "vui lòng nhập vào thông tin","unique" => "Email dã tồn tại trong hệ thống"]);
+         try{
+             contact::create([
+                 "email" => $request -> get("email")
+             ])->save();
+         }
+         catch(Exception $e){
+             die($e ->getMessage());
+         }
+         return redirect()->back()->with("success","
+         We will contact you as soon as possible");
+    }
 
+    public function listEmailContact(){
+        $emailcontacts = DB::table('contact')
+        ->orderBy('id','ASC')
+        ->paginate(20);
+        return view('admin.list.emailcontact',\compact('emailcontacts'));
+    }
+    public function emailContacted(){
+        $emailcontacted = DB::table('contact')
+        ->orderBy('id','ASC')->where('active','=',1)
+        ->paginate(20);
+        return view('admin.list.emailcontacted',\compact('emailcontacted'));
+    }
+    public function emailNotContacted(){
+        $emailcontacted = DB::table('contact')
+        ->orderBy('id','ASC')->where('active','=',0)
+        ->paginate(20);
+        return view('admin.list.emailnotcontacted',\compact('emailcontacted'));
+    }
+    public function contactEmail($id){
+        $contact = DB::table('contact')->where('id','=',$id)->where('active','=','0');
+
+        $contact->update([
+            "active" => 1
+        ]);
+        return redirect('https://mail.google.com/mail/u/0/#inbox')->with("success","
+        contact succes");
+     }
 }

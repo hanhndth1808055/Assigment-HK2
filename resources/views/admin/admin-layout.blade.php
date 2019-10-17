@@ -369,6 +369,21 @@ Website: http://www.webthemez.com/
                         </li>
                     </ul>
                 </li>
+                <li>
+                        <a><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/listEmailContact') }}">Total</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailcontacted') }}">Contacted</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
+                                </li>
+                            </ul>
+                </li>
             </ul>
 
         </div>

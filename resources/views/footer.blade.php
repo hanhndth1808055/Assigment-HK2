@@ -16,11 +16,20 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="newsletter_form_container mx-auto">
-                        <form action="post">
+                        <form action="{{route('contact')}}" method="post">
+                            @csrf
                             <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-                                <input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
+                                <input name="email" id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address"
+                                 required="required" data-error="Valid email is required." value="{{old('country_name')}}">
+
                                 <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
                             </div>
+                            @if($errors -> has("email"))
+                                <p class="error">{{ $errors -> first("email") }}</p>
+                                @endif
+                                @if(Session::has("success"))
+                                <p class="text-center" style="color:green">{{ Session::get("success") }}</p>
+                                @endif
                         </form>
                     </div>
                 </div>
