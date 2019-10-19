@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\learn_more_research;
 use App\partnership;
+use App\research;
 use App\seminar;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -111,5 +113,103 @@ class MyController_2 extends Controller
         return redirect("admin/listPartnership");
     }
 
+    /* ----- Research -----*/
+
+    public function showResearch(){
+        $researchs = research::paginate(5);
+        return view("pages.research",compact('researchs'));
+    }
+
+    public function showListResearch(){
+        $researchs = research::paginate(5);
+        return view("admin.list.listResearch",compact('$researchs'));
+    }
+
+    public function addResearch(){
+        $researchs = research::orderby("research_project_id","DESC")->get();
+        return view("admin.form.formResearch",compact('researchs'));
+    }
+    public function saveResearch(Request $request){
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+        ];
+        $ruler = [
+            "learn_more_id" => "required|numeric",
+            "research_picture" => "string|max:255",
+            "research_project_name" => "string|max:255",
+            "challenge" => "required",
+            "key_Activities"=> "required",
+            "impact" => "required"
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            research::create([
+                "learn_more_id"=> $request->get("learn_more_id"),
+                "research_picture"=> $request->get("research_picture"),
+                "research_project_name"=> $request->get("research_project_name"),
+                "challenge"=> $request->get("challenge"),
+                "key_Activities"=> $request->get("key_Activities"),
+                "impact"=> $request->get("impact"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("admin/listResearch");
+    }
+
+
+
+    /* ----- Learn More Research -----*/
+
+    public function showLearnMoreResearch(){
+        $learnMoreResearchs = learn_more_research::paginate(5);
+        return view("pages.researchDetail",compact('learnMoreResearchs'));
+    }
+
+    public function showListLearnMoreResearch(){
+        $learnMoreResearchs = learn_more_research::paginate(5);
+        return view("admin.list.listLearnMoreResearch",compact('learnMoreResearchs'));
+    }
+
+    public function addLearnMoreResearch(){
+        return view("admin.form.formLearnMoreResearch");
+    }
+    public function saveLearnMoreResearch(Request $request){
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+        ];
+        $ruler = [
+            "project_director" => "string",
+            "duration" => "string",
+            "learn_more_project_link" => "required|string",
+            "funded_by" => "string",
+            "partners" => "string",
+            "bodies_of_work"=> "string",
+            "services"=> "string",
+            "regions"=> "string",
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            learn_more_research::create([
+                "project_director"=> $request->get("project_director"),
+                "learn_more_project_link"=> $request->get("learn_more_project_link"),
+                "duration"=> $request->get("duration"),
+                "funded_by"=> $request->get("funded_by"),
+                "partners"=> $request->get("partners"),
+                "bodies_of_work"=> $request->get("bodies_of_work"),
+                "services"=> $request->get("services"),
+                "regions"=> $request->get("regions"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("admin/listLearnMoreResearch");
+    }
 
 }

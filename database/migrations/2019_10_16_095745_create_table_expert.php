@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableResearch extends Migration
+class CreateTableExpert extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTableResearch extends Migration
      */
     public function up()
     {
-        Schema::create('research', function (Blueprint $table) {
-            $table->bigIncrements('research_project_id');
-            $table->unsignedBigInteger('expert_id');
-            $table->string('research_project_name');
+        Schema::create('expert', function (Blueprint $table) {
+            $table->bigIncrements('expert_id');
+            $table->string('expert_name');
+            $table->string('expert_picture');
+            $table->string('expert_expertise');
+            $table->string('expert_content');
             $table->unsignedTinyInteger('active')->default(1);
             $table->timestamps();
         });
@@ -29,6 +31,6 @@ class CreateTableResearch extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('research');
+        Schema::dropIfExists('expert');
     }
 }

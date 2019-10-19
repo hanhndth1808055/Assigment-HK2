@@ -9,8 +9,12 @@ class research extends Model
     protected $table = 'research';
     protected $primaryKey = 'research_project_id';
     protected $fillable = [
-        'expert_id',
+        'learn_more_id',
         'research_project_name',
+        'research_picture',
+        'challenge',
+        'key_Activities',
+        'impact',
         'active'
     ];
     public const ACTIVE = 1;

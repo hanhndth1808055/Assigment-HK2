@@ -54,6 +54,19 @@ Route::prefix('admin')->group( function () {
     Route::get('/addPartnership',"MyController_2@addPartnership");
     Route::post('/addPartnership',"MyController_2@savePartnership");
     Route::get('/listPartnership',"MyController_2@showListPartnership");
+
+    /* Research */
+
+    Route::get('/addResearch',"MyController_2@addResearch");
+    Route::post('/addResearch',"MyController_2@saveResearch");
+    Route::get('/listResearch',"MyController_2@showListReaserch");
+
+    /* Learn More Research */
+
+    Route::get('/addLearnMoreResearch',"MyController_2@addLearnMoreResearch");
+    Route::post('/addLearnMoreResearch',"MyController_2@saveLearnMoreResearch");
+    Route::get('/listLearnMoreResearch',"MyController_2@showListLearnMoreResearch");
+
 });
 Route::get('/scholars-ship', "Client@viewScholarship") ;
 Route::get('/detai/{id}',"Client@viewDetais" );
