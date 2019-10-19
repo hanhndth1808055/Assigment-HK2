@@ -11,10 +11,17 @@
 |
 */
 Auth::routes();
+//client
 
 Route::get('/', "Client@viewHome");
+Route::get('/scholars-ship', "Client@viewScholarship") ;
+Route::get('/detai/{id}',"Client@viewDetais" );
 
-Route::prefix('admin')->group( function () {
+Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
+Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
+
+
+Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
     Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
 
@@ -35,8 +42,8 @@ Route::prefix('admin')->group( function () {
     Route::get('show_scholarship/{id}',"MyController@showScholarship");
     Route::get('registerScholarship/{id}',"Client@registerScholarship");
 
-    Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
-    Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
+
+
     Route::get('listRegister',"MyController@listRegister");
 
     Route::get('delete/{id}',"MyController@deletescholarship");
@@ -68,16 +75,18 @@ Route::prefix('admin')->group( function () {
     Route::get('/listLearnMoreResearch',"MyController_2@showListLearnMoreResearch");
 
 });
-Route::get('/scholars-ship', "Client@viewScholarship") ;
-Route::get('/detai/{id}',"Client@viewDetais" );
+
 
 
 
 Route::get('gallery', 'GalleryController@showGallery');
 Route::get('campaigns', 'CampaignsController@showCampaigns');
+Route::get('campaigns/{id}', 'CampaignsController@showCampaignDetail');
+Route::post('campaigns/charge/{id}', 'CampaignsController@payWithStripe');
 
 //coment scholarship
 Route::get('/load-coment-scholarship', "Client@loadComentScholarship");
+
 
 Route::get('admin', function (){
     return view('admin.gallery-admin');
@@ -90,6 +99,13 @@ Route::get('chart', function (){
     return view('admin.chart');
 });
 
+Route::get('user', function (){
+    return view('auth.user');
+});
+Route::get('home', function (){
+    return view('auth.user');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->middleware('admin');;

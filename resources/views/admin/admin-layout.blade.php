@@ -14,13 +14,12 @@ Website: http://www.webthemez.com/
     <base href="{{asset('')}}">
     <title>EduPan | Admin</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg" />
-    <title>Bootstrap HTML5 Admin Template : Master - WebThemez</title>
-    <!-- Bootstrap Styles-->
+
+
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FontAwesome Styles-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
+
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
@@ -34,7 +33,7 @@ Website: http://www.webthemez.com/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BRILLIANT</strong></a>
+            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">   EduPan</strong></a>
             <div id="sideNav" href="">
                 <i class="fa fa-bars icon"></i>
             </div>
@@ -232,17 +231,46 @@ Website: http://www.webthemez.com/
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
+                @guest
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                        @endif<i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    {{-- <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
                     <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
+                     --}}
+                     @else
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div  class="dropdown-menu dropdown-menu-right text-center" style="color:#f36a5a !important" aria-labelledby="navbarDropdown">
+                                <i class="fa fa-sign-out fa-fw"></i><a style="color:#f36a5a !important" class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                  @endguest
+
                 </ul>
                 <!-- /.dropdown-user -->
             </li>
@@ -257,7 +285,7 @@ Website: http://www.webthemez.com/
                 <li>
                     <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
-                <li>
+                 {{--   <li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
                 </li>
 
@@ -272,7 +300,7 @@ Website: http://www.webthemez.com/
                         </li>
                     </ul>
                 </li>
-                {{-- <li>
+             <li>
                     <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                 </li>
 
@@ -348,49 +376,8 @@ Website: http://www.webthemez.com/
     </nav>
     <!-- /. NAV SIDE  -->
     <div id="page-wrapper">
-        {{-- <div class="header">
-            <h1 class="page-header">
-                Empty Page <small>Create new page.</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Empty</a></li>
-                <li class="active">Data</li>
-            </ol>
-
-        </div> --}}
-        {{-- <div class="row">
-
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Messages
-                    </div>
-
-                    <div class="panel-body">
-                        <div class="alert alert-success">
-                            <strong>Well done!</strong> You successfully read this important alert message.
-                        </div>
-                        <div class="alert alert-info">
-                            <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-                        </div>
-                        <div class="alert alert-warning">
-                            <strong>Warning!</strong> Best check yo self, you're not looking too good.
-                        </div>
-                        <div class="alert alert-danger">
-                            <strong>Oh snap!</strong> Change a few things up and try submitting again.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-        @yield('main-content')
-
-        <div id="page-inner">
-            <footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p></footer>
-        </div>
         <!-- /. PAGE INNER  -->
+        @yield('main-content')
     </div>
     <!-- /. PAGE WRAPPER  -->
 </div>

@@ -23,9 +23,9 @@
                         <td><a class="btn btn-danger">{{  \App\scholarship_coment::$_status[$coment->active] }}</a></td>
                         <td>{{ $coment->id }}</td>
                         <td>
-                            <a href="{{ url('deletecoment/'.$coment->coment_id) }}">Delete</a>
-                            <a href="{{ url('hide_coment/'.$coment->coment_id) }}">Hide</a>
-                            <a href="{{ url('show_coment/'.$coment->coment_id) }}">Show</a>
+                            <a href="{{ url('admin/deletecoment/'.$coment->coment_id) }}">Delete</a>
+                            <a href="{{ url('admin/hide_coment/'.$coment->coment_id) }}">Hide</a>
+                            <a href="{{ url('admin/show_coment/'.$coment->coment_id) }}">Show</a>
                         </td>
                     </tr>
                 @endforeach

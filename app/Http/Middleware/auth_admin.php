@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-class admin_scholarship
+class auth_admin
 {
     /**
      * Handle an incoming request.
@@ -19,7 +19,7 @@ class admin_scholarship
             if(Auth::user()->isAdmin()){
                 return $next($request);
             }
-            return redirect('/');
+            return redirect('/user');
         }
         return redirect('/login');
     }
