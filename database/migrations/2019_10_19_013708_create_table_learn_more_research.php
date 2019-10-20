@@ -15,14 +15,13 @@ class CreateTableLearnMoreResearch extends Migration
     {
         Schema::create('learn_more_research', function (Blueprint $table) {
             $table->bigIncrements('learn_more_id');
-            $table->string('project_director');
-            $table->string('learn_more_project_link');
+            $table->string('learn_more_research_name');
             $table->string('duration');
-            $table->string('funded_by');
-            $table->string('partners');
-            $table->string('bodies_of_work');
-            $table->string('services');
-            $table->string('regions');
+            $table->longText('funded_by');
+            $table->longText('partners');
+            $table->longText('bodies_of_work');
+            $table->longText('services');
+            $table->longText('regions');
             $table->unsignedTinyInteger('active')->default(1);
             $table->timestamps();
         });

@@ -10,7 +10,14 @@
                     <p class="error">{{ $errors -> first("research_project_name") }}</p>
                 @endif
             </div>
-
+            <div class="form-group">
+                <label for="">Research detail</label>
+                <select class="form-control" type="text" name="learn_more_id"  required>
+                    @foreach($learnMoreResearchs as $learn_more_research)
+                        <option value="{{$learn_more_research->learn_more_id}}" @if($learn_more_research->learn_more_id == old("learn_more_id"))selected @endif>{{$learn_more_research->learn_more_research_name}}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="form-group">
                 <label for="">Research Picture </label>
                 <input type="text" name="research_picture" id="" class="form-control" value="{{old('research_picture')}}">
@@ -19,16 +26,17 @@
                 @endif
             </div>
 
+
             <div class="form-group">
                 <label for="">Challenge </label>
-                <input type="text" name="challenge" id="" class="form-control" value="{{old('challenge')}}">
+                <textarea type="text" name="challenge"  id="" class="form-control" value="{{old('challenge')}}" style="height: 200px" required></textarea>
                 @if($errors -> has("challenge"))
                     <p class="error">{{ $errors -> first("challenge") }}</p>
                 @endif
             </div>
             <div class="form-group">
                 <label for="">Key Activities </label>
-                <input type="text" name="key_Activities" id="" class="form-control" value="{{old('key_Activities')}}" required>
+                <textarea type="text" name="key_Activities" id="" class="form-control" value="{{old('key_Activities')}}" style="height: 200px" required> </textarea>
                 @if($errors -> has("key_Activities"))
                     <p class="error">{{ $errors -> first("key_Activities") }}</p>
                 @endif
@@ -36,20 +44,13 @@
 
             <div class="form-group">
                 <label for="">Impact </label>
-                <input type="text" name="impact" id="" class="form-control" value="{{old('impact')}}" required>
+                <textarea type="text" name="impact" id="" class="form-control" value="{{old('impact')}}" style="height: 200px" required> </textarea>
                 @if($errors -> has("impact"))
                     <p class="error">{{ $errors -> first("impact") }}</p>
                 @endif
             </div>
 
-            <div class="form-group">
-                <label>Learn More </label>
-                <select class="form-control" type="text" name="learn_more_id" value="{{old("phongchieu_id")}}"  required>
-                    @foreach($phongchieus as $phongchieu)
-                        <option value="{{$phongchieu->phongchieu_id}}" @if($phongchieu->phongchieu_id == old("learn_more_id"))selected @endif>{{$phongchieu->tenPhong}}</option>
-                    @endforeach
-                </select>
-            </div>
+
 
             <div class="form-group text-right">
                 <button class="btn btn-danger" type="submit">SUBMIT</button>

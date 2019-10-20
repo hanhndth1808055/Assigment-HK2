@@ -3,19 +3,13 @@
     <div class="container">
         <form action="{{url("admin/addLearnMoreResearch")}}" method="POST">
             @csrf
-            <div class="form-group">
-                <label for="">Project Director</label>
-                <input type="text" name="project_director" id="" class="form-control" value="{{old('project_director')}}">
-                @if($errors -> has("project_director"))
-                    <p class="error">{{ $errors -> first("project_director") }}</p>
-                @endif
-            </div>
+
 
             <div class="form-group">
-                <label for="">Learn More Project Link </label>
-                <input type="text" name="learn_more_project_link" id="" class="form-control" value="{{old('learn_more_project_link')}}">
-                @if($errors -> has("learn_more_project_link"))
-                    <p class="error">{{ $errors -> first("learn_more_project_link") }}</p>
+                <label for="">Learn More Project Name </label>
+                <input type="text" name="learn_more_research_name" id="" class="form-control" value="{{old('learn_more_research_name')}}">
+                @if($errors -> has("learn_more_research_name"))
+                    <p class="error">{{ $errors -> first("learn_more_research_name") }}</p>
                 @endif
             </div>
             <div class="form-group">
@@ -28,14 +22,14 @@
 
             <div class="form-group">
                 <label for="">Funded By </label>
-                <input type="text" name="funded_by" id="" class="form-control" value="{{old('funded_by')}}">
+                <textarea style="height: 200px" type="text" name="funded_by" id="" class="form-control" value="{{old('funded_by')}}"></textarea>
                 @if($errors -> has("funded_by"))
                     <p class="error">{{ $errors -> first("funded_by") }}</p>
                 @endif
             </div>
             <div class="form-group">
                 <label for="">Partners </label>
-                <input type="text" name="partners" id="" class="form-control" value="{{old('partners')}}">
+                <textarea style="height: 200px" type="text" name="partners" id="" class="form-control" value="{{old('partners')}}"></textarea>
                 @if($errors -> has("partners"))
                     <p class="error">{{ $errors -> first("partners") }}</p>
                 @endif

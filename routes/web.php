@@ -53,27 +53,46 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     /* Seminar */
 
-    Route::get('/addSeminar',"MyController_2@addSeminar");
-    Route::post('/addSeminar',"MyController_2@saveSeminar");
-    Route::get('/listSeminar',"MyController_2@showListSeminar");
+    Route::get('/addSeminar',"SeminarController@addSeminar");
+    Route::post('/addSeminar',"SeminarController@saveSeminar");
+    Route::get('/listSeminar',"SeminarController@showListSeminar");
+
+    Route::get('/editSeminar',"SeminarController@editSeminar");
+    Route::post('/editSeminar',"SeminarController@updateSeminar");
 
     /* Partnership */
-    Route::get('/addPartnership',"MyController_2@addPartnership");
-    Route::post('/addPartnership',"MyController_2@savePartnership");
-    Route::get('/listPartnership',"MyController_2@showListPartnership");
+    Route::get('/addPartnership',"PartnershipController@addPartnership");
+    Route::post('/addPartnership',"PartnershipController@savePartnership");
+    Route::get('/listPartnership',"PartnershipController@showListPartnership");
+
+    Route::get('/editPartnership',"PartnershipController@editPartnership");
+    Route::post('/editPartnership',"PartnershipController@updatePartnership");
 
     /* Research */
 
-    Route::get('/addResearch',"MyController_2@addResearch");
-    Route::post('/addResearch',"MyController_2@saveResearch");
-    Route::get('/listResearch',"MyController_2@showListReaserch");
+    Route::get('/addResearch',"ResearchController@addResearch");
+    Route::post('/addResearch',"ResearchController@saveResearch");
+    Route::get('/listResearch',"ResearchController@showListReaserch");
+
+    Route::get('/editResearch',"ResearchController@editResearch");
+    Route::post('/editResearch',"ResearchController@updateResearch");
 
     /* Learn More Research */
 
-    Route::get('/addLearnMoreResearch',"MyController_2@addLearnMoreResearch");
-    Route::post('/addLearnMoreResearch',"MyController_2@saveLearnMoreResearch");
-    Route::get('/listLearnMoreResearch',"MyController_2@showListLearnMoreResearch");
+    Route::get('/addLearnMoreResearch',"ResearchController@addLearnMoreResearch");
+    Route::post('/addLearnMoreResearch',"ResearchController@saveLearnMoreResearch");
+    Route::get('/listLearnMoreResearch',"ResearchController@showListLearnMoreResearch");
 
+    Route::get('/editLearnMoreResearch',"ResearchController@editLearnMoreResearch");
+    Route::post('/editLearnMoreResearch',"ResearchController@updateLearnMoreResearch");
+
+    /* Expert */
+    Route::get('/addExpert',"ResearchController@addExpert");
+    Route::post('/addExpert',"ResearchController@saveExpert");
+    Route::get('/listExpert',"ResearchController@showListExpert");
+
+    Route::get('/editExpert',"ResearchController@editExpert");
+    Route::post('/editExpert',"ResearchController@updateExpert");
 });
 
 
@@ -92,8 +111,11 @@ Route::get('admin', function (){
     return view('admin.gallery-admin');
 });
 // Seminar
-Route::get('seminar',"MyController_2@showSeminar");
-Route::get('partnership',"MyController_2@showPartnership");
+Route::get('seminar',"SeminarController@showSeminar");
+Route::get('partnership',"PartnershipController@showPartnership");
+Route::get('research',"ResearchController@showResearch");
+Route::get('researchDetail',"ResearchController@showResearchDetail");
+Route::get('seminarDetail',"SeminarController@showSeminarDetail");
 
 Route::get('chart', function (){
     return view('admin.chart');

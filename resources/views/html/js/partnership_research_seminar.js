@@ -24,3 +24,11 @@ function showSubmit() {
         document.getElementById('showLoading').style.display = "none";
     },3000)
 }
+function clickRegisterSeminar() {
+    var x = document.getElementById("registerSeminar");
+    if (x.style.display === "none"){
+        x.style.display = "block";
+    }else{
+        x.style.display = "none";
+    }
+}

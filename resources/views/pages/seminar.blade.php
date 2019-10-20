@@ -27,7 +27,7 @@
                     <div class="card">
                         <img class="card-img-top" src="{{$seminar->seminar_picture}}" alt="https://unsplash.com/@kellybrito">
                         <div class="card-body ">
-                            <div class="card-title"><a href="#"><h3 class="card-title">{{$seminar->seminar_name}}</h3></a></div>
+                            <div class="card-title"><a href="{{url('seminarDetail?id='.$seminar->seminar_id)}}"><h3 class="card-title">{{$seminar->seminar_name}}</h3></a></div>
                             <div class="card-time">
                                 <i class="fa fa-clock-o" aria-hidden="true"></i>
                                 DATE: &nbsp;&nbsp;{{$seminar->seminar_time}}
