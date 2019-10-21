@@ -8,7 +8,7 @@
 
 </style>
 <div class="container">
-    <form action="{{ url('/editscholarship') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('admin/editscholarship') }}" method="post" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $scholarships->id }}">
         <div class="form-group">

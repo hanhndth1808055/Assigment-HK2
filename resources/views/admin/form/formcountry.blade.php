@@ -1,7 +1,7 @@
 @extends('admin.admin-layout')
 @section('main-content')
     <div class="container">
-        <form action="addcountry" method="POST">
+        <form action="admin/addcountry" method="POST">
             @csrf
             <div class="form-group">
                 <label for="">Name Country</label>

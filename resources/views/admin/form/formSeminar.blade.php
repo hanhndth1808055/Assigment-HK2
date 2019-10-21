@@ -19,6 +19,14 @@
             </div>
 
             <div class="form-group">
+                <label for="">Seminar Content </label>
+                <textarea type="text" name="seminar_content" id="" class="form-control" style="height: 300px" value="{{old('seminar_content')}}" required></textarea>
+                @if($errors -> has("seminar_content"))
+                    <p class="error">{{ $errors -> first("seminar_content") }}</p>
+                @endif
+            </div>
+
+            <div class="form-group">
                 <label for="">Seminar Time </label>
                 <input type="text" name="seminar_time" id="" class="form-control" value="{{old('seminar_time')}}">
                 @if($errors -> has("seminar_time"))

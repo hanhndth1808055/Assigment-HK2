@@ -100,16 +100,16 @@
                                 <div class="latest_post_image">
                                     <img style="object-fit:cover;height:180px" width="100%"  src="{{asset('images/scholarship').'/'.$latestpost->image}}" alt="">
                                 </div>
-                                <div class="latest_post_title"><a href="">{{ $latestpost->title }}</a></div>
+                                <div class="latest_post_title"><a href="{{ url('/detai/'.$latestpost->id) }}">{{ $latestpost->title }}</a></div>
                                 <div class="latest_post_meta">
                                     <span class="latest_post_author"><a href="#">{{ $latestpost->unit_id }}</a></span>
                                     <span>|</span>
-                                    <span class="latest_post_comments"><a href="#">3 Comments</a></span>
+                                    <span class="latest_post_comments"><a>{{ $latestpost->country_id }}</a></span>
                                 </div>
                             </div>
                             @endforeach
                             <div style="width:100%">
-                                    <a style="float:right" href="{{ url('/scholars-ship') }}">Show all</a>
+                                    <a style="float:right" href="{{ url('/scholarship') }}">Show all</a>
                             </div>
 
                         </div>

@@ -15,13 +15,19 @@ Website: http://www.webthemez.com/
     <title>EduPan | Admin</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg" />
 
-
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
-
+    <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <style>
+        .btn-edit-seminar{
+            border: none ; padding: 5px;background-color: DodgerBlue;
+        }
+        .btn-edit-seminar:hover{
+            background-color: RoyalBlue;
+        }
+    </style>
 </head>
 <body>
 <div id="wrapper">
@@ -253,7 +259,7 @@ Website: http://www.webthemez.com/
                      --}}
                      @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -283,7 +289,7 @@ Website: http://www.webthemez.com/
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
                  {{--   <li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
@@ -366,6 +372,96 @@ Website: http://www.webthemez.com/
 
                             </ul>
 
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                        <a><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/listEmailContact') }}">Total</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailcontacted') }}">Contacted</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
+                                </li>
+                            </ul>
+                    <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/listSeminar') }}">List Seminar</a>
+                        </li>
+                        <li>
+                            <a href="#">List Feedback</a>
+                        </li>
+                        <li>
+                            <a href="#">List Register</a>
+                        </li>
+                        <li>
+                            <a href="#">Form<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/addSeminar') }}">Add Seminar</a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap"></i>Partnership<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/listPartnership') }}">List Partnership</a>
+                        </li>
+                        <li>
+                            <a href="#">List Feedback</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Form<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/addPartnership') }}">Add Partnership</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap"></i>Research<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/listResearch') }}">List Research</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/listLearnMoreResearch') }}">List Learn More Research</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/listExpert') }}">List Experts</a>
+                        </li>
+                        <li>
+                            <a href="#">List Feedback</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Form<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/addResearch') }}">Add Research</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/addResearch') }}">Add Learn More Research</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/addResearch') }}">Add Experts </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </li>
