@@ -259,7 +259,7 @@ Website: http://www.webthemez.com/
                      --}}
                      @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -289,7 +289,7 @@ Website: http://www.webthemez.com/
             <ul class="nav" id="main-menu">
 
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
                  {{--   <li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
@@ -376,6 +376,19 @@ Website: http://www.webthemez.com/
                     </ul>
                 </li>
                 <li>
+                        <a><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
+
+                        <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/listEmailContact') }}">Total</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailcontacted') }}">Contacted</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
+                                </li>
+                            </ul>
                     <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
