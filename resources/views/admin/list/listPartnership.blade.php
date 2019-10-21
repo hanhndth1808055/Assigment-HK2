@@ -15,6 +15,7 @@
                 <th scope="col">Percentage of International Students</th>
                 <th scope="col">Value Score</th>
                 <th scope="col">Website</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -31,9 +32,11 @@
                     <td>{{ $partnership->partnership_edu_percentage }}</td>
                     <td>{{ $partnership->partnership_edu_value }}</td>
                     <td>{{ $partnership->partnership_edu_website }}</td>
+                    <td><a href="{{url('admin/editPartnership?id='.$partnership->partnership_id)}}">EDIT</a></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
+        {!! $partnerships -> Links() !!}
     </div>
 @endsection

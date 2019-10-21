@@ -11,6 +11,7 @@ class seminar extends Model
     protected $fillable = [
         'seminar_picture',
         'seminar_name',
+        'seminar_content',
         'seminar_time',
         'seminar_address',
         'active'
