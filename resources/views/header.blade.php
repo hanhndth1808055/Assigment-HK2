@@ -15,9 +15,9 @@
                     <li class="main_nav_item"><a href="#">home</a></li>
                     <li class="main_nav_item"><a href="#">Research </a></li>
                     <li class="main_nav_item"><a href="courses.html">seminar</a></li>
-                    <li class="main_nav_item"><a href="{{url('campaigns')}}">Campaigns</a></li>
-                    <li class="main_nav_item"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
-                    <li class="main_nav_item"><a href="{{url('gallery')}}">Gallery</a></li>
+                    <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
+                    <li class="main_nav_item"><a href="{{ url('scholarship') }}">Scholarship</a></li>
+                    <li class="main_nav_item"><a href="contact.html">Gallery</a></li>
                     {{--  <li class="main_nav_item"><a href="contact.html">About Work</a></li>  --}}
                 </ul>
             </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="header_side d-flex flex-row justify-content-center align-items-center">
         <img src="images/phone-call.svg" alt="">
-        <span>Contact Us</span>
+        <span><a href="" style="color : #fff">Contact Us</a></span>
     </div>
 
     <!-- Hamburger -->

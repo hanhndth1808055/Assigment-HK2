@@ -8,7 +8,7 @@
 
 </style>
 <div class="container">
-    <form action="{{ url('add-scholarship') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('admin/add-scholarship') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="">Title</label>
@@ -125,7 +125,7 @@
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     document.getElementById('viewImg').innerHTML =
-                        '<img style="width:100px; height: 100px;" src="' + e.target.result + '"/>';
+                        '<img style="width:250px; height: 100px;" src="' + e.target.result + '"/>';
                 };
                 reader.readAsDataURL(fileInput.files[0]);
             }

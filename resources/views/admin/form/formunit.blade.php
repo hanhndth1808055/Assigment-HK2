@@ -1,7 +1,7 @@
 @extends('admin.admin-layout')
 @section('main-content')
     <div class="container">
-        <form action="addunit" method="POST">
+        <form action="admin/addunit" method="POST">
             @csrf
             <div class="form-group">
                 <label for="">Name Unit</label>

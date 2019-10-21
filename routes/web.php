@@ -14,11 +14,15 @@ Auth::routes();
 //client
 
 Route::get('/', "Client@viewHome");
-Route::get('/scholars-ship', "Client@viewScholarship") ;
+Route::get('/scholarship', "Client@viewScholarship") ;
 Route::get('/detai/{id}',"Client@viewDetais" );
+Route::get('registerScholarship/{id}',"Client@registerScholarship");
 
 Route::get('scholarshipRegister',"MyController@addregister")->name('scholarship.register');
 Route::post('scholarshipRegister',"MyController@saveRegisterScholarship")->name('scholarship.register');
+
+Route::get('emailcontact',"MyController@addContact")->name('contact');
+Route::post('emailcontact',"MyController@saveEmailContact")->name('contact');
 
 
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
@@ -40,7 +44,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::post('editscholarship',"MyController@updateScholarship");
     Route::get('hide_scholarship/{id}',"MyController@hideScholarship");
     Route::get('show_scholarship/{id}',"MyController@showScholarship");
-    Route::get('registerScholarship/{id}',"Client@registerScholarship");
+
 
 
 
@@ -61,6 +65,13 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::post('/editSeminar',"SeminarController@updateSeminar");
 
     /* Partnership */
+
+    Route::get('/listEmailContact',"MyController@listEmailContact");
+    Route::get('/emailcontacted',"Mycontroller@emailContacted");
+    Route::get('/emailnotcontacted',"Mycontroller@emailNotcontacted");
+
+    Route::get('contactEmail/{id}','MyController@contactEmail');
+  
     Route::get('/addPartnership',"PartnershipController@addPartnership");
     Route::post('/addPartnership',"PartnershipController@savePartnership");
     Route::get('/listPartnership',"PartnershipController@showListPartnership");
@@ -124,9 +135,10 @@ Route::get('chart', function (){
 Route::get('user', function (){
     return view('auth.user');
 });
+
 Route::get('home', function (){
     return view('auth.user');
-});
+})->middleware('admin');
 
 Auth::routes();
 

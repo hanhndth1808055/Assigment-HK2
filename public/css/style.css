@@ -266,7 +266,21 @@ h1 span {
     position: relative;
     /* display: table; */
 }
-
+.sub-main-w3 .form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(25, 24, 24, 0.32);
+    padding: 3.5vw;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 13px 2px rgba(251, 251, 251, 0.09);
+    position: relative;
+    /* display: table; */
+    color: #EDEDED;
+}
+.form a {
+    color : greenyellow;
+    margin-left: 20px;
+}
 p.legend {
     color: #fff;
     font-size: 28px;

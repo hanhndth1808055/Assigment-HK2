@@ -1,38 +1,5 @@
-
-    <!DOCTYPE HTML>
-    <html lang="zxx">
-
-    <head>
-        <title>Admin Login</title>
-        <!-- Meta tag Keywords -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8" />
-        <meta name="keywords" content="Modish Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
-        <script>
-            addEventListener("load", function () {
-                setTimeout(hideURLbar, 0);
-            }, false);
-
-            function hideURLbar() {
-                window.scrollTo(0, 1);
-            }
-        </script>
-        <!-- Meta tag Keywords -->
-        <base href="{{asset('')}}">
-        <!-- css files -->
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-        <!-- Style-CSS -->
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <!-- Font-Awesome-Icons-CSS -->
-        <!-- //css files -->
-        {{-- <link href="assets/css/bootstrap.css" rel="stylesheet" /> --}}
-        <!-- web-fonts -->
-        <link href="//fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
-        <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-        <!-- //web-fonts -->
-    </head>
-
-    <body>
+@extends('auth.auth_admin')
+@section('content')
         <!-- title -->
         <h1>
             <span>A</span>dmin
@@ -106,13 +73,11 @@
         <!-- //content -->
 
         <!-- copyright -->
-        <div class="footer">
+        {{--  <div class="footer">
             <h2>&copy; 2018 Modish Login Form. All rights reserved | Design by
                 <a href="http://w3layouts.com">W3layouts</a>
             </h2>
-        </div>
+        </div>  --}}
         <!-- //copyright -->
 
-    </body>
-
-    </html>
+@endsection
