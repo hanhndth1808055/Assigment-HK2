@@ -7,24 +7,27 @@ Website: http://www.webthemez.com/
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="" name="description" />
-    <meta content="webthemez" name="author" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="" name="description"/>
+    <meta content="webthemez" name="author"/>
     <base href="{{asset('')}}">
     <title>EduPan | Admin</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg"/>
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet"/>
     <!-- Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <style>
-        .btn-edit-seminar{
-            border: none ; padding: 5px;background-color: DodgerBlue;
+        .btn-edit-seminar {
+            border: none;
+            padding: 5px;
+            background-color: DodgerBlue;
         }
-        .btn-edit-seminar:hover{
+
+        .btn-edit-seminar:hover {
             background-color: RoyalBlue;
         }
     </style>
@@ -39,7 +42,8 @@ Website: http://www.webthemez.com/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">   EduPan</strong></a>
+            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">
+                    EduPan</strong></a>
             <div id="sideNav" href="">
                 <i class="fa fa-bars icon"></i>
             </div>
@@ -110,7 +114,8 @@ Website: http://www.webthemez.com/
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (success)</span>
                                     </div>
                                 </div>
@@ -126,7 +131,8 @@ Website: http://www.webthemez.com/
                                     <span class="pull-right text-muted">28% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="28"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 28%">
                                         <span class="sr-only">28% Complete</span>
                                     </div>
                                 </div>
@@ -142,7 +148,8 @@ Website: http://www.webthemez.com/
                                     <span class="pull-right text-muted">60% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                         <span class="sr-only">60% Complete (warning)</span>
                                     </div>
                                 </div>
@@ -158,7 +165,8 @@ Website: http://www.webthemez.com/
                                     <span class="pull-right text-muted">85% Complete</span>
                                 </p>
                                 <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="85"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                                         <span class="sr-only">85% Complete (danger)</span>
                                     </div>
                                 </div>
@@ -238,34 +246,38 @@ Website: http://www.webthemez.com/
             <!-- /.dropdown -->
             <li class="dropdown">
                 @guest
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                        @endif<i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    {{-- <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                     --}}
-                     @else
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+            @endif<i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                {{-- <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                </li>
+                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+                 --}}
+                @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" style="color:#f36a5a !important"  class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" style="color:#f36a5a !important"
+                           class="nav-link dropdown-toggle text-capitalize" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <div  class="dropdown-menu dropdown-menu-right text-center" style="color:#f36a5a !important" aria-labelledby="navbarDropdown">
-                                <i class="fa fa-sign-out fa-fw"></i><a style="color:#f36a5a !important" class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                        <div class="dropdown-menu dropdown-menu-right text-center" style="color:#f36a5a !important"
+                             aria-labelledby="navbarDropdown">
+                            <i class="fa fa-sign-out fa-fw"></i><a style="color:#f36a5a !important"
+                                                                   class="dropdown-item" href="{{ route('logout') }}"
+                                                                   onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
@@ -275,10 +287,10 @@ Website: http://www.webthemez.com/
                             </form>
                         </div>
                     </li>
-                  @endguest
+                @endguest
 
-                </ul>
-                <!-- /.dropdown-user -->
+            </ul>
+            <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
         </ul>
@@ -291,31 +303,31 @@ Website: http://www.webthemez.com/
                 <li>
                     <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                 </li>
-                 {{--   <li>
-                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
-                </li>
+                {{--   <li>
+                   <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
+               </li>
 
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="admin.chart.html">Charts JS</a>
-                        </li>
-                        <li>
-                            <a href="morris-chart.html">Morris Chart</a>
-                        </li>
-                    </ul>
-                </li>
-             <li>
-                    <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                </li>
+               <li>
+                   <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
+                   <ul class="nav nav-second-level">
+                       <li>
+                           <a href="admin.chart.html">Charts JS</a>
+                       </li>
+                       <li>
+                           <a href="morris-chart.html">Morris Chart</a>
+                       </li>
+                   </ul>
+               </li>
+            <li>
+                   <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+               </li>
 
-                <li>
-                    <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
-                </li>
-                <li>
-                    <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                </li> --}}
+               <li>
+                   <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
+               </li>
+               <li>
+                   <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
+               </li> --}}
 
 
                 {{-- <li>
@@ -376,19 +388,21 @@ Website: http://www.webthemez.com/
                     </ul>
                 </li>
                 <li>
-                        <a><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
 
-                        <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="{{ url('admin/listEmailContact') }}">Total</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/emailcontacted') }}">Contacted</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
-                                </li>
-                            </ul>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/listEmailContact') }}">Total</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/emailcontacted') }}">Contacted</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -406,10 +420,7 @@ Website: http://www.webthemez.com/
                                 <li>
                                     <a href="{{ url('admin/addSeminar') }}">Add Seminar</a>
                                 </li>
-
-
                             </ul>
-
                         </li>
                     </ul>
                 </li>
