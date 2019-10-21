@@ -18,6 +18,8 @@
                     <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
                     <li class="main_nav_item"><a href="{{ url('scholarship') }}">Scholarship</a></li>
                     <li class="main_nav_item"><a href="contact.html">Gallery</a></li>
+                    {{-- <li><a href="{!! route('user.change-language', ['en']) !!}">English</a></li>
+                       <li> <a href="{!! route('user.change-language', ['vi']) !!}">Vietnam</a></li> --}}
                     {{--  <li class="main_nav_item"><a href="contact.html">About Work</a></li>  --}}
                 </ul>
             </div>
@@ -53,6 +55,7 @@
 					<li class="menu_item menu_mm"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
                     <li class="menu_item menu_mm"><a href="contact.html">Gallery</a></li>
                     <li class="menu_item menu_mm"><a href="contact.html">Contact</a></li>
+
 				</ul>
 
 				<!-- Menu Social -->
@@ -63,7 +66,8 @@
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-instagram"></i></a></li>
 						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li class="menu_social_item menu_mm"><a href="#"><i class="fab fa-twitter"></i></a></li>
+
 					</ul>
 				</div>
 

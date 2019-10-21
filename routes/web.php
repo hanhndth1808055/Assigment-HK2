@@ -71,6 +71,15 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/emailnotcontacted',"Mycontroller@emailNotcontacted");
 
     Route::get('contactEmail/{id}','MyController@contactEmail');
+
+
+    Route::get('addIntroduce',"MyController@addIntroduce");
+    Route::post('addIntroduce',"MyController@saveIntroduce");
+
+    Route::get('listIntroduce',"MyController@introduce");
+
+    Route::get('editIntroduce',"MyController@editIntroduce");
+    Route::post('editIntroduce',"MyController@updateIntroduce");
 });
 
 
@@ -107,3 +116,10 @@ Route::get('home', function (){
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->middleware('admin');;
+
+
+// Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+Route::group(['middleware' => 'locale'], function() {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+        ->name('user.change-language');
+});
