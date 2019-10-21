@@ -98,6 +98,7 @@ class CampaignsController extends Controller
             return $ex->getMessage();
         }
 
-        return view('campaigns');
+        $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
+        return view('pages.campaigns', compact('campaigns'));
     }
 }
