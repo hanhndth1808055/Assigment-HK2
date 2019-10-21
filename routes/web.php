@@ -45,9 +45,6 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('hide_scholarship/{id}',"MyController@hideScholarship");
     Route::get('show_scholarship/{id}',"MyController@showScholarship");
 
-
-
-
     Route::get('listRegister',"MyController@listRegister");
 
     Route::get('delete/{id}',"MyController@deletescholarship");
@@ -71,7 +68,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/emailnotcontacted',"Mycontroller@emailNotcontacted");
 
     Route::get('contactEmail/{id}','MyController@contactEmail');
-  
+
     Route::get('/addPartnership',"PartnershipController@addPartnership");
     Route::post('/addPartnership',"PartnershipController@savePartnership");
     Route::get('/listPartnership',"PartnershipController@showListPartnership");
@@ -104,10 +101,9 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     Route::get('/editExpert',"ResearchController@editExpert");
     Route::post('/editExpert',"ResearchController@updateExpert");
+
+    /* Gallery */
 });
-
-
-
 
 Route::get('gallery', 'GalleryController@showGallery');
 Route::get('campaigns', 'CampaignsController@showCampaigns');
