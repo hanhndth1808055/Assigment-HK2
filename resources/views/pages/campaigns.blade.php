@@ -57,7 +57,7 @@
                         <div class="card-body text-justify">
                             <h3 class="card-title text-center">{{$campaign->name}}</h3>
                             <p class="card-text text-center">Campaign by : {{$campaign->campaign_chairman}}</p>
-                            <p>{{$campaign->short_description}}
+                            <p>{{ $campaign->short_description }}
                             </p>
                         </div>
                         <a href="{{url('campaigns/'.$campaign->id)}}">
