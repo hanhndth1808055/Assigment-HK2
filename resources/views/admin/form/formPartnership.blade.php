@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 <label for="">Information </label>
-                <input type="text" name="partnership_edu_infor" id="" class="form-control" value="{{old('partnership_edu_infor')}}" required>
+                <textarea type="text" name="partnership_edu_infor" id="" class="form-control" value="{{old('partnership_edu_infor')}}" style="height: 200px" required> </textarea>
                 @if($errors -> has("partnership_edu_infor"))
                     <p class="error">{{ $errors -> first("partnership_edu_infor") }}</p>
                 @endif
@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 <label for="">Information Readmore</label>
-                <input type="text" name="partnership_edu_infor_readmore" id="" class="form-control" value="{{old('partnership_edu_infor_readmore')}}">
+                <textarea type="text" name="partnership_edu_infor_readmore" id="" class="form-control" value="{{old('partnership_edu_infor_readmore')}}"  style="height: 200px" required> </textarea>
                 @if($errors -> has("partnership_edu_infor_readmore"))
                     <p class="error">{{ $errors -> first("partnership_edu_infor_readmore") }}</p>
                 @endif

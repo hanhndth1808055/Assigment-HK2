@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="row course_boxes">
+            <div class="row course_boxes partnership_seminar_research" >
                 <!-- Popular Course Item -->
                 @foreach($partnerships as $partnership)
                 <div class="col-lg-6 course_box  ">
