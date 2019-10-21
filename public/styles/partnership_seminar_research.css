@@ -1109,6 +1109,14 @@ a.hover-partnership:hover{
     line-height: 50px;
     margin-left: -70px;
 }
+.text-learn-more{
+    color: #101c28;
+    font-size: 56px;
+    line-height: 80px;
+    width: 100px;
+    margin-left: -70px;
+
+}
 .border-project{
     border-top: 15px solid #ffb606;
     color: white;
@@ -1116,10 +1124,25 @@ a.hover-partnership:hover{
     width: 150px;
     margin-top: -5px;
 }
+
 .project-box{
     background: #101c28;
-
-
+}
+.impact-box{
+    background: #ffb606;
+}
+.learn-more-box{
+    background: #f2f2f2;
+}
+.border-impact{
+    border-top: 15px solid #101c28;
+    color: white;
+    margin-left: 70px;
+    width: 150px;
+    margin-top: -5px;
+}
+.content-impact{
+    color: #4c432d ; margin-top: -60px;font-size: 25px
 }
 .view-text{
     font-size: 16px;
@@ -1133,6 +1156,23 @@ a.hover-partnership:hover{
     color: black;
     border-bottom: 5px solid #ffb606;
     width: 200px;
+}
+.style-item-learn-more{
+    color: #7f7f7f;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 30px 0 20px 14px;
+    padding: 0;
+}
+
+.style-item-learn-more-2{
+    color: #f8f9f9 ;
+    font-size: 18px;
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 30px 0 20px 36px;
+    padding: 0;
 }
 /*score */
 /* list ul li content seminar */
@@ -1178,3 +1218,12 @@ a.hover-partnership:hover{
 .content-expert{
     color: #364d59;
 }
+.title-content-research-detail{
+    font-size: 60px;
+    color: #101c28;
+    margin: 0 0 80px;
+    padding: 0;
+    border-bottom: none;
+    font-weight: bold;
+}
+
