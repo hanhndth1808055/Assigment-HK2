@@ -18,6 +18,8 @@ Website: http://www.webthemez.com/
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="assets/css/font-awesome.css" rel="stylesheet"/>
     <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet"/>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <style>
@@ -401,6 +403,9 @@ Website: http://www.webthemez.com/
                             <a href="{{ url('admin/emailnotcontacted') }}">Not Contacted</a>
                         </li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{ url('admin/viewContact') }}"><i class="fa fa-envelope"></i>User Contact</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>

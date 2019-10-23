@@ -14,4 +14,6 @@ class Campaigns extends Model
     protected $fillable = [
         'thumbnail', 'full_size_thumbnail', 'name', 'campaign_chairman', 'short_description', 'long_description'
     ];
+
+
 }

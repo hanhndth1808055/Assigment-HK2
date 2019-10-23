@@ -38,8 +38,7 @@
             </div>
             <div class="form-group">
                 <label for="image">Introduce Picture</label>
-                <input class="" type="file" id="image" name="image" onchange="showIMG()"
-                value="{{ $introduce->image }}">
+                <input class="" type="file" id="image" name="image" onchange="showIMG()">
                 @if($errors -> has("image"))
                 <p class="error">{{ $errors -> first("image") }}</p>
                 @endif

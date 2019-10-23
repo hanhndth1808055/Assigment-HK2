@@ -6,6 +6,7 @@ use App\scholarship;
 use App\unit;
 use App\country;
 use App\contact;
+use App\contactus;
 use App\register_scholarship;
 use App\introduce;
 use App\scholarship_coment;
@@ -350,8 +351,42 @@ class MyController extends Controller
         return redirect()->back()->with('thongbao', 'Xóa thành công');
      }
 
+     public function saveContactus(Request $request){
+        // dd($request->all());
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "numeric" => "Nhập vào một số",
+            "min" => "giá trị tối thiểu 0",
+            "max" => "tối đa 255 ký tự",
+            "unique" => "Đã tồn tại",
 
+        ];
+        $rules = [
+            "name" => "required",
+            "email" => "required",
+            // "note" => "required",
+            "messager"=>"required"
+        ];
+        $this->validate($request,$rules , $messages);
+        try{
+            contactus::create([
+            "id" => $request ->get("id"),
+            "name"=>$request->get("name"),
+            "email"=>$request->get("email"),
+            "messager" => $request->get("messager"),
+        ])->save();
+        }
+        catch(\Exception $e){
+            die($e -> getMessage());
+        }
+        return redirect()->back()->with("success","Register successfully!!!");
+     }
 
+     public function viewContactUs(){
+        $contactus = DB::table('contactus')->paginate(20);
+        return view('admin.list.contactus',compact('contactus'));
+     }
      //register
 
      public function saveRegisterScholarship(Request $request){
