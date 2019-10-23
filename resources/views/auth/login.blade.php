@@ -2,8 +2,9 @@
 @section('content')
         <!-- title -->
         <h1>
-            <span>A</span>dmin
-            <span>L</span>ogin
+            {{-- <span>A</span>dmin
+            <span>L</span>ogin --}}
+            Wellcome To Edupan Admin
             {{-- <span>F</span>orm --}}
         </h1>
         <!-- //title -->
@@ -54,17 +55,18 @@
                                 {{ __('Login') }}
                             </button>
 
-                            @if (Route::has('password.request'))
+                            {{-- @if (Route::has('password.request'))
                                 <a style="color:#fff;margin-top:25px;font-size:13px" class="btn btn-link"
                                  href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
-                            @endif
+                            @endif --}}
+                            <div style="margin-top : 20px;color : #f4f6f8">
+                                You don't have account '<a class="nav-link" style="color : white ; font-weight:bold" href="{{ route('register') }}">{{ __('Register now') }}</a>
+                            </div>
                         </div>
                     </div>
-                    <div style="margin-top : 20px;color : #f4f6f8">
-                            You don't have account '<a class="nav-link" style="color : green" href="{{ route('register') }}">{{ __('Register now') }}</a>
-                    </div>
+
                 {{-- <button type="submit" class="submit">
                     Login
                 </button> --}}

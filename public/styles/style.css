@@ -22,7 +22,7 @@
 }
 .scholar-link {
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     right: 20px;
     /* object-fit: cover */
 }

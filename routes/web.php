@@ -25,6 +25,12 @@ Route::get('emailcontact',"MyController@addContact")->name('contact');
 Route::post('emailcontact',"MyController@saveEmailContact")->name('contact');
 
 
+Route::get('contactus',"MyController@addContactus")->name('contactus');
+Route::post('contactus',"MyController@saveContactus")->name('contactus');
+
+Route::get('contact',"Client@contactUs");
+
+
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
     Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
@@ -69,6 +75,15 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     Route::get('contactEmail/{id}','MyController@contactEmail');
 
+    Route::get('addIntroduce',"MyController@addIntroduce");
+    Route::post('addIntroduce',"MyController@saveIntroduce");
+
+    Route::get('listIntroduce',"MyController@introduce");
+
+    Route::get('editIntroduce',"MyController@editIntroduce");
+    Route::post('editIntroduce',"MyController@updateIntroduce");
+
+
     Route::get('/addPartnership',"PartnershipController@addPartnership");
     Route::post('/addPartnership',"PartnershipController@savePartnership");
     Route::get('/listPartnership',"PartnershipController@showListPartnership");
@@ -101,6 +116,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     Route::get('/editExpert',"ResearchController@editExpert");
     Route::post('/editExpert',"ResearchController@updateExpert");
+
+    Route::get('viewContact',"MyController@viewContactUs");
 
     /* Gallery */
 
@@ -146,3 +163,10 @@ Route::get('home', function (){
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->middleware('admin');;
+
+
+// Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+Route::group(['middleware' => 'locale'], function() {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+        ->name('user.change-language');
+});

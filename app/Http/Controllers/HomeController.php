@@ -25,4 +25,10 @@ class HomeController extends Controller
     {
         return view('admin.dashboart');
     }
+    public function changeLanguage($language)
+{
+    \Session::put('website_language', $language);
+
+    return redirect()->back();
+}
 }

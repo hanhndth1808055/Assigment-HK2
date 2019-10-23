@@ -18,7 +18,7 @@
             </tr>
 
         </thead>
-        <tbody>
+        <tbody style="font-size : 12px">
             @foreach($scholars as $scholar)
             <tr>
                 <td scope="col">{{$scholar -> id}}</td>
