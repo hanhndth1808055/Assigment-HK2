@@ -8,15 +8,61 @@ use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
 use App\CampaignDonation;
+use UploadTrait;
 
 class CampaignsController extends Controller
 {
     const _LIMIT = 6;
 
+    public $campaign = Campaigns::class;
     public function showCampaigns()
     {
         $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
         return view('pages.campaigns', compact('campaigns'));
+    }
+
+    public function index()
+    {
+        $campaigns = Campaigns::orderBy("created_at", "DESC")->get();
+        return view('admin.campaigns.index', compact('campaigns'));
+    }
+
+    public function addCampaign()
+    {
+        return view("admin.campaigns.form", compact('departments', 'positions', 'certifications', 'salary_s'));
+    }
+    public function updateCampaign(Request $request)
+    {
+
+        // Form validation
+        $request->validate([
+            'name' => 'required',
+            'campaign_chairman' => 'required|string|max:255',
+            'short_description' => 'required',
+            'long_description' => 'required',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'full_size_thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        // Check if a profile image has been uploaded
+        if ($request->has('profile_image')) {
+            // Get image file
+            $image = $request->file('profile_image');
+            // Make a image name based on user name and current timestamp
+            $name = str_slug($request->input('name')) . '_' . time();
+            // Define folder path
+            $folder = '/uploads/images/';
+            // Make a file path where image will be stored [ folder path + file name + file extension]
+            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
+            // Upload image
+            $this->uploadOne($image, $folder, 'public', $name);
+            // Set user profile image path in database to filePath
+            $campaign->thumbnail = $filePath;
+        }
+
+
+        // Return user back and show a flash message
+        return redirect()->back()->with(['status' => 'Profile updated successfully.']);
     }
 
     public function showCampaignDetail($id)
@@ -101,4 +147,6 @@ class CampaignsController extends Controller
         $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
         return view('pages.campaigns', compact('campaigns'));
     }
+
+
 }
