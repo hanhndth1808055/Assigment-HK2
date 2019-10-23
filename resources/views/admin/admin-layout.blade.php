@@ -16,10 +16,15 @@ Website: http://www.webthemez.com/
     <link rel="shortcut icon" type="image/x-icon" href="images/edu-logo.jpg"/>
 
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
-    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
     <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet"/>
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- TABLE STYLES-->
+    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/1ed7b1f4b0.js" crossorigin="anonymous"></script>
     <style>
         .btn-edit-seminar {
             border: none;
@@ -498,7 +503,9 @@ Website: http://www.webthemez.com/
 <script src="assets/js/jquery.metisMenu.js"></script>
 <!-- Custom Js -->
 <script src="assets/js/custom-scripts.js"></script>
-
+<!-- DATA TABLE SCRIPTS -->
+<script src="assets/js/dataTables/jquery.dataTables.js"></script>
+<script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
 
 </body>
 </html>
