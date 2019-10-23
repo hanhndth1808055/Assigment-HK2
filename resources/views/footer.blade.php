@@ -43,7 +43,7 @@
             <div class="row">
 
                 <!-- Footer Column - About -->
-                <div class="col-lg-3 footer_col">
+                <div class="col-lg-5 footer_col">
 
                     <!-- Logo -->
                     <div class="logo_container">
@@ -59,7 +59,7 @@
 
                 <!-- Footer Column - Menu -->
 
-                <div class="col-lg-3 footer_col">
+                <div class="col-lg-3 pl-4 footer_col">
                     <div class="footer_column_title">Menu</div>
                     <div class="footer_column_content">
                         <ul>
@@ -75,7 +75,7 @@
 
                 <!-- Footer Column - Usefull Links -->
 
-                <div class="col-lg-3 footer_col">
+                {{-- <div class="col-lg-3 footer_col">
                     <div class="footer_column_title">Usefull Links</div>
                     <div class="footer_column_content">
                         <ul>
@@ -86,11 +86,11 @@
                             <li class="footer_list_item"><a href="#">Tuitions</a></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Footer Column - Contact -->
 
-                <div class="col-lg-3 footer_col">
+                <div class="col-lg-4 footer_col">
                     <div class="footer_column_title">Contact</div>
                     <div class="footer_column_content">
                         <ul>

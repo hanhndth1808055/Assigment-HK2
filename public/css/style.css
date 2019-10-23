@@ -219,7 +219,7 @@ img {
 /*end reset*/
 
 body {
-    background: url(../images/scholarship/EPam5r7_image_677640_witcher-3-hd-wallpaper.jpg) no-repeat;
+    background: url(../images/background-1.jpeg) no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -304,10 +304,11 @@ p.legend span {
 .input span {
     position: absolute;
     display: block;
-    color: #f13f57;
+    color: #ff0022;
     left: 10px;
-    top: 12px;
+    top: 65px;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .input input {
@@ -335,7 +336,7 @@ p.legend span {
     color: #2ecc71;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0px 0px 0px 4px #fff;
+    /* box-shadow: 0px 0px 0px 4px #fff; */
     transition: 0.2s ease-out;
     margin-right: 10px;
     margin-top: 20px;

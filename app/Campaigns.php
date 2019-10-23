@@ -24,4 +24,5 @@ class Campaigns extends Model
 //    {
 //        return $this->full_size_thumbnail;
 //    }
+
 }
