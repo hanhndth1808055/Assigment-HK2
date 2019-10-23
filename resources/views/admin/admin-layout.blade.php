@@ -18,6 +18,8 @@ Website: http://www.webthemez.com/
     <link href="assets/css/bootstrap.css" rel="stylesheet"/>
     <link href="assets/css/font-awesome.css" rel="stylesheet"/>
     <link href="{{asset('assets/css/custom-styles.css')}}" rel="stylesheet"/>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <style>
