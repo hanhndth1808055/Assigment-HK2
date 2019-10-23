@@ -25,6 +25,12 @@ Route::get('emailcontact',"MyController@addContact")->name('contact');
 Route::post('emailcontact',"MyController@saveEmailContact")->name('contact');
 
 
+Route::get('contactus',"MyController@addContactus")->name('contactus');
+Route::post('contactus',"MyController@saveContactus")->name('contactus');
+
+Route::get('contact',"Client@contactUs");
+
+
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
     Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
@@ -110,6 +116,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     Route::get('/editExpert',"ResearchController@editExpert");
     Route::post('/editExpert',"ResearchController@updateExpert");
+
+    Route::get('viewContact',"MyController@viewContactUs");
 
     /* Gallery */
 });

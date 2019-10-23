@@ -12,7 +12,7 @@
         <nav class="main_nav_container">
             <div class="main_nav">
                 <ul class="main_nav_list">
-                    <li class="main_nav_item"><a href="#">home</a></li>
+                    <li class="main_nav_item"><a href="{{ url('/') }}">home</a></li>
                     <li class="main_nav_item"><a href="#">Research </a></li>
                     <li class="main_nav_item"><a href="courses.html">seminar</a></li>
                     <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
@@ -27,7 +27,7 @@
     </div>
     <div class="header_side d-flex flex-row justify-content-center align-items-center">
         <img src="images/phone-call.svg" alt="">
-        <span><a href="" style="color : #fff">Contact Us</a></span>
+        <span><a href="{{ url('contact') }}" style="color : #fff">Contact Us</a></span>
     </div>
 
     <!-- Hamburger -->

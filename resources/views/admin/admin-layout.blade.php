@@ -405,6 +405,9 @@ Website: http://www.webthemez.com/
                     </ul>
                 </li>
                 <li>
+                    <a href="{{ url('admin/viewContact') }}"><i class="fa fa-envelope"></i>User Contact</a>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>

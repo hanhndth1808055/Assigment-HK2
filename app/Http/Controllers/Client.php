@@ -94,4 +94,7 @@ class Client extends Controller
         return view('client.load_coment',compact("coments"));
         // return response()->json($coments);
     }
+    public function contactUs(){
+        return view('client.contact');
+    }
 }
