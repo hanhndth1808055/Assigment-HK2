@@ -22,7 +22,10 @@ function showSubmit() {
     document.getElementById('showLoading').style = 'margin-right:1px';
     setTimeout(function () {
         document.getElementById('showLoading').style.display = "none";
+        alert('register successful');
+
     },3000)
+
 }
 function clickRegisterSeminar() {
     var x = document.getElementById("registerSeminar");

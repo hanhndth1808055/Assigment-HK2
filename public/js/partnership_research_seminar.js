@@ -23,6 +23,7 @@ function showSubmit() {
     setTimeout(function () {
         document.getElementById('showLoading').style.display = "none";
     },3000)
+
 }
 
 function clickRegisterSeminar() {

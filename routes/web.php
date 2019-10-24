@@ -61,6 +61,10 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editSeminar',"SeminarController@editSeminar");
     Route::post('/editSeminar',"SeminarController@updateSeminar");
 
+    Route::get('/listSeminarRegister',"SeminarController@showListSeminarRegister");
+
+
+
     /* Partnership */
 
     Route::get('/listEmailContact',"MyController@listEmailContact");
@@ -102,6 +106,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editExpert',"ResearchController@editExpert");
     Route::post('/editExpert',"ResearchController@updateExpert");
 
+
     /* Gallery */
 });
 
@@ -123,6 +128,7 @@ Route::get('partnership',"PartnershipController@showPartnership");
 Route::get('research',"ResearchController@showResearch");
 Route::get('researchDetail',"ResearchController@showResearchDetail");
 Route::get('seminarDetail',"SeminarController@showSeminarDetail");
+Route::post('addSeminarRegister',"SeminarController@saveSeminarRegister");
 
 Route::get('chart', function (){
     return view('admin.chart');

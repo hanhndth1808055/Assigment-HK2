@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\seminar;
+use App\seminar_register;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -58,10 +59,12 @@ class SeminarController extends Controller
     public function showSeminarDetail(Request $request){
         $seminar_id = $request->get('id');
         $seminar = seminar::find($seminar_id);
-        return view("pages.seminarDetail",compact('seminar'));
+        $seminars = seminar::orderBy("seminar_id","ASC");
+        return view("pages.seminarDetail",compact('seminar','seminars'));
+
     }
 
-    /* seminar edit */
+    /* Seminar Edit */
     public function editSeminar(Request $request){
         $seminar_id = $request->get('id');
         $seminar = seminar::find($seminar_id);
@@ -99,6 +102,43 @@ class SeminarController extends Controller
             die($e->getMessage());
         }
         return redirect("admin/listSeminar");
+    }
+
+    /* Seminar Register */
+
+    function showListSeminarRegister(){
+        $registerSeminars = seminar_register::paginate(5);
+        return view('admin.list.listSeminarRegister',compact('registerSeminars'));
+    }
+    function saveSeminarRegister(Request $request){
+        $seminar = seminar::find($request->get('seminar_id'));
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+            "unique" => "giá trị đã tồn tại",
+        ];
+        $ruler = [
+            "seminar_id" => "required|numeric",
+            "name" => "string",
+            "email" => "string",
+            "phone" => "string",
+            "address" => "string",
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            seminar_register::create([
+                "seminar_id"=> $request->get("seminar_id"),
+                "name"=> $request->get("name"),
+                "email"=> $request->get("email"),
+                "phone"=> $request->get("phone"),
+                "address"=> $request->get("address"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("seminarDetail?id=".$seminar->seminar_id)->with('status', 'Register Successful !');
     }
 }
 

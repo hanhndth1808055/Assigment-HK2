@@ -9,7 +9,9 @@
                     <div class="section_title text-center">
                         <span class="identifying-content "><p class="title-content-research-detail">{{$research->research_project_name}}</p></span>
                     </div>
-
+                    <div class="img-research mt-5">
+                        <img src="{{$research->research_picture}}" style="width: 100%; height: auto">
+                    </div>
                     <div class="text-left mt-5 text-content-seminar ">
                         <h1>Challenge</h1>
                     </div>

@@ -412,7 +412,7 @@ Website: http://www.webthemez.com/
                             <a href="#">List Feedback</a>
                         </li>
                         <li>
-                            <a href="#">List Register</a>
+                            <a href="{{url('admin/listSeminarRegister')}}">List Register</a>
                         </li>
                         <li>
                             <a href="#">Form<span class="fa arrow"></span></a>
