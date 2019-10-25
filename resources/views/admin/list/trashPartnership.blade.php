@@ -25,13 +25,14 @@
                 <th scope="col">Percentage of International Students</th>
                 <th scope="col">Value Score</th>
                 <th scope="col">Website</th>
+                <th scope="col">Active</th>
                 <th></th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach ($partnerships as $partnership )
-                @if($partnership -> active == 1)
+                @if($partnership -> active == 0)
                 <tr>
                     <td>{{ $partnership->partnership_id }}</td>
                     <td>{{ $partnership->partnership_edu_logo }}</td>
@@ -45,8 +46,8 @@
                     <td>{{ $partnership->partnership_edu_value }}</td>
                     <td>{{ $partnership->partnership_edu_website }}</td>
                     <td><a href="{{url('admin/editPartnership?id='.$partnership->partnership_id)}}">EDIT</a></td>
-                    <td><a class="btn-edit-seminar" href="{{url('admin/deletePartnership/'.$partnership->partnership_id )}}" onclick="return confirm('Are you sure ?')">
-                            <i class="fa fa-trash-o fa-1x"  style="color: white"aria-hidden="true"></i>
+                    <td><a class="btn-edit-seminar" href="{{url('admin/recoverPartnership/'.$partnership->partnership_id )}}" onclick="return confirm('Are you sure ?')">
+                            <i class="fa fa-undo fa-1x"  style="color: white" aria-hidden="true"></i>
                         </a></td>
                 </tr>
                 @endif

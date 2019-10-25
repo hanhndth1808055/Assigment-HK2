@@ -34,7 +34,7 @@
                     <td>{{ $registerSeminar->email }}</td>
                     <td>{{ $registerSeminar->phone }}</td>
                     <td>{{ $registerSeminar->address }}</td>
-                    <td>{{ App\seminar_register::$_statusActiveSeminarRegister[$registerSeminar->seminar_register_id] }}</td>
+                    <td>{{ App\seminar_register::$_statusActiveSeminarRegister[$registerSeminar->active] }}</td>
                     <td><a class="btn-edit-seminar" href="#">
                             <i class="fa fa-trash-o fa-1x"  style="color: white"aria-hidden="true"></i>
                         </a></td>

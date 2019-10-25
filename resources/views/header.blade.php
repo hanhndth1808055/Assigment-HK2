@@ -11,16 +11,14 @@
         <!-- Main Navigation -->
         <nav class="main_nav_container">
             <div class="main_nav">
-                <ul class="main_nav_list">
-<<<<<<< HEAD
-                    <li class="main_nav_item"><a href="#">home</a></li>
+                <ul class="main_nav_list"><li class="main_nav_item"><a href="#">home</a></li>
                     <li class="main_nav_item"><a href="{{url('research')}}">Research </a></li>
                     <li class="main_nav_item"><a href="{{url('seminar')}}">seminar</a></li>
-=======
+
                     <li class="main_nav_item"><a href="{{ url('/') }}">home</a></li>
                     <li class="main_nav_item"><a href="#">Research </a></li>
                     <li class="main_nav_item"><a href="courses.html">seminar</a></li>
->>>>>>> 3e47680a462654a2ed23c38d4d704e909c5b1566
+
                     <li class="main_nav_item"><a href="elements.html">Campaigns</a></li>
                     <li class="main_nav_item"><a href="{{ url('scholarship') }}">Scholarship</a></li>
                     <li class="main_nav_item"><a href="contact.html">Gallery</a></li>

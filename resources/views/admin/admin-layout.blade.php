@@ -413,16 +413,68 @@ Website: http://www.webthemez.com/
                     <a href="{{ url('admin/viewContact') }}"><i class="fa fa-envelope"></i>User Contact</a>
                 </li>
                 <li>
+                    <a href="#"><i class="fa fa-sitemap"></i>Research<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/listResearch') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Research</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/listLearnMoreResearch') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                 Learn More Research</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/listExpert') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Expert</a>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('admin/trashResearch') }}">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                Recycle bin</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Form<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li>
+                                    <a href="{{ url('admin/addResearch') }}">Add Research</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/addLearnMoreResearch') }}">Add Learn More Research</a>
+                                </li>
+                                <li>
+                                    <a href="{{ url('admin/addExpert') }}">Add Expert</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
                     <a href="#"><i class="fa fa-sitemap"></i>Seminar<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{ url('admin/listSeminar') }}">List Seminar</a>
+                            <a href="{{ url('admin/listSeminar') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Seminar</a>
                         </li>
                         <li>
-                            <a href="#">List Feedback</a>
+                            <a href="#">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Feedback</a>
                         </li>
                         <li>
-                            <a href="{{url('admin/listSeminarRegister')}}">List Register</a>
+                            <a href="{{url('admin/listSeminarRegister')}}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Register</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/trashSeminar') }}">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                Recycle bin</a>
                         </li>
                         <li>
                             <a href="#">Form<span class="fa arrow"></span></a>
@@ -438,10 +490,19 @@ Website: http://www.webthemez.com/
                     <a href="#"><i class="fa fa-sitemap"></i>Partnership<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{ url('admin/listPartnership') }}">List Partnership</a>
+                            <a href="{{ url('admin/listPartnership') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Partnership</a>
                         </li>
                         <li>
-                            <a href="#">List Feedback</a>
+                            <a href="#">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Feedback</a>
+                        </li>
+                        <li>
+                            <a href="{{url('admin/trashPartnership')}}">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                Recycle Bin</a>
                         </li>
 
                         <li>
@@ -454,38 +515,9 @@ Website: http://www.webthemez.com/
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i>Research<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="{{ url('admin/listResearch') }}">List Research</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/listLearnMoreResearch') }}">List Learn More Research</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('admin/listExpert') }}">List Experts</a>
-                        </li>
-                        <li>
-                            <a href="#">List Feedback</a>
-                        </li>
 
-                        <li>
-                            <a href="#">Form<span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="{{ url('admin/addResearch') }}">Add Research</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/addResearch') }}">Add Learn More Research</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('admin/addResearch') }}">Add Experts </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+
+
             </ul>
 
         </div>

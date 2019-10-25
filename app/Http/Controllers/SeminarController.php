@@ -22,6 +22,11 @@ class SeminarController extends Controller
         return view("admin.list.listSeminar",compact('seminars'));
     }
 
+    public function showTrashSeminar(){
+        $seminars = seminar::paginate(5);
+        return view("admin.list.trashSeminar",compact('seminars'));
+    }
+
     public function addSeminar(){
         $seminars = seminar::orderby("seminar_id","DESC")->get();
         return view("admin.form.formSeminar",compact('seminars'));
@@ -140,17 +145,28 @@ class SeminarController extends Controller
         }
         return redirect("seminarDetail?id=".$seminar->seminar_id)->with('status', 'Register Successful !');
     }
-
+    /* Delete */
         public function deleteSeminar($id){
             $seminar = seminar::find($id);
             try{
                 $seminar->active = seminar::DEACTIVE;
                 $seminar->save();
             }catch (\Exception $e){
-                return redirect("listSeminar")->with("error","Delete Error");
+                return redirect("admin/listSeminar")->with("error","Delete Error");
             }
-            return redirect("listSeminar")->with("success","Delete Successfully");
+            return redirect("admin/listSeminar")->with("success","Delete Successfully");
         }
+
+    public function recoverSeminar($id){
+        $seminar = seminar::find($id);
+        try{
+            $seminar->active = seminar::ACTIVE;
+            $seminar->save();
+        }catch (\Exception $e){
+            return redirect("admin/trashSeminar")->with("error","Recover Error");
+        }
+        return redirect("admin/trashSeminar")->with("success","Recover Successfully");
+    }
 
     public function deleteSeminarRegister($id){
         $seminarRegister = seminar_register::find($id);
@@ -158,9 +174,11 @@ class SeminarController extends Controller
             $seminarRegister->active = seminar_register::DEACTIVE;
             $seminarRegister->save();
         }catch (\Exception $e){
-            return redirect("listSeminarRegister")->with("error","Delete Error");
+            return redirect("admin/listSeminarRegister")->with("error","Delete Error");
         }
-        return redirect("listSeminarRegister")->with("success","Delete Successfully");
+        return redirect("admin/listSeminarRegister")->with("success","Delete Successfully");
     }
+
+
 }
 
