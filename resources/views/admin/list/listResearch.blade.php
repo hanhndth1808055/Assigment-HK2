@@ -1,5 +1,15 @@
 @extends('admin.admin-layout')
 @section('main-content')
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-error">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="container-fluid">
         <table class="table">
             <thead>
@@ -11,6 +21,8 @@
                 <th scope="col">Challenge</th>
                 <th scope="col">Key Activities</th>
                 <th scope="col">Impact</th>
+                <th scope="col">Active</th>
+                <th></th>
                 <th></th>
             </tr>
             </thead>
@@ -24,7 +36,11 @@
                     <td>{{ $research->challenge }}</td>
                     <td>{{ $research->key_Activities }}</td>
                     <td>{{ $research->impact }}</td>
+                    <td>{{ App\research::$_statusActiveResearch[$research->Active] }}</td>
                     <th><a href="{{url('admin/editResearch?id='.$research->research_project_id)}}">EDIT</a></th>
+                    <td><a class="btn-edit-seminar" href="{{url('admin/deleteResearch/'.$research->research_project_id)}}" onclick="return confirm('Are you sure ?')">
+                            <i class="fa fa-trash-o fa-1x"  style="color: white"aria-hidden="true"></i>
+                        </a></td>
                 </tr>
             @endforeach
             </tbody>

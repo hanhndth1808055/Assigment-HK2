@@ -112,4 +112,16 @@ class PartnershipController extends Controller
         }
         return redirect("admin/listPartnership");
     }
+
+    /* delete Partnership */
+    public function deletePartnership($id){
+        $partnership = partnership::find($id);
+        try{
+            $partnership->active = partnership::DEACTIVE;
+            $partnership->save();
+        }catch (\Exception $e){
+            return redirect("listPartnership")->with("error","Delete Error");
+        }
+        return redirect("listPartnership")->with("success","Delete Successfully");
+    }
 }

@@ -140,5 +140,27 @@ class SeminarController extends Controller
         }
         return redirect("seminarDetail?id=".$seminar->seminar_id)->with('status', 'Register Successful !');
     }
+
+        public function deleteSeminar($id){
+            $seminar = seminar::find($id);
+            try{
+                $seminar->active = seminar::DEACTIVE;
+                $seminar->save();
+            }catch (\Exception $e){
+                return redirect("listSeminar")->with("error","Delete Error");
+            }
+            return redirect("listSeminar")->with("success","Delete Successfully");
+        }
+
+    public function deleteSeminarRegister($id){
+        $seminarRegister = seminar_register::find($id);
+        try{
+            $seminarRegister->active = seminar_register::DEACTIVE;
+            $seminarRegister->save();
+        }catch (\Exception $e){
+            return redirect("listSeminarRegister")->with("error","Delete Error");
+        }
+        return redirect("listSeminarRegister")->with("success","Delete Successfully");
+    }
 }
 

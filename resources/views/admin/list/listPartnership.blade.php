@@ -1,5 +1,15 @@
 @extends('admin.admin-layout')
 @section('main-content')
+    @if (session()->has('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if (session()->has('error'))
+        <div class="alert alert-error">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="container-fluid">
         <table class="table">
             <thead>
@@ -15,6 +25,8 @@
                 <th scope="col">Percentage of International Students</th>
                 <th scope="col">Value Score</th>
                 <th scope="col">Website</th>
+                <th scope="col">Active</th>
+                <th></th>
                 <th></th>
             </tr>
             </thead>
@@ -33,6 +45,9 @@
                     <td>{{ $partnership->partnership_edu_value }}</td>
                     <td>{{ $partnership->partnership_edu_website }}</td>
                     <td><a href="{{url('admin/editPartnership?id='.$partnership->partnership_id)}}">EDIT</a></td>
+                    <td><a class="btn-edit-seminar" href="{{url('admin/deletePartnership/'.$partnership->partnership_id )}}" onclick="return confirm('Are you sure ?')">
+                            <i class="fa fa-trash-o fa-1x"  style="color: white"aria-hidden="true"></i>
+                        </a></td>
                 </tr>
             @endforeach
             </tbody>

@@ -73,7 +73,11 @@ class Client extends Controller
         ->orderBy('coment_id','DESC')
         ->paginate(6,['name','messager','title as id']);
 
-        return view('client.home',compact('scholarships','feedbacks'));
+        $campaigns = DB::table('campaigns')->orderBy('id','DESC')->paginate(4);
+        $seminars = DB::table('seminar')->orderBy('seminar_id','ASC')->paginate(6);
+
+
+        return view('client.home',compact('scholarships','feedbacks','campaigns','seminars'));
     }
 
     public function loadComentScholarship(Request $request){
@@ -89,5 +93,8 @@ class Client extends Controller
             ->get();
         return view('client.load_coment',compact("coments"));
         // return response()->json($coments);
+    }
+    public function contactUs(){
+        return view('client.contact');
     }
 }

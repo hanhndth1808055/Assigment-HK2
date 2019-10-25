@@ -282,4 +282,41 @@ class ResearchController extends Controller
         return redirect("admin/listExpert");
     }
 
+    /* Delete */
+
+    /* Research */
+    public function deleteResearch($id){
+        $research = research::find($id);
+        try{
+            $research->active = research::DEACTIVE;
+            $research->save();
+        }catch (\Exception $e){
+            return redirect("listResearch")->with("error","Delete Error");
+        }
+        return redirect("listResearch")->with("success","Delete Successfully");
+    }
+
+    /* Expert */
+    public function deleteExpert($id){
+        $expert = expert::find($id);
+        try{
+            $expert->active = expert::DEACTIVE;
+            $expert->save();
+        }catch (\Exception $e){
+            return redirect("listExpert")->with("error","Delete Error");
+        }
+        return redirect("listExpert")->with("success","Delete Successfully");
+    }
+
+    /* learn more research */
+    public function deleteLearnMoreResearch($id){
+        $learnMoreResearch = learn_more_research::find($id);
+        try{
+            $learnMoreResearch->active = learn_more_research::DEACTIVE;
+            $learnMoreResearch->save();
+        }catch (\Exception $e){
+            return redirect("listLearnMoreResearch")->with("error","Delete Error");
+        }
+        return redirect("listLearnMoreResearch")->with("success","Delete Successfully");
+    }
 }

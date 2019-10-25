@@ -25,6 +25,12 @@ Route::get('emailcontact',"MyController@addContact")->name('contact');
 Route::post('emailcontact',"MyController@saveEmailContact")->name('contact');
 
 
+Route::get('contactus',"MyController@addContactus")->name('contactus');
+Route::post('contactus',"MyController@saveContactus")->name('contactus');
+
+Route::get('contact',"Client@contactUs");
+
+
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
     Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
@@ -61,8 +67,11 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editSeminar',"SeminarController@editSeminar");
     Route::post('/editSeminar',"SeminarController@updateSeminar");
 
+    Route::get("/deleteSeminar/{id}","SeminarController@deleteSeminar");
+
     Route::get('/listSeminarRegister',"SeminarController@showListSeminarRegister");
 
+    Route::get('/deleteSeminarRegister/{id}',"SeminarController@deleteSeminarRegister");
 
 
     /* Partnership */
@@ -73,12 +82,23 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
 
     Route::get('contactEmail/{id}','MyController@contactEmail');
 
+    Route::get('addIntroduce',"MyController@addIntroduce");
+    Route::post('addIntroduce',"MyController@saveIntroduce");
+
+    Route::get('listIntroduce',"MyController@introduce");
+
+    Route::get('editIntroduce',"MyController@editIntroduce");
+    Route::post('editIntroduce',"MyController@updateIntroduce");
+
+
     Route::get('/addPartnership',"PartnershipController@addPartnership");
     Route::post('/addPartnership',"PartnershipController@savePartnership");
     Route::get('/listPartnership',"PartnershipController@showListPartnership");
 
     Route::get('/editPartnership',"PartnershipController@editPartnership");
     Route::post('/editPartnership',"PartnershipController@updatePartnership");
+
+    Route::get("/deletePartnership/{id}","PartnershipController@deletePartnership");
 
     /* Research */
 
@@ -89,6 +109,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editResearch',"ResearchController@editResearch");
     Route::post('/editResearch',"ResearchController@updateResearch");
 
+    Route::get("/deleteResearch/{id}","ResearchController@deleteResearch");
+
     /* Learn More Research */
 
     Route::get('/addLearnMoreResearch',"ResearchController@addLearnMoreResearch");
@@ -98,6 +120,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editLearnMoreResearch',"ResearchController@editLearnMoreResearch");
     Route::post('/editLearnMoreResearch',"ResearchController@updateLearnMoreResearch");
 
+    Route::get("/deleteLearnMoreResearch/{id}","ResearchController@deleteLearnMoreResearch");
+
     /* Expert */
     Route::get('/addExpert',"ResearchController@addExpert");
     Route::post('/addExpert',"ResearchController@saveExpert");
@@ -106,8 +130,22 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/editExpert',"ResearchController@editExpert");
     Route::post('/editExpert',"ResearchController@updateExpert");
 
+    Route::get('/deleteExpert/{id}',"ResearchController@deleteExpert");
+
+
+
+
+    Route::get('viewContact',"MyController@viewContactUs");
+
 
     /* Gallery */
+
+    Route::get('/campaigns', 'CampaignsController@index')->name('campaigns.list');
+//    Route::get('/campaigns/add', 'CampaignsController@add')->name('campaigns.add');
+//    Route::post('/campaigns/add', 'CampaignsController@save')->name('campaigns.save');
+//    Route::get("/campaigns/update", "AdminController@update")->name('campaigns.update');
+//    Route::post("/campaigns/update", "AdminController@updated")->name('campaigns.updated');
+//    Route::get("campaigns/delete/{id}", "AdminController@delete")->name('campaigns.delete');
 });
 
 Route::get('gallery', 'GalleryController@showGallery');
@@ -145,3 +183,10 @@ Route::get('home', function (){
 Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->middleware('admin');;
+
+
+// Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+Route::group(['middleware' => 'locale'], function() {
+    Route::get('change-language/{language}', 'HomeController@changeLanguage')
+        ->name('user.change-language');
+});

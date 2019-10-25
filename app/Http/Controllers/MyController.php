@@ -6,7 +6,9 @@ use App\scholarship;
 use App\unit;
 use App\country;
 use App\contact;
+use App\contactus;
 use App\register_scholarship;
+use App\introduce;
 use App\scholarship_coment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -349,8 +351,42 @@ class MyController extends Controller
         return redirect()->back()->with('thongbao', 'Xóa thành công');
      }
 
+     public function saveContactus(Request $request){
+        // dd($request->all());
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "numeric" => "Nhập vào một số",
+            "min" => "giá trị tối thiểu 0",
+            "max" => "tối đa 255 ký tự",
+            "unique" => "Đã tồn tại",
 
+        ];
+        $rules = [
+            "name" => "required",
+            "email" => "required",
+            // "note" => "required",
+            "messager"=>"required"
+        ];
+        $this->validate($request,$rules , $messages);
+        try{
+            contactus::create([
+            "id" => $request ->get("id"),
+            "name"=>$request->get("name"),
+            "email"=>$request->get("email"),
+            "messager" => $request->get("messager"),
+        ])->save();
+        }
+        catch(\Exception $e){
+            die($e -> getMessage());
+        }
+        return redirect()->back()->with("success","Register successfully!!!");
+     }
 
+     public function viewContactUs(){
+        $contactus = DB::table('contactus')->paginate(20);
+        return view('admin.list.contactus',compact('contactus'));
+     }
      //register
 
      public function saveRegisterScholarship(Request $request){
@@ -434,5 +470,123 @@ class MyController extends Controller
         ]);
         return redirect('https://mail.google.com/mail/u/0/#inbox')->with("success","
         contact succes");
+     }
+
+     public function addIntroduce(){
+         $introduce = DB::table('introduce')->get();
+         return view('admin.form.addIntroduce',compact('introduce'));
+     }
+
+     public function saveIntroduce(Request $request){
+
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "numeric" => "Nhập vào một số",
+            "min" => "giá trị tối thiểu 0",
+            "max" => "tối đa 255 ký tự",
+        ];
+
+        $rules = [
+            "content" => "required|string|max:550",
+            "image" => "required",
+            "email" => "required|string",
+            "address" => "required|string",
+            "phone" => "required|numeric"
+
+        ];
+
+        $this->validate($request,$rules , $messages);
+        //Kiểm tra định dạng ảnh
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = Str::random(7) . "_image_" . $name;
+            while (file_exists('images/introduce/' . $image)) {
+                $image = Str::random(7) . "_image_" . $name;
+            }
+            $file->move('images/introduce/', $image);
+            $file_name = $image;
+        } else {
+            $file_name = 'logo.png';
+        };
+
+        try{
+         introduce::create([
+            "email" => $request ->get("email"),
+            "phone" => $request -> get("phone"),
+            "address" => $request -> get("address"),
+            "content" => $request -> get("content"),
+            "image" => $file_name,
+
+        ])->save();
+        }
+        catch(\Exception $e){
+            die($e -> getMessage());
+        }
+        return redirect()->back()->with("success","Introduce successfully");
+     }
+
+     public function introduce(){
+         $introduces = DB::table('introduce')->paginate(20);
+         return view('admin.list.introduce',compact('introduces'));
+     }
+
+
+     public function editIntroduce(Request $request){
+        $id = $request -> get("id");
+        $introduce = introduce::find($id);
+        return view('admin.edit.introduce',compact('introduce'));
+     }
+
+     public function updateIntroduce(Request $request){
+        $introduces = introduce::find($request -> get("id"));
+        $messages = [
+            "required" => "vui lòng nhập vào thông tin",
+            "string" => "Phải nhập vào 1 chuỗi",
+            "numeric" => "Nhập vào một số",
+            "min" => "giá trị tối thiểu 0",
+            "max" => "tối đa 255 ký tự",
+        ];
+
+        $rules = [
+            "content" => "required|string|max:550",
+            "image" => "required",
+            "email" => "required|string",
+            "address" => "required|string",
+            "phone" => "required|numeric"
+
+        ];
+
+        $this->validate($request,$rules , $messages);
+        //Kiểm tra định dạng ảnh
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = Str::random(7) . "_image_" . $name;
+            while (file_exists('images/introduce/' . $image)) {
+                $image = Str::random(7) . "_image_" . $name;
+            }
+            $file->move('images/introduce/', $image);
+            $file_name = $image;
+
+        } else {
+            $file_name = 'logo.png';
+        };
+
+        try{
+            $introduces -> update([
+            "email" => $request ->get("email"),
+            "phone" => $request -> get("phone"),
+            "address" => $request -> get("address"),
+            "content" => $request -> get("content"),
+            "image" => $file_name,
+
+        ]);
+        }
+        catch(\Exception $e){
+            die($e -> getMessage());
+        }
+        return redirect()->back()->with("success","Introduce successfully");
      }
 }

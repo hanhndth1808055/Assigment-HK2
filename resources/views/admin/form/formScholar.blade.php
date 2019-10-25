@@ -72,20 +72,14 @@
             @endif
         </div>
 
-
         <div class="form-group">
             <label for="">Content</label>
-            <textarea name="content" class="form-control" rows="10">{{old('content')}}</textarea>
+            <textarea name="content" class="form-control ckeditor" rows="10">{{old('content')}}</textarea>
 
             @if($errors -> has("content"))
             <p class="error">{{ $errors -> first("content") }}</p>
             @endif
         </div>
-
-
-
-
-
 
         <div class="form-group">
             <label for="image">Hình ảnh </label>

@@ -23,7 +23,7 @@
                         @foreach ($scholarships as $scholarship )
                         <h2 class="text-dark">Name Scholarship : {{ $scholarship->title }}</h2>
                         <h3 class="text-dark">DeadLine : {{ $scholarship->enddate }}</h3>
-                        <img width="100%" src="{{asset('images/scholarship').'/'.$scholarship->image}}" alt="">
+                        <img width="100%" style="height : 400px ; object-fit:cover" src="{{asset('images/scholarship').'/'.$scholarship->image}}" alt="">
                         @endforeach
 
                         <form role="form" action="{{route('scholarship.register')}}" method="post"
@@ -90,7 +90,7 @@
         </div>
 
         <!-- Google Map -->
-
+{{--
         <div class="row">
             <div class="col">
                 <div id="google_map">
@@ -101,7 +101,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 </div>
