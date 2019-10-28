@@ -49,7 +49,7 @@ Website: http://www.webthemez.com/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">
+            <a style="background:#000" class="navbar-brand" href="{{ url('/') }}"><strong><img src="images/logo.png" alt="">
                     EduPan</strong></a>
             <div id="sideNav" href="">
                 <i class="fa fa-bars icon"></i>

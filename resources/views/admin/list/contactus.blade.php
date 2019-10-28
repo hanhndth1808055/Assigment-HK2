@@ -1,7 +1,7 @@
 @extends('admin.admin-layout')
 @section('main-content')
 <div class="container-fluid">
-        <table class="table">
+        <table class="table table-striped table-bordered table-hover">
             <thead>
                 <tr>
                     <th scope="col">Id</th>

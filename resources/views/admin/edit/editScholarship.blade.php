@@ -76,7 +76,7 @@
         </div>
         <div class="form-group">
             <label for="">Content</label>
-            <textarea name="content" class="form-control" rows="10">{{ $scholarships->content }}</textarea>
+            <textarea name="content" class="form-control ckeditor" rows="15">{{ $scholarships->content }}</textarea>
 
             @if($errors -> has("content"))
             <p class="error">{{ $errors -> first("content") }}</p>
