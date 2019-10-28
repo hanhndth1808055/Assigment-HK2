@@ -395,6 +395,18 @@ Website: http://www.webthemez.com/
                     </ul>
                 </li>
                 <li>
+                    <a href="#"><i class="fa fa-sitemap"></i>Campaigns<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/campaigns') }}">Campaign List</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/campaigns/add') }}">Add A Campaign</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href="#"><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
 
                     <ul class="nav nav-second-level">

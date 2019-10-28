@@ -10,6 +10,7 @@
                 <div class="panel panel-default pt-5">
                     <div class="panel-heading">
                         Campaigns
+                        <span><a href="{{url('admin/campaigns/add')}}"><i class="fas fa-plus-circle"></i></a></span>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -36,7 +37,7 @@
                                         <th>{!! $campaign->short_description!!}</th>
                                         <th>{!! $campaign->long_description!!}</th>
                                         <th>{{$campaign->created_at->format('d/m/y')}}</th>
-                                        <th><a href="#"><span><i class="fas fa-pencil-alt"></i></span></a><span>    </span><a href="#"><span><i class="fas fa-trash-alt"></i></span></a></th>
+                                        <th><a href="{{url('admin/campaigns/update?id='.$campaign->id)}}"><span><i class="fas fa-pencil-alt"></i></span></a><span>    </span><a href="{{url('admin/campaigns/delete/'.$campaign->id)}}"><span><i class="fas fa-trash-alt"></i></span></a></th>
                                     </tr>
                                 @endforeach
                                 </tbody>

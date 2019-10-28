@@ -5,93 +5,59 @@
             <div class="col-md-8">
                 <div class="card p-5">
                 <h2>Update Staff Profile</h2>
-                    <form action="{{url("admin/update-staff")}}" class="form-horizontal" method="post">
+                    <form action="{{url("admin/campaigns/update")}}" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="staff_id" value="{{$staff->staff_id}}">
+                        <input type="hidden" name="id" value="{{$campaign->id}}">
                         <div class="form-group">
                             <label class="control-label">Name</label>
                             <input type="text" class="form-control" name="name" placeholder="Name"
-                                   value="{{$staff->name}}">
+                                   value="{{$campaign->name}}">
                             @if($errors->has("name"))
                                 <p class="error" style="color:red">{{$errors->first("name")}}</p>
                             @endif
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Tel</label>
-                            <input type="text" class="form-control" value="{{$staff->tel}}" name="tel"
-                                   placeholder="Phone number">
+                            <label class="control-label">Campaign Chairman</label>
+                            <input type="text" class="form-control" value="{{$campaign->campaign_chairman}}" name="campaign_chairman"
+                                   placeholder="Campaign Chairman">
+                            @if($errors->has("campaign_chairman"))
+                                <p class="error" style="color:red">{{$errors->first("campaign_chairman")}}</p>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Birthday</label>
-                            <input type="date" class="form-control" name="birthday" value="{{$staff->birthday}}"
-                                   placeholder="Birthday">
+                            <label class="control-label">Short Description</label>
+                            <input type="text" class="form-control" name="short_description" value="{{$campaign->short_description}}"
+                                   placeholder="Short Description">
+                            @if($errors->has("short_description"))
+                                <p class="error" style="color:red">{{$errors->first("short_description")}}</p>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Gender</label>
-                            <select name="gender" class="form-control">
-                                <option value="0" @if($staff->gender == 0)selected @endif>Male</option>
-                                <option value="1" @if($staff->gender == 1)selected @endif>Female</option>
-                            </select>
+                            <label class="control-label">Long Description</label>
+                            <input type="text" class="form-control" name="long_description" value="{{$campaign->long_description}}"
+                                   placeholder="Long Description">
+                            @if($errors->has("long_description"))
+                                <p class="error" style="color:red">{{$errors->first("long_description")}}</p>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Department</label>
-                            <select name="department_id" class="form-control">
-                                @foreach($departments as $department)
-                                    <option value="{{$department->department_id}}"
-                                            @if($staff->department_id == $department->department_id) selected @endif>
-                                        {{$department->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Position</label>
-                            <select name="position_id" class="form-control">
-                                @foreach($positions as $position)
-                                    <option value="{{$position->position_id}}"
-                                            @if($staff->position_id == $position->position_id) selected @endif>
-                                        {{$position->name}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Certification</label>
-                            <select name="certification_id" class="form-control">
-                                @foreach($certifications as $certification)
-                                    <option
-                                        value="{{$certification->certification_id}}"
-                                        @if($staff->certification_id == $certification->certification_id) selected @endif>
-                                        {{$certification->name}}
-                                        - {{$certification->major}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Salary</label>
-                            <select name="salary_id" class="form-control">
-                                @foreach($salary_s as $salary)
-                                    <option
-                                        value="{{$salary->salary_id}}"
-                                        @if($staff->salary_id == $salary->salary_id) selected @endif>
-                                        {{$salary->salary_grade}}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label">Strength</label>
-                            <input type="text" class="form-control" value="{{$staff->strength}}" name="strength"
-                                   placeholder="Strength">
+                            <label class="control-label">Thumbnail</label>
+                            <input type="file" class="form-control" name="thumbnail" value="{{$campaign->thumbnail}}"
+                                   placeholder="Thumbnail" id="thumbnail">
+                            @if($errors->has("thumbnail"))
+                                <p class="error" style="color:red">{{$errors->first("thumbnail")}}</p>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label">Enrollment Date</label>
-                            <input type="date" class="form-control" name="enrollment_date"
-                                   value="{{$staff->enrollment_date}}" placeholder="Enrollment Date">
+                            <label class="control-label">Full Size Thumbnail</label>
+                            <input type="file" class="form-control" name="full_size_thumbnail" value="{{$campaign->full_size_thumbnail}}"
+                                   placeholder="Full Size Thumbnail" id="full_size_thumbnail">
+                            @if($errors->has("full_size_thumbnail"))
+                                <p class="error" style="color:red">{{$errors->first("full_size_thumbnail")}}</p>
+                            @endif
                         </div>
-                        <div class="form-group text-right">
+                        <div class="form-group row text-right">
                             <button type="submit" class="btn btn-primary">UPDATE</button>
                         </div>
                         <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}"/>
