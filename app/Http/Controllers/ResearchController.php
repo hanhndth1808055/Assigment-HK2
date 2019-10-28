@@ -22,9 +22,14 @@ class ResearchController extends Controller
         return view("pages.research",compact('researchs','experts'));
     }
 
-    public function showListReaserch(){
+    public function showListResearch(){
         $researchs = research::paginate(5);
         return view("admin.list.listResearch",compact('researchs'));
+    }
+
+    public function showTrashResearch(){
+        $researchs = research::paginate(5);
+        return view("admin.list.trashResearch",compact('researchs'));
     }
 
     public function addResearch(){
@@ -282,4 +287,52 @@ class ResearchController extends Controller
         return redirect("admin/listExpert");
     }
 
+    /* Delete */
+
+    /* Research */
+    public function deleteResearch($id){
+        $research = research::find($id);
+        try{
+            $research->active = research::DEACTIVE;
+            $research->save();
+        }catch (\Exception $e){
+            return redirect("admin/listResearch")->with("error","Delete Error");
+        }
+        return redirect("admin/listResearch")->with("success","Delete Successfully");
+    }
+
+    public function recoverResearch($id){
+        $research = research::find($id);
+        try{
+            $research->active = research::ACTIVE;
+            $research->save();
+        }catch (\Exception $e){
+            return redirect("admin/trashResearch")->with("error","Recover Error");
+        }
+        return redirect("admin/trashResearch")->with("success","Recover Successfully");
+    }
+
+    /* Expert */
+    public function deleteExpert($id){
+        $expert = expert::find($id);
+        try{
+            $expert->active = expert::DEACTIVE;
+            $expert->save();
+        }catch (\Exception $e){
+            return redirect("admin/listExpert")->with("error","Delete Error");
+        }
+        return redirect("admin/listExpert")->with("success","Delete Successfully");
+    }
+
+    /* learn more research */
+    public function deleteLearnMoreResearch($id){
+        $learnMoreResearch = learn_more_research::find($id);
+        try{
+            $learnMoreResearch->active = learn_more_research::DEACTIVE;
+            $learnMoreResearch->save();
+        }catch (\Exception $e){
+            return redirect("admin/listLearnMoreResearch")->with("error","Delete Error");
+        }
+        return redirect("admin/listLearnMoreResearch")->with("success","Delete Successfully");
+    }
 }

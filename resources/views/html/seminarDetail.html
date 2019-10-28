@@ -177,70 +177,55 @@
                                 &nbsp;  Register Now</button>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="regiss_seminar" id="registerSeminar" >
-                    <div class="text-left mt-5 text-content-seminar " >
-                        <h1>REGISTER </h1>
-                    </div>
-                    <div class="form-register-seminar mt-5">
-                        <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-                            <div class="wrapper wrapper--w780">
-                                <div class="card card-3">
-                                    <div class="card-body">
-                                        <h2 class="title text-center">Seminar Ticket Register</h2>
-                                        <form>
-                                            <div class="input-group">
-                                                <input class="input--style-3" type="text" placeholder="Seminar"
-                                                       name="Seminar">
-                                            </div>
-                                            <div class="input-group">
-                                                <input class="input--style-3" type="text" placeholder="Name"
-                                                       name="name">
-                                            </div>
-                                            <div class="input-group">
-                                                <input class="input--style-3 js-datepicker" type="text"
-                                                       placeholder="Birthdate" name="birthday">
-                                                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                            </div>
-                                            <div class="input-group">
-                                                <div class="rs-select2 js-select-simple select--no-search">
-                                                    <select name="gender">
-                                                        <option disabled="disabled" selected="selected">Gender</option>
-                                                        <option>Male</option>
-                                                        <option>Female</option>
-                                                        <option>Other</option>
-                                                    </select>
-                                                    <div class="select-dropdown text-right"></div>
-                                                </div>
-                                            </div>
-                                            <div class="input-group">
-                                                <input class="input--style-3" type="email" placeholder="Email"
-                                                       name="email">
-                                            </div>
-                                            <div class="input-group">
-                                                <input class="input--style-3" type="text" placeholder="Phone"
-                                                       name="phone">
-                                            </div>
-                                            <div class="input-group">
-                                                <input class="input--style-3" type="text" placeholder="Address"
-                                                       name="address">
-                                            </div>
-                                            <div class="p-t-10 text-center">
-                                                <button  id="send_submit" class="btn btn-warning btn-border-none" onclick="showSubmit();" >Submit
-                                                    <span style="display: none" id="showLoading">
+                <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h4 class="modal-title w-100 font-weight-bold">Seminar Register</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mx-3">
+                                <div class="md-form mb-4">
+
+                                </div>
+                                <div class="md-form mb-4">
+                                    <input type="text"  class="form-control validate btn-border-none input-seminar-register" placeholder="Name .  .  .">
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <input type="email"   class="form-control validate btn-border-none input-seminar-register" placeholder="Email .  .  .">
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <input type="password" class="form-control validate btn-border-none input-seminar-register" placeholder="Phone .  .  .">
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <input type="password"  class="form-control validate btn-border-none input-seminar-register" placeholder="Address .  .  .">
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button  id="send_submit" class="btn btn-warning btn-border-none" onclick="showSubmit();" >Submit
+                                    <span style="display: none" id="showLoading">
                                              &nbsp; <i class="fa fa-refresh fa-spin fa-1x fa-fw"></i>
                                             </span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="text-center">
+                    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+                        Modal Login Form</a>
+                </div>
+
+
 
 
             </div>
@@ -439,7 +424,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="registerForm/vendor/datepicker/daterangepicker.js"></script>
 
 <!-- Main JS-->
-<script src="registerForm/js/global.js"></script>
+
 <script src="js/partnership_research_seminar.js"></script>
 <SCRIPT>
 

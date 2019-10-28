@@ -1194,10 +1194,7 @@ a.hover-partnership:hover{
     width: 100%;
     box-sizing: border-box;
 }
-.form-feedback textarea{
 
-    height: 200px;width: calc(100% - 164px) ; padding : 20px; margin : 10px;
-}
 
 .regiss_seminar{
     display: none;
@@ -1226,4 +1223,15 @@ a.hover-partnership:hover{
     border-bottom: none;
     font-weight: bold;
 }
-
+.title-content-research-detail{
+    font-size: 60px;
+    color: #101c28;
+    margin: 0 0 80px;
+    padding: 0;
+    border-bottom: none;
+    font-weight: bold;
+}
+.input-seminar-register{
+    border: none;
+    border-bottom: 1px solid silver;
+}

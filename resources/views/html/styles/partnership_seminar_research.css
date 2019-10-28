@@ -1226,3 +1226,9 @@ a.hover-partnership:hover{
     border-bottom: none;
     font-weight: bold;
 }
+.input-seminar-register{
+    border: none;
+    border-bottom: 1px solid silver;
+}
+
+

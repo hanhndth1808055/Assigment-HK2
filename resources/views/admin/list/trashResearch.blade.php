@@ -27,7 +27,7 @@
             </thead>
             <tbody>
             @foreach ($researchs as $research)
-                @if($research->active == 1)
+                @if($research->active == 0)
                 <tr>
                     <td>{{ $research->research_project_id }}</td>
                     <td>{{ $research->research_project_name }}</td>
@@ -37,8 +37,8 @@
                     <td>{{ $research->key_Activities }}</td>
                     <td>{{ $research->impact }}</td>
                     <th><a href="{{url('admin/editResearch?id='.$research->research_project_id)}}">EDIT</a></th>
-                    <td><a class="btn-edit-seminar" href="{{url('admin/deleteResearch/'.$research->research_project_id)}}" onclick="return confirm('Are you sure ?')">
-                            <i class="fa fa-trash-o fa-1x"  style="color: white"aria-hidden="true"></i>
+                    <td><a class="btn-edit-seminar" href="{{url('admin/recoverResearch/'.$research->research_project_id)}}" onclick="return confirm('Are you sure ?')">
+                            <i class="fa fa-undo fa-1x"  style="color: white"aria-hidden="true"></i>
                         </a></td>
                 </tr>
                 @endif

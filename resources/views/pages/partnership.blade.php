@@ -24,6 +24,7 @@
             <div class="row course_boxes partnership_seminar_research" >
                 <!-- Popular Course Item -->
                 @foreach($partnerships as $partnership)
+                    @if($partnership->active == 1)
                 <div class="col-lg-6 course_box  ">
                     <div class="card card-partnership">
                         <div class="card-partnership-row">
@@ -105,6 +106,7 @@
 
                     </div>
                 </div>
+                    @endif
                 @endforeach
 
 

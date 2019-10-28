@@ -23,6 +23,11 @@ class PartnershipController extends Controller
         return view("admin.list.listPartnership",compact('partnerships'));
     }
 
+    public function showTrashPartnership(){
+        $partnerships = partnership::paginate(5);
+        return view("admin.list.trashPartnership",compact('partnerships'));
+    }
+
     public function addPartnership(){
         return view("admin.form.formPartnership");
     }
@@ -111,5 +116,28 @@ class PartnershipController extends Controller
             die($e->getMessage());
         }
         return redirect("admin/listPartnership");
+    }
+
+    /* delete Partnership */
+    public function deletePartnership($id){
+        $partnership = partnership::find($id);
+        try{
+            $partnership->active = partnership::DEACTIVE;
+            $partnership->save();
+        }catch (\Exception $e){
+            return redirect("admin/listPartnership")->with("error","Delete Error");
+        }
+        return redirect("admin/listPartnership")->with("success","Delete Successfully");
+    }
+
+    public function recoverPartnership($id){
+        $partnership = partnership::find($id);
+        try{
+            $partnership->active = partnership::ACTIVE;
+            $partnership->save();
+        }catch (\Exception $e){
+            return redirect("admin/trashPartnership")->with("error","Recover Error");
+        }
+        return redirect("admin/trashPartnership")->with("success","Recover Successfully");
     }
 }

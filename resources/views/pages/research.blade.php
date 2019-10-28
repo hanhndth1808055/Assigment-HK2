@@ -32,10 +32,11 @@
                 </div>
                 <div class="row view-content ml-4 p-2 mb-4">
                     @foreach($researchs as $research)
+                        @if($research->active == 1)
                     <div class="col-lg-6 view-text  mt-5">
                         <a href="{{url('researchDetail?id='.$research->research_project_id)}}" class="view-text"> {{$research->research_project_name}}</a>
                     </div>
-
+                        @endif
                     @endforeach
 
                 </div>
