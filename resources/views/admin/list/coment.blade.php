@@ -32,7 +32,7 @@
                 @endforeach
             </tbody>
         </table>
-        <h2 class="text-center" style="margin:10px 0;">Comment Hide</h2>
+        <h2 class="text-center" style="margin:10px 0;margin-top:70px">Comment Hide</h2>
         <table class="table">
             <thead>
                 <tr>
