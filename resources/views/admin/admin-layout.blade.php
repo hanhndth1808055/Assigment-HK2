@@ -432,6 +432,12 @@ Website: http://www.webthemez.com/
                         </li>
 
                         <li>
+                            <a href="{{ url('admin/listFeedbackResearch') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Feedback Research</a>
+                        </li>
+
+                        <li>
                             <a href="{{ url('admin/trashResearch') }}">
                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 Recycle bin</a>
@@ -472,6 +478,11 @@ Website: http://www.webthemez.com/
                                 List Register</a>
                         </li>
                         <li>
+                            <a href="{{ url('admin/listFeedbackSeminar') }}">
+                                <i class="fa fa-list-ul" aria-hidden="true"></i>
+                                List Feedback Seminar</a>
+                        </li>
+                        <li>
                             <a href="{{ url('admin/trashSeminar') }}">
                                 <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 Recycle bin</a>
@@ -495,9 +506,9 @@ Website: http://www.webthemez.com/
                                 List Partnership</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a  href="{{ url('admin/listFeedbackPartnership') }}">
                                 <i class="fa fa-list-ul" aria-hidden="true"></i>
-                                List Feedback</a>
+                                List Feedback </a>
                         </li>
                         <li>
                             <a href="{{url('admin/trashPartnership')}}">

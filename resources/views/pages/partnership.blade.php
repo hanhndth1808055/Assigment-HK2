@@ -4,10 +4,10 @@
 
     <div class="home">
         <div class="home_background_container prlx_parent">
-            <div class="home_background prlx" style="background-image:url(images/courses_background.jpg)"></div>
+            <div class="home_background prlx" style="background-image:url('https://www.uni-bonn.de/the-university/images/unilebenslider2.jpg')"></div>
         </div>
         <div class="home_content">
-            <h1>Courses</h1>
+            <h1>Partnership</h1>
         </div>
     </div>
 
@@ -28,8 +28,10 @@
                 <div class="col-lg-6 course_box  ">
                     <div class="card card-partnership">
                         <div class="card-partnership-row">
-                            <div class="card-logo">
-                                <img src="{{$partnership->partnership_edu_logo}}" alt="" style="width: 200px ;margin-left: 168px">
+                            <div class="card-logo-partnership mt-5">
+                                <div class="logo-partnership-center">
+                                <img src="{{$partnership->partnership_edu_logo}}" alt="" style="width: 200px ;">
+                                </div>
                             </div>
                             <div class="card-title-logo text-center" >
                                 {{$partnership->partnership_edu_name}}
@@ -113,6 +115,64 @@
 
 
             </div>
+        </div>
+
+
+    </div>
+    <div class="register mb-5">
+
+        <div class="container-fluid">
+
+            <div class="row row-eq-height">
+                <div class="col-lg-6 nopadding">
+
+                    <!-- Register -->
+
+                    <div class="register_section d-flex flex-column align-items-center justify-content-center">
+                        <div class="register_content text-center">
+                            <h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
+                            <p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
+                            <div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 nopadding">
+
+                    <!-- Search -->
+
+                    <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                        <div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+                        <div class="search_content text-center">
+                            <h1 class="search_title">Feedback</h1>
+                            <form id="search_form" class="search_form" action="{{url('/addFeedbackPartnership')}}" method="POST">
+                                @csrf
+                                <input id="search_form_name" name="name" class="input_field search_form_name" type="text" placeholder="Name" required="required" data-error="Course name is required.">
+                                <input id="search_form_category" name="email" class="input_field search_form_category" type="email" placeholder="Email">
+                                <select id="search_form_degree" name="partnership_id" class="input_field search_form_degree mt-4   " type="text" >
+                                    <option value="{{$partnership->partnership_id}}" @if($partnership->partnership_id == old("partnership_id"))selected @endif>
+                                        {{$partnership ->partnership_edu_name}}
+                                    </option>
+                                </select>
+                                <textarea id="contact_form_message" class="text_field contact_form_message" name="partnership_review" placeholder="Review"  required="required" data-error="Please, write us a message."> </textarea>
+                                <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
+                                <div class="mt-2">
+                                    @if (session()->has('submit_success_feedback'))
+                                        <div class="alert alert-success">
+                                            {{ session('submit_success_feedback') }}
+                                        </div>
+                                    @endif
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 @endsection

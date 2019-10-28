@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\feedback_research;
+use App\feedback_seminar;
 use App\seminar;
 use App\seminar_register;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -66,7 +68,6 @@ class SeminarController extends Controller
         $seminar = seminar::find($seminar_id);
         $seminars = seminar::orderBy("seminar_id","ASC");
         return view("pages.seminarDetail",compact('seminar','seminars'));
-
     }
 
     /* Seminar Edit */
@@ -115,6 +116,7 @@ class SeminarController extends Controller
         $registerSeminars = seminar_register::paginate(5);
         return view('admin.list.listSeminarRegister',compact('registerSeminars'));
     }
+
     function saveSeminarRegister(Request $request){
         $seminar = seminar::find($request->get('seminar_id'));
         $message = [
@@ -145,6 +147,9 @@ class SeminarController extends Controller
         }
         return redirect("seminarDetail?id=".$seminar->seminar_id)->with('status', 'Register Successful !');
     }
+
+
+
     /* Delete */
         public function deleteSeminar($id){
             $seminar = seminar::find($id);
@@ -156,6 +161,8 @@ class SeminarController extends Controller
             }
             return redirect("admin/listSeminar")->with("success","Delete Successfully");
         }
+
+
 
     public function recoverSeminar($id){
         $seminar = seminar::find($id);
@@ -178,6 +185,42 @@ class SeminarController extends Controller
         }
         return redirect("admin/listSeminarRegister")->with("success","Delete Successfully");
     }
+
+        function showListFeedbackSeminar(){
+            $feedbackSeminars = feedback_seminar::paginate(5);
+            return view('admin.list.listFeedbackSeminar',compact('feedbackSeminars'));
+        }
+
+    function saveFeedbackSeminar(Request $request){
+        $seminar = seminar::find($request->get('seminar_id'));
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+            "unique" => "giá trị đã tồn tại",
+        ];
+        $ruler = [
+            "seminar_id" => "required|numeric",
+            "name" => "string",
+            "email" => "string",
+            "seminar_review" => "required",
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            feedback_seminar::create([
+                "seminar_id"=> $request->get("seminar_id"),
+                "name"=> $request->get("name"),
+                "email"=> $request->get("email"),
+                "seminar_review"=> $request->get("seminar_review"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("seminarDetail?id=".$seminar->seminar_id)->with('submit_success_feedback', 'Submit Feedback Successful !');
+    }
+
+
 
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\feedback_partnership;
 use App\partnership;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -139,5 +140,40 @@ class PartnershipController extends Controller
             return redirect("admin/trashPartnership")->with("error","Recover Error");
         }
         return redirect("admin/trashPartnership")->with("success","Recover Successfully");
+    }
+
+    function showListFeedbackPartnership (){
+        $feedbackPartnerships = feedback_partnership::paginate(10);
+        return view("admin.list.listFeedbackPartnership",compact('feedbackPartnerships'));
+    }
+
+    function saveFeedbackPartnership(Request $request){
+        $partnership = partnership::find($request->get('partnership_id'));
+
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+            "unique" => "giá trị đã tồn tại",
+        ];
+        $ruler = [
+            "partnership_id" => "required|numeric",
+            "name" => "string",
+            "email" => "string",
+            "partnership_review" => "string",
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            feedback_partnership::create([
+                "partnership_id"=> $request->get("partnership_id"),
+                "name"=> $request->get("name"),
+                "email"=> $request->get("email"),
+                "partnership_review"=> $request->get("partnership_review"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("partnership")->with('submit_success_feedback', 'Submit Feedback  Successful !');
     }
 }

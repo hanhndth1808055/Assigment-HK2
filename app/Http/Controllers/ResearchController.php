@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\expert;
+use App\feedback_research;
 use App\learn_more_research;
 use App\research;
 use App\seminar;
@@ -334,5 +335,41 @@ class ResearchController extends Controller
             return redirect("admin/listLearnMoreResearch")->with("error","Delete Error");
         }
         return redirect("admin/listLearnMoreResearch")->with("success","Delete Successfully");
+    }
+
+
+    function showListFeedbackResearch (){
+        $feedbackResearchs = feedback_research::paginate(10);
+        return view("admin.list.listFeedbackResearch",compact('feedbackResearchs'));
+    }
+
+    function saveFeedbackResearch(Request $request){
+        $research = research::find($request->get('research_project_id'));
+
+        $message = [
+            "required" => "Không được để trống",
+            "string" => "Vui lòng nhập một chuỗi",
+            "max" => "Tối đa 255 ký tự",
+            "unique" => "giá trị đã tồn tại",
+        ];
+        $ruler = [
+            "research_project_id" => "required|numeric",
+            "name" => "string",
+            "email" => "string",
+            "research_review" => "string",
+        ];
+        $this->validate($request,$ruler,$message);
+        try{
+            feedback_research::create([
+                "research_project_id"=> $request->get("research_project_id"),
+                "name"=> $request->get("name"),
+                "email"=> $request->get("email"),
+                "research_review"=> $request->get("research_review"),
+            ])->save();
+
+        }catch (\Exception $e){
+            die($e->getMessage());
+        }
+        return redirect("researchDetail?id=".$research->research_project_id)->with('submit_success_feedback', 'Submit Feedback  Successful !');
     }
 }
