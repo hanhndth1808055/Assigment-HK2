@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Campaigns;
+use PHPUnit\Exception;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Charge;
 use App\CampaignDonation;
-use UploadTrait;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+
+//use UploadTrait;
 
 class CampaignsController extends Controller
 {
     const _LIMIT = 6;
 
     public $campaign = Campaigns::class;
+
     public function showCampaigns()
     {
         $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
@@ -27,11 +32,12 @@ class CampaignsController extends Controller
         return view('admin.campaigns.index', compact('campaigns'));
     }
 
-    public function addCampaign()
+    public function add()
     {
-        return view("admin.campaigns.form", compact('departments', 'positions', 'certifications', 'salary_s'));
+        return view('admin.campaigns.form');
     }
-    public function updateCampaign(Request $request)
+
+    public function save(Request $request)
     {
 
         // Form validation
@@ -44,25 +50,131 @@ class CampaignsController extends Controller
             'full_size_thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        // Check if a profile image has been uploaded
-        if ($request->has('profile_image')) {
-            // Get image file
-            $image = $request->file('profile_image');
-            // Make a image name based on user name and current timestamp
-            $name = str_slug($request->input('name')) . '_' . time();
-            // Define folder path
-            $folder = '/uploads/images/';
-            // Make a file path where image will be stored [ folder path + file name + file extension]
-            $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
-            // Upload image
-            $this->uploadOne($image, $folder, 'public', $name);
-            // Set user profile image path in database to filePath
-            $campaign->thumbnail = $filePath;
+        if ($request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $name = $file->getClientOriginalName();
+            $thumbnail = Str::random(7) . "_thumbnail_" . $name;
+            while (file_exists('images/campaigns/' . $thumbnail)) {
+                $thumbnail = Str::random(7) . "_thumbnail_" . $name;
+            }
+            $file->move('images/campaigns/', $thumbnail);
+            $file_name = $thumbnail;
+        } else {
+            $file_name = 'logo.png';
+        };
+
+        if ($request->hasFile('full_size_thumbnail')) {
+            $file = $request->file('full_size_thumbnail');
+            $name = $file->getClientOriginalName();
+            $full_size_thumbnail = Str::random(7) . "_full_size_thumbnail_" . $name;
+            while (file_exists('images/campaigns/' . $full_size_thumbnail)) {
+                $full_size_thumbnail = Str::random(7) . "_full_size_thumbnail_" . $name;
+            }
+            $file->move('images/campaigns/', $full_size_thumbnail);
+            $file_name_full = $full_size_thumbnail;
+        } else {
+            $file_name_full = 'logo.png';
+        };
+
+        try {
+            Campaigns::create([
+                'name' => $request->get('name'),
+                'campaign_chairman' => $request->get('campaign_chairman'),
+                'short_description' => $request->get('short_description'),
+                'long_description' => $request->get('long_description'),
+                'thumbnail' => 'images/campaigns/'. $file_name,
+                'full_size_thumbnail' => 'images/campaigns/'. $file_name_full
+            ])->save();
+        } catch (\Exception $e) {
+            die($e->getMessage());
         }
 
+        return redirect()->back()->with("success", "Add Campaign successfully");
+    }
 
-        // Return user back and show a flash message
-        return redirect()->back()->with(['status' => 'Profile updated successfully.']);
+    public function update(Request $request)
+    {
+        $id = $request->get('id');
+        $campaign = Campaigns::find($id);
+        return view('admin.campaigns.form_edit', compact('campaign'));
+    }
+
+    public function updated(Request $request)
+    {
+        $campaign = Campaigns::find($request->get("id"));
+
+        $request->validate([
+            'name' => 'required',
+            'campaign_chairman' => 'required|string|max:255',
+            'short_description' => 'required',
+            'long_description' => 'required',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'full_size_thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        if ($request->hasFile('thumbnail')) {
+            $file = $request->file('thumbnail');
+            $name = $file->getClientOriginalName();
+            $thumbnail = Str::random(7) . "_thumbnail_" . $name;
+            while (file_exists('images/campaigns/' . $thumbnail)) {
+                $thumbnail = Str::random(7) . "_thumbnail_" . $name;
+            }
+            $file->move('images/campaigns/', $thumbnail);
+            $file_name = $thumbnail;
+        } else {
+            $file_name = 'logo.png';
+        };
+
+        if ($request->hasFile('full_size_thumbnail')) {
+            $file = $request->file('full_size_thumbnail');
+            $name = $file->getClientOriginalName();
+            $full_size_thumbnail = Str::random(7) . "_full_size_thumbnail_" . $name;
+            while (file_exists('images/campaigns/' . $full_size_thumbnail)) {
+                $full_size_thumbnail = Str::random(7) . "_full_size_thumbnail_" . $name;
+            }
+            $file->move('images/campaigns/', $full_size_thumbnail);
+            $file_name_full = $full_size_thumbnail;
+        } else {
+            $file_name_full = 'logo.png';
+        };
+
+        try {
+            $campaign->update([
+                'name' => $request->get('name'),
+                'campaign_chairman' => $request->get('campaign_chairman'),
+                'short_description' => $request->get('short_description'),
+                'long_description' => $request->get('long_description'),
+                'thumbnail' => 'images/campaigns/' . $file_name,
+                'full_size_thumbnail' => 'images/campaigns/' . $file_name_full
+            ]);
+        } catch (\Exception $e) {
+            die($e->getMessage());
+        }
+
+        return redirect(route('campaigns.list'));
+    }
+
+    public function delete($id)
+    {
+        $thumbnail = DB::table('campaigns')->where('id', '=', $id)->pluck('thumbnail')->first();
+        $full_size_thumbnail = DB::table('campaigns')->where('id', '=', $id)->pluck('full_size_thumbnail')->first();
+
+        if ($thumbnail == "logo.png" && $full_size_thumbnail == "logo.png") {
+            DB::table('campaigns')->where('id', '=', $id)->delete();
+            return redirect()->back()->with('thongbao', 'Xóa thành công');
+        }
+
+        if (file_exists('images/campaigns/' . $thumbnail)) {
+            unlink('images/campaigns/' . $thumbnail);
+        }
+
+        if (file_exists('images/campaigns/' . $full_size_thumbnail)) {
+            unlink('images/campaigns/' . $full_size_thumbnail);
+        }
+
+        DB::table('campaigns')->where('id', '=', $id)->delete();
+
+        return redirect()->back()->with('thongbao', 'Xóa thành công');
     }
 
     public function showCampaignDetail($id)
@@ -144,8 +256,7 @@ class CampaignsController extends Controller
             return $ex->getMessage();
         }
 
-        $campaigns = Campaigns::orderBy("created_at", "DESC")->take(self::_LIMIT)->get();
-        return view('pages.campaigns', compact('campaigns'));
+        return redirect()->back();
     }
 
 
