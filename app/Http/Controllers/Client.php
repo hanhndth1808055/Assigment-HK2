@@ -64,6 +64,7 @@ class Client extends Controller
         $scholarships = DB::table('scholarship')
         ->join('unit', 'unit.unit_id', '=', 'scholarship.unit_id')
         ->join('country', 'country.country_id', '=', 'scholarship.country_id')
+        ->where('status',1)
         ->paginate(3 ,["id","title","enddate","image","content","country_name as country_id" ,
         "unit_name as unit_id","pay","startdate","brief_content","status","scholarship.created_at"]);
 
