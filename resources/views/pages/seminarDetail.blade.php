@@ -136,14 +136,7 @@
 
                         <!-- Register -->
 
-                        <div class="register_section d-flex flex-column align-items-center justify-content-center">
-                            <div class="register_content text-center">
-                                <h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
-                                <p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
-                                <div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
-                            </div>
-                        </div>
-
+                        <img src="images/seminar-feedback.jpg" style="width: 100%; height: 100%">
                     </div>
 
                     <div class="col-lg-6 nopadding">

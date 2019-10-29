@@ -17,7 +17,7 @@
                     </div>
                     <div class="content-about-edupan mt-5">
                         <div  style="text-align: left">
-                            {{$research->challenge}}
+                            {!!$research->challenge!!}
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@
                     </div>
                     <div class="content-about-edupan mt-5">
                         <div  style="text-align: left">
-                            {{$research->key_Activities}}
+                            {!!$research->key_Activities!!}
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
         </div>
 
     </div>
-    <div class="register mb-5">
+    <div class="register mb-5 mt-5">
 
         <div class="container-fluid">
 
@@ -103,15 +103,9 @@
 
                     <!-- Register -->
 
-                    <div class="register_section d-flex flex-column align-items-center justify-content-center">
-                        <div class="register_content text-center">
-                            <h1 class="register_title">Register now and get a discount <span>50%</span> discount until 1 January</h1>
-                            <p class="register_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempo.</p>
-                            <div class="button button_1 register_button mx-auto trans_200"><a href="#">register now</a></div>
-                        </div>
-                    </div>
+                    <img src="images/research-feedback.jpg" style="width: 100%; height: auto">
 
-                </div>
+            </div>
 
                 <div class="col-lg-6 nopadding">
 
