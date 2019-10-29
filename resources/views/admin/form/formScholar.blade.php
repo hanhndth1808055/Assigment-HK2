@@ -8,7 +8,7 @@
 
 </style>
 <div class="container">
-    <form action="{{ url('admin/add-scholarship') }}" method="post" enctype="multipart/form-data">
+    <form class="form" action="{{ url('admin/add-scholarship') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="">Title</label>

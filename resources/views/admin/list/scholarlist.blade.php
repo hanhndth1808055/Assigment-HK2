@@ -37,7 +37,7 @@
                                         <td><img width="200px" src="{{asset('images/scholarship').'/'.$scholar->image}}" alt=""></td>
                                         <td>
                                             <div style="height : 150px;overflow-y: scroll;">
-                                                {{ $scholar -> content }}
+                                                {!! $scholar -> content !!}
                                             </div>
                                         </td>
                                         <td>{{ $scholar -> country_id }}</td>

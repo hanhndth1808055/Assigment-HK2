@@ -37,6 +37,9 @@ Website: http://www.webthemez.com/
         .btn-edit-seminar:hover {
             background-color: RoyalBlue;
         }
+        form{
+            max-width: 1000px;
+        }
     </style>
 </head>
 <body>
