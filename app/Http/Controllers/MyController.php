@@ -261,14 +261,14 @@ class MyController extends Controller
         if ($image == "logo.png")
         {
             DB::table('scholarship')->where('id', '=', $id)->delete();
-            return redirect()->back()->with('thongbao', 'Xóa thành công');
+            return redirect()->back()->with('messager', 'Xóa thành công');
         }
         if (file_exists('images/scholarship/' . $image)) {
             unlink('images/scholarship/' . $image);
         }
         DB::table('scholarship')->where('id', '=', $id)->delete();
 
-        return redirect()->back()->with('thongbao', 'Xóa thành công');
+        return redirect()->back()->with('messager', 'Xóa thành công');
     }
 
     public function scholarshipSaveComent(Request $request){
