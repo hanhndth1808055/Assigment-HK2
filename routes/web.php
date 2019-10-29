@@ -29,11 +29,11 @@ Route::get('contactus',"MyController@addContactus")->name('contactus');
 Route::post('contactus',"MyController@saveContactus")->name('contactus');
 
 Route::get('contact',"Client@contactUs");
-
+Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
+Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
 
 Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
-    Route::get('addcoment' ,"MyController@scholarshipComent")->name('scholarship.coment');
-    Route::post('addcoment' ,"MyController@scholarshipSaveComent")->name('scholarship.coment');
+
 
     Route::get('scholars-ship' , "MyController@SCLList");
     Route::get('coment',"MyController@coment");

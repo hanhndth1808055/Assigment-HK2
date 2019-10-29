@@ -63,12 +63,12 @@
                     <div class="footer_column_title">Menu</div>
                     <div class="footer_column_content">
                         <ul>
-                            <li class="footer_list_item"><a href="#">Home</a></li>
-                            <li class="footer_list_item"><a href="#">Research</a></li>
-                            <li class="footer_list_item"><a href="">Seminar</a></li>
-                            <li class="footer_list_item"><a href="">Campaings</a></li>
-                            <li class="footer_list_item"><a href="">Scholarship</a></li>
-                            <li class="footer_list_item"><a href="">Gallery</a></li>
+                            <li class="footer_list_item"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="footer_list_item"><a href="{{url('research')}}">Research</a></li>
+                            <li class="footer_list_item"><a href="{{url('seminar')}}">Seminar</a></li>
+                            <li class="footer_list_item"><a href="{{ url('campaigns') }}">Campaings</a></li>
+                            <li class="footer_list_item"><a href="{{ url('scholarship') }}">Scholarship</a></li>
+                            <li class="footer_list_item"><a href="{{ url('gallery') }}">Gallery</a></li>
                         </ul>
                     </div>
                 </div>
