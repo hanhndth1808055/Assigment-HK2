@@ -76,6 +76,8 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/recoverSeminar/{id}',"SeminarController@recoverSeminar");
     Route::get('/trashSeminar',"SeminarController@showTrashSeminar");
 
+    Route::get('/listFeedbackSeminar',"SeminarController@showListFeedbackSeminar");
+
     /* Partnership */
 
     Route::get('/listEmailContact',"MyController@listEmailContact");
@@ -104,6 +106,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get('/recoverPartnership/{id}',"PartnershipController@recoverPartnership");
     Route::get('/trashPartnership',"PartnershipController@showTrashPartnership");
 
+    Route::get('/listFeedbackPartnership',"PartnershipController@showListFeedbackPartnership");
     /* Research */
 
     Route::get('/addResearch',"ResearchController@addResearch");
@@ -116,6 +119,7 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     Route::get("/deleteResearch/{id}","ResearchController@deleteResearch");
     Route::get('/recoverResearch/{id}',"ResearchController@recoverResearch");
     Route::get('/trashResearch',"ResearchController@showTrashResearch");
+    Route::get('/listFeedbackResearch',"ResearchController@showListFeedbackResearch");
 
     /* Learn More Research */
 
@@ -173,6 +177,10 @@ Route::get('research',"ResearchController@showResearch");
 Route::get('researchDetail',"ResearchController@showResearchDetail");
 Route::get('seminarDetail',"SeminarController@showSeminarDetail");
 Route::post('addSeminarRegister',"SeminarController@saveSeminarRegister");
+
+Route::post('addFeedbackSeminar',"SeminarController@saveFeedbackSeminar");
+Route::post('addFeedbackPartnership',"PartnershipController@saveFeedbackPartnership");
+Route::post('addFeedbackResearch',"ResearchController@saveFeedbackResearch")->name('feedbackResearch');
 
 Route::get('chart', function (){
     return view('admin.chart');

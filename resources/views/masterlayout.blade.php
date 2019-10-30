@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/gallery.css">
 
     <script src="js/jquery-3.2.1.min.js"></script>
+
     {{--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="registerFormSeminar/vendor/select2/select2.min.css" rel="stylesheet" class="form-register-seminar">
     <link href="registerFormSeminar/vendor/datepicker/daterangepicker.css" rel="stylesheet" class="form-register-seminar">
@@ -30,6 +31,41 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropdown-about-us {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content-about-us {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content-about-us a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content-about-us a:hover {background-color: #f1f1f1}
+
+        .dropdown-about-us:hover .dropdown-content-about-us {
+            display: block;
+        }
+
+    </style>
+    <link href="registerFormSeminar/vendor/select2/select2.min.css" rel="stylesheet" class="form-register-seminar">
+    <link href="registerFormSeminar/vendor/datepicker/daterangepicker.css" rel="stylesheet" class="form-register-seminar">
+    <link href="registerFormSeminar/css/main.css" rel="stylesheet" class="form-register-seminar">
+
 </head>
 <body>
 @include('header')

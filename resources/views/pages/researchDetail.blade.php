@@ -17,7 +17,7 @@
                     </div>
                     <div class="content-about-edupan mt-5">
                         <div  style="text-align: left">
-                            {{$research->challenge}}
+                            {!!$research->challenge!!}
                         </div>
                     </div>
 
@@ -26,7 +26,7 @@
                     </div>
                     <div class="content-about-edupan mt-5">
                         <div  style="text-align: left">
-                            {{$research->key_Activities}}
+                            {!!$research->key_Activities!!}
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,61 @@
             @endforeach
 
         </div>
+
     </div>
+    <div class="register mb-5 mt-5">
+
+        <div class="container-fluid">
+
+            <div class="row row-eq-height">
+                <div class="col-lg-6 nopadding">
+
+                    <!-- Register -->
+
+                    <img src="images/research-feedback.jpg" style="width: 100%; height: auto">
+
+            </div>
+
+                <div class="col-lg-6 nopadding">
+
+                    <!-- Search -->
+
+                    <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                        <div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+                        <div class="search_content text-center">
+                            <h1 class="search_title">Feedback</h1>
+                            <form id="search_form" class="search_form" action="{{url('/addFeedbackResearch')}}" method="POST">
+                                @csrf
+                                <input id="search_form_name" name="name" class="input_field search_form_name" type="text" placeholder="Name" required="required" data-error="Course name is required.">
+                                <input id="search_form_category" name="email" class="input_field search_form_category" type="email" placeholder="Email">
+                                <select id="search_form_degree" name="research_project_id" class="input_field search_form_degree mt-4   " type="text" >
+                                    <option value="{{$research->research_project_id}}" @if($research->research_project_id == old("research_project_id"))selected @endif>
+                                        {{$research ->research_project_name}}
+                                    </option>
+                                </select>
+                                <textarea id="contact_form_message" class="text_field contact_form_message" name="research_review" placeholder="Review"  required="required" data-error="Please, write us a message."> </textarea>
+                                <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
+                                <div class="mt-2">
+                                    @if (session()->has('submit_success_feedback'))
+                                        <div class="alert alert-success">
+                                            {{ session('submit_success_feedback') }}
+                                        </div>
+                                    @endif
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
+
 
 @endsection

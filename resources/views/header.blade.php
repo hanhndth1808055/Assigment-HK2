@@ -15,10 +15,22 @@
                     <li class="main_nav_item"><a href="{{ url('/') }}">home</a></li>
                     <li class="main_nav_item"><a href="{{url('research')}}">Research </a></li>
                     <li class="main_nav_item"><a href="{{url('seminar')}}">seminar</a></li>
-
                     <li class="main_nav_item"><a href="{{ url('campaigns') }}">Campaigns</a></li>
                     <li class="main_nav_item"><a href="{{ url('scholarship') }}">Scholarship</a></li>
-                    <li class="main_nav_item"><a href="{{ url('gallery') }}">Gallery</a></li>
+                    <li class="main_nav_item ">
+                        <div class="dropdown-about-us">
+                            <a class="main_nav_item" style="margin-right: -12px ; color: #3a3a3a">About Us
+                                <i class="fa fa-caret-down ml-1" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-content-about-us">
+                                <a href="{{url('partnership')}}">Partnership</a>
+                                <a href="{{ url('gallery') }}">Gallery</a>
+                            </div>
+                        </div>
+                    </li>
+                    {{-- <li><a href="{!! route('user.change-language', ['en']) !!}">English</a></li>
+                       <li> <a href="{!! route('user.change-language', ['vi']) !!}">Vietnam</a></li> --}}
+                    {{--  <li class="main_nav_item"><a href="contact.html">About Work</a></li>  --}}
                 </ul>
             </div>
         </nav>
@@ -51,8 +63,18 @@
 					<li class="menu_item menu_mm"><a href="{{url('seminar')}}">Serminar</a></li>
 					<li class="menu_item menu_mm"><a href="{{ url('campaigns') }}">Campaigns</a></li>
 					<li class="menu_item menu_mm"><a href="{{ url('scholars-ship') }}">Scholarship</a></li>
-                    <li class="menu_item menu_mm"><a href="{{ url('gallery') }}">Gallery</a></li>
-                    <li class="menu_item menu_mm"><a href="{{ url('contact') }}">Contact</a></li>
+                    <li class="main_nav_item ">
+                        <div class="dropdown-about-us">
+                            <a class="main_nav_item" style="margin-right: -12px ; color: #3a3a3a">About Us
+                                <i class="fa fa-caret-down ml-1" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-content-about-us">
+                                <a href="{{url('partnership')}}">Partnership</a>
+                                <a href="{{ url('gallery') }}">Gallery</a>
+                                <a href="{{ url('contact') }}">Contact</a>
+                            </div>
+                        </div>
+                    </li>
 
 				</ul>
 

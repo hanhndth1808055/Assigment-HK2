@@ -11,6 +11,9 @@
     <link rel="stylesheet" type="text/css" href="styles/partnership_seminar_research.css">
     <link rel="stylesheet" type="text/css" href="styles/courses_responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/partnership.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 </head>
 <body>
 
@@ -116,13 +119,15 @@
                 </div>
             </div>
 
-            <div class="row course_boxes">
+            <div class="row course_boxes ">
                 <!-- Popular Course Item -->
                 <div class="col-lg-6 course_box  ">
                     <div class="card card-partnership">
                         <div class="card-partnership-row">
-                            <div class="card-logo">
-                                <img src="https://home.www.upenn.edu/sites/default/files/styles/large_inline/public/logo1.gif?itok=sqXI2-M6" alt="" style="width: 200px ;margin-left: 168px">
+                            <div class="card-logo-partnership">
+                                <div class="logo-partnership-center">
+                                    <img src="https://home.www.upenn.edu/sites/default/files/styles/large_inline/public/logo1.gif?itok=sqXI2-M6" alt="" style="width: 200px;">
+                                </div>
                             </div>
                             <div class="card-title-logo text-center" >
                                 Georgetown University
@@ -200,92 +205,67 @@
 
                     </div>
                 </div>
+            </div>
 
-                <!-- Popular Course Item -->
-                <div class="col-lg-6 course_box  ">
-                    <div class="card card-partnership">
-                        <div class="card-partnership-row">
-                            <div class="card-logo">
-                                <img src="https://home.www.upenn.edu/sites/default/files/styles/large_inline/public/logo1.gif?itok=sqXI2-M6" alt="" style="width: 200px ;margin-left: 168px">
-                            </div>
-                            <div class="card-title-logo text-center" >
-                                Georgetown University
-                            </div>
-                            <div class="card-content-logo ">
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icon-information.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Information detail</div>
-                                        <div class="text-address-detail">Every year approximately 3,000 international students and scholars (professors and researchers) representing approximately 115 countries come to the University of Miami’s campus.
-                                            <span id="dots">...</span><span id="more">
-                                            Staff members in the International Students and Scholars office offer advice, information, services, and programs designed to make the transition to Miami a little easier.
-                                            Students and scholars get help with the immigration process, preparing taxes, communicating with governments and embassies, coping with crisis, and handling personal adjustment issues.
-                                            Although baseline tuition is over $40,000, scholarship and aid packages often exceed $20,000.</span></div>
-                                        <button onclick="readmoreInforLogo()" id="myBtn" class="button-read-more"> <a  class="hover-partnership">Read more &nbsp;
-                                            <i class="fa fa-arrow-down" aria-hidden="true">
-                                            </i>
-                                        </a>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icon-adrress.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Address</div>
-                                        <div class="text-address-detail">Washington, District of Columbia</div>
-                                    </div>
-                                </div>
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icon-tuition.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Tuition</div>
-                                        <div class="text-address-detail">$ 42,852</div>
-                                    </div>
-                                </div>
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icons-average.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Average tuition </div>
-                                        <div class="text-address-detail">$ 18,569</div>
-                                    </div>
-                                </div>
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icon-international-student.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Percentage of International Students </div>
-                                        <div class="text-address-detail">12 %</div>
-                                    </div>
-                                </div>
-                                <div class="card-address-logo row">
-                                    <div class="col-lg-2">
-                                        <img src="images/icon-rating.png" style="width: 30px">
-                                    </div>
-                                    <div class="col-lg-8 address-logo-partnership">
-                                        <div class="text-address">Value Score </div>
-                                        <div class="text-address-detail">88</div>
-                                    </div>
-                                </div>
-                                <div class="button-website"><p class="text-website "><a href="#" class="hover-partnership">PARTENRSHIP WEBSITE &nbsp;
-                                    <i class="fa fa-arrow-right " aria-hidden="true"></i>
-                                </a></p></div>
+
+
+
+        </div>
+        <div class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+
+                        <!-- Contact Form -->
+                        <div class="contact_form">
+                            <div class="contact_title">Feedback</div>
+
+                            <div class="contact_form_container">
+                                <form action="post">
+                                    <input id="contact_form_name"  class="input_field contact_form_name" type="text" placeholder="Name" required="required" data-error="Name is required.">
+                                    <input id="contact_form_email" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required.">
+                                    <select id="partnership_id" class="input_field contact_form_email" type="email" placeholder="E-mail" required="required" data-error="Valid email is required."></select>
+                                    <textarea id="contact_form_message" class="text_field contact_form_message" name="message" placeholder="Review" required="required" data-error="Please, write us a message."></textarea>
+                                    <button id="contact_send_btn" type="button" class="contact_send_btn trans_200" value="Submit">send message</button>
+                                </form>
                             </div>
                         </div>
 
-
                     </div>
+
+                    <div class="col-lg-4">
+                        <div class="about">
+                            <div class="about_title">Information</div>
+                            <p class="about_text">In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor fermentum. Etiam eu purus nec eros varius luctus. Praesent finibus risus facilisis ultricies. Etiam eu purus nec eros varius luctus.</p>
+
+                            <div class="contact_info">
+                                <ul>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="images/placeholder.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>
+                                        Blvd Libertad, 34 m05200 Arévalo
+                                    </li>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="images/smartphone.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>
+                                        0034 37483 2445 322
+                                    </li>
+                                    <li class="contact_info_item">
+                                        <div class="contact_info_icon">
+                                            <img src="images/envelope.svg" alt="https://www.flaticon.com/authors/lucy-g">
+                                        </div>hello@company.com
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
 
-
+                <!-- Google Map -->
 
             </div>
         </div>
@@ -298,29 +278,7 @@
 
             <!-- Newsletter -->
 
-            <div class="newsletter">
-                <div class="row">
-                    <div class="col">
-                        <div class="section_title text-center">
-                            <h1>Subscribe to newsletter</h1>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="newsletter_form_container mx-auto">
-                            <form action="post">
-                                <div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-center">
-                                    <input id="newsletter_email" class="newsletter_email" type="email" placeholder="Email Address" required="required" data-error="Valid email is required.">
-                                    <button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
             <!-- Footer Content -->
 
