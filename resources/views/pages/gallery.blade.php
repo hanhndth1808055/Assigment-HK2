@@ -11,8 +11,8 @@
                     <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">See our
+                                <span>Milestones</span> here!</h1>
                         </div>
                     </div>
                 </div>
@@ -22,8 +22,8 @@
                     <div class="hero_slide_background" style="background-image:url({{asset('images/slider_background.jpg')}})"></div>
                     <div class="hero_slide_container d-flex flex-column align-items-center justify-content-center">
                         <div class="hero_slide_content text-center">
-                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Get your
-                                <span>Education</span> today!</h1>
+                            <h1 data-animation-in="fadeInUp" data-animation-out="animate-out fadeOut">Join our
+                                <span>hand</span> together!</h1>
                         </div>
                     </div>
                 </div>

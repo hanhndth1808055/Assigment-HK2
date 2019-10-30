@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-    {{--  <link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
-    <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">  --}}
+    <link rel="stylesheet" type="text/css" href="styles/elements_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/elements_responsive.css">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/news_post_styles.css">
     <link rel="stylesheet" type="text/css" href="styles/news_post_responsive.css">
@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/gallery.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <style>
         .dropdown-about-us {
             position: relative;
@@ -56,6 +55,10 @@
         }
 
     </style>
+    <link href="registerFormSeminar/vendor/select2/select2.min.css" rel="stylesheet" class="form-register-seminar">
+    <link href="registerFormSeminar/vendor/datepicker/daterangepicker.css" rel="stylesheet" class="form-register-seminar">
+    <link href="registerFormSeminar/css/main.css" rel="stylesheet" class="form-register-seminar">
+
 </head>
 <body>
 @include('header')

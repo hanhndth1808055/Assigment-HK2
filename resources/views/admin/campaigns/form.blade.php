@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card p-5">
-                    <h2>Add New Staff</h2>
+                    <h2>Add New Campaign</h2>
                     <form action="{{url("admin/campaigns/add")}}" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">

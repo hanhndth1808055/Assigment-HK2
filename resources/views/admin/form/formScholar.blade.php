@@ -34,7 +34,7 @@
                 @endforeach
             </select>
             <small id="emailHelp" class="form-text text-muted">
-                <a target="_blank" href="{{ url('addunit') }}">Add Unit</a>
+                <a target="_blank" href="{{ url('admin/addunit') }}">Add Unit</a>
             </small>
         </div>
         <div class="form-group">
@@ -47,7 +47,7 @@
                 @endforeach
             </select>
             <small id="emailHelp" class="form-text text-muted">
-                <a target="_blank" href="{{ url('addcountry') }}">Add Country</a>
+                <a target="_blank" href="{{ url('admin/addcountry') }}">Add Country</a>
             </small>
         </div>
         <div class="form-group">

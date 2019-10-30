@@ -380,7 +380,7 @@ class MyController extends Controller
         catch(\Exception $e){
             die($e -> getMessage());
         }
-        return redirect()->back()->with("success","Register successfully!!!");
+        return redirect()->back()->with("success","Contact successfully!!!");
      }
 
      public function viewContactUs(){

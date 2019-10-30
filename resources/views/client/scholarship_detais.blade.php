@@ -28,9 +28,9 @@
                         <span class="ml-5">Unit : {{ $detai -> unit_id }}</span>
                     </h4>
                     <img width="100%" style="margin-bottom : 20px" src="{{asset('images/scholarship').'/'.$detai->image}}" alt="">
-                    <span class="text-dark" style="font-size : 16px">
-                            {{ $detai -> content }}
-                    </span><br>
+                    <div class="text-dark" style="font-size : 16px;">
+                            {!! $detai -> content   !!} <br>
+                    </div>
                     <a class="btn btn-primary mt-5" style="float:right" href="{{ url('registerScholarship/'.$detai->id) }}">Registration</a>
                 @endforeach
                 <div class="news_post_comments">

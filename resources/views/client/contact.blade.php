@@ -28,7 +28,11 @@
                             <textarea id="contact_form_message" name="messager" class="text_field contact_form_message" placeholder="Message" required="required" data-error="Please, write us a message."></textarea>
                             <button id="contact_send_btn" type="submit" class="contact_send_btn trans_200" value="Submit">send message</button>
                         </form>
+                        @if(Session::has("success"))
+                        <h3 class="text-center" style="color:green">{{ Session::get("success") }}</h3>
+                        @endif
                     </div>
+
                 </div>
 
             </div>

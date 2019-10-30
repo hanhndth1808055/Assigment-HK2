@@ -49,7 +49,7 @@ Website: http://www.webthemez.com/
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a style="background:#000" class="navbar-brand" href="index.html"><strong><img src="images/logo.png" alt="">
+            <a style="background:#000" class="navbar-brand" href="{{ url('/') }}"><strong><img src="images/logo.png" alt="">
                     EduPan</strong></a>
             <div id="sideNav" href="">
                 <i class="fa fa-bars icon"></i>
@@ -394,6 +394,18 @@ Website: http://www.webthemez.com/
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-sitemap"></i>Campaigns<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ url('admin/campaigns') }}">Campaign List</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('admin/campaigns/add') }}">Add A Campaign</a>
+                        </li>
+                    </ul>
+                </li>
+
                 <li>
                     <a href="#"><i class="fa fa-envelope fa-fw"></i>Email Contact<span class="fa arrow"></span></a>
 

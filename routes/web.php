@@ -151,11 +151,11 @@ Route::group(['middleware' => 'admin' ,"prefix" => "admin"], function (){
     /* Gallery */
 
     Route::get('/campaigns', 'CampaignsController@index')->name('campaigns.list');
-//    Route::get('/campaigns/add', 'CampaignsController@add')->name('campaigns.add');
-//    Route::post('/campaigns/add', 'CampaignsController@save')->name('campaigns.save');
-//    Route::get("/campaigns/update", "AdminController@update")->name('campaigns.update');
-//    Route::post("/campaigns/update", "AdminController@updated")->name('campaigns.updated');
-//    Route::get("campaigns/delete/{id}", "AdminController@delete")->name('campaigns.delete');
+    Route::get('/campaigns/add', 'CampaignsController@add')->name('campaigns.add');
+    Route::post('/campaigns/add', 'CampaignsController@save')->name('campaigns.save');
+    Route::get('/campaigns/update', 'CampaignsController@update')->name('campaigns.update');
+    Route::post('/campaigns/update', 'CampaignsController@updated')->name('campaigns.updated');
+    Route::get('/campaigns/delete/{id}', 'CampaignsController@delete')->name('campaigns.delete');
 });
 
 Route::get('gallery', 'GalleryController@showGallery');
