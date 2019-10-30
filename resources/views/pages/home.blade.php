@@ -49,7 +49,7 @@
                         <img src="images/earth-globe.svg" class="svg" alt="">
                         <div class="hero_box_content">
                             <h2 class="hero_box_title">Our Scholarship</h2>
-                            <a href="scholarship" class="hero_box_link">view more</a>
+                            <a href="{{ url('scholarship') }}" class="hero_box_link">view more</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <div class="hero_box d-flex flex-row align-items-center justify-content-start">
                         <img src="images/books.svg" class="svg" alt="">
                         <div class="hero_box_content">
-                            <h2 class="hero_box_title">Our Library</h2>
+                            <h2 class="hero_box_title">Our Gallery</h2>
                             <a href="courses.html" class="hero_box_link">view more</a>
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                         <div class="owl-item">
                                 <div class="testimonials_item text-center">
                                     <div class="quote">“</div>
-                                    <p class="testimonials_text">{{ $feedback->messager }}</p>
+                                    <p class="testimonials_text" style="color : white">{{ $feedback->messager }}</p>
                                     <div class="testimonial_user">
                                         <div class="testimonial_image mx-auto">
                                             <img src="images/testimonials_user.jpg" alt="">

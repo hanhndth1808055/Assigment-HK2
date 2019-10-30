@@ -42,6 +42,9 @@
     right: 40px; */
 }
 
-p {
+.scholarship-content p {
     color : black !important;
+}
+.form {
+    max-width: 1000px !important;
 }

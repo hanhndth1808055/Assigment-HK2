@@ -37,7 +37,7 @@
                                         <td><img width="200px" src="{{asset('images/scholarship').'/'.$scholar->image}}" alt=""></td>
                                         <td>
                                             <div style="height : 150px;overflow-y: scroll;">
-                                                {{ $scholar -> content }}
+                                                {!! $scholar -> content !!}
                                             </div>
                                         </td>
                                         <td>{{ $scholar -> country_id }}</td>
@@ -56,6 +56,10 @@
                                                     onclick="return confirm('You really want to hide this row??')">Hide</a>
                                                 <a class="btn btn-primary" href="{{ url('admin/show_scholarship/'.$scholar->id) }}"
                                                     onclick="return confirm('You really want to active this row??')">show</a>
+                                                    <a class="btn btn-dark ml-2" href="{{ url('admin/delete/'.$scholar->id) }}"
+                                                        onclick="return confirm('You really want to delete this row??')">
+                                                        <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                                                    </a>
                                         </td>
                                     </tr>
                                     @endforeach
