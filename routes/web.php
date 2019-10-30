@@ -182,6 +182,7 @@ Route::post('addFeedbackSeminar',"SeminarController@saveFeedbackSeminar");
 Route::post('addFeedbackPartnership',"PartnershipController@saveFeedbackPartnership");
 Route::post('addFeedbackResearch',"ResearchController@saveFeedbackResearch")->name('feedbackResearch');
 
+
 Route::get('chart', function (){
     return view('admin.chart');
 });
