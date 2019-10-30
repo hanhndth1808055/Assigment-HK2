@@ -97,10 +97,10 @@
                 @endforeach
             </div>
         </div>
-        <div class="row pt-5">
-            <div class="col-12 text-center">
-                <button class="newsletter_submit_btn trans_300">LOAD MORE</button>
-            </div>
-        </div>
+{{--        <div class="row pt-5">--}}
+{{--            <div class="col-12 text-center">--}}
+{{--                <button class="newsletter_submit_btn trans_300">LOAD MORE</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 @endsection

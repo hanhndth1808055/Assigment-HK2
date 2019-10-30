@@ -15,14 +15,9 @@ class Campaigns extends Model
         'thumbnail', 'full_size_thumbnail', 'name', 'campaign_chairman', 'short_description', 'long_description'
     ];
 
-//    public function getThumbnailAttribute()
-//    {
-//        return $this->thumbnail;
-//    }
-//
-//    public function getFullSizeThumbnailAttribute()
-//    {
-//        return $this->full_size_thumbnail;
-//    }
+    protected $dates = ['created_at', 'updated_at'];
 
+    public function donation(){
+        return $this->hasMany(CampaignDonation::class, 'campaign_id');
+    }
 }

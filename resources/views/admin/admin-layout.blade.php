@@ -310,9 +310,9 @@ Website: http://www.webthemez.com/
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
 
-                <li>
-                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="{{ url('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>--}}
+{{--                </li>--}}
                 {{--   <li>
                    <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
                </li>
