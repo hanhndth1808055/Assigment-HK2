@@ -56,7 +56,6 @@
                                     <div class="modal-body mx-3">
                                         <form action="{{url('/addSeminarRegister')}}" method="POST">
                                             @csrf
-
                                         <div class="md-form mb-4">
                                             <select type="text" name="seminar_id"
                                                     style="border: none;border-bottom: 1px solid silver;"
@@ -106,8 +105,6 @@
                                             </span>
                                                 </button>
                                                 <br>
-
-
                                             </div>
 
                                     </div>
@@ -125,7 +122,55 @@
                         @endif
                     </div>
 
+                </div>
 
+            </div>
+        </div>
+
+        <div class="register mb-5">
+
+            <div class="container-fluid">
+
+                <div class="row row-eq-height">
+                    <div class="col-lg-6 nopadding">
+
+                        <!-- Register -->
+
+                        <img src="images/seminar-feedback.jpg" style="width: 100%; height: 100%">
+                    </div>
+
+                    <div class="col-lg-6 nopadding">
+
+                        <!-- Search -->
+
+                        <div class="search_section d-flex flex-column align-items-center justify-content-center">
+                            <div class="search_background" style="background-image:url(images/search_background.jpg);"></div>
+                            <div class="search_content text-center">
+                                <h1 class="search_title">Feedback</h1>
+                                <form id="search_form" class="search_form" action="{{url('/addFeedbackSeminar')}}" method="POST">
+                                    @csrf
+                                    <input id="search_form_name" name="name" class="input_field search_form_name" type="text" placeholder="Name" required="required" data-error="Course name is required.">
+                                    <input id="search_form_category" name="email" class="input_field search_form_category" type="email" placeholder="Email">
+                                    <select id="search_form_degree" name="seminar_id" class="input_field search_form_degree mt-4   " type="text" >
+                                        <option value="{{$seminar->seminar_id}}" @if($seminar->seminar_id == old("seminar_id"))selected @endif>
+                                            {{$seminar ->seminar_name}}
+                                        </option>
+                                    </select>
+                                    <textarea id="contact_form_message" class="text_field contact_form_message" name="seminar_review" placeholder="Review"  required="required" data-error="Please, write us a message."> </textarea>
+                                    <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>
+                                    <div class="mt-2">
+                                        @if (session()->has('submit_success_feedback'))
+                                            <div class="alert alert-success">
+                                                {{ session('submit_success_feedback') }}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -133,6 +178,5 @@
         </div>
 
 
-    </div>
 
 @endsection

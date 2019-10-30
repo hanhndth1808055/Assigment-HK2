@@ -7,7 +7,7 @@
             <div class="home_background prlx" style="background-image:url(images/courses_background.jpg)"></div>
         </div>
         <div class="home_content">
-            <h1>Courses</h1>
+            <h1> Seminar</h1>
         </div>
     </div>
 
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col">
                     <div class="section_title text-center">
-                        <h1>Popular Courses</h1>
+                        <h1> Our Seminar</h1>
                     </div>
                 </div>
             </div>

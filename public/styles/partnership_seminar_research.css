@@ -866,7 +866,7 @@ a.hover-partnership:hover{
     color: #1a1a1a;
 }
 
-.card-logo img{
+.card-logo-partnership {
     margin-top: 20px;
 }
 .card-title-logo{
@@ -1222,6 +1222,9 @@ a.hover-partnership:hover{
     padding: 0;
     border-bottom: none;
     font-weight: bold;
+}
+.logo-partnership-center{
+    text-align: center;
 }
 .title-content-research-detail{
     font-size: 60px;

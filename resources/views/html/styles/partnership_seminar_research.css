@@ -823,7 +823,7 @@ section
     font-size: 16px;
     margin-left: 10px;
 }
-.
+
 
 .card-title-a
 {
@@ -866,8 +866,11 @@ a.hover-partnership:hover{
     color: #1a1a1a;
 }
 
-.card-logo img{
+.card-logo-partnership {
     margin-top: 20px;
+}
+.logo-partnership-center{
+    text-align: center;
 }
 .card-title-logo{
     display: block;

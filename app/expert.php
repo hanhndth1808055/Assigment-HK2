@@ -9,7 +9,7 @@ class expert extends Model
     protected $table = 'expert';
     protected $primaryKey = 'expert_id';
     protected $fillable = [
-    'expert_name',
+         'expert_name',
         'expert_picture',
         'expert_expertise',
         'expert_content',
