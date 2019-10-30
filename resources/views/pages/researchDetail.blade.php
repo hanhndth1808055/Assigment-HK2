@@ -32,20 +32,20 @@
                 </div>
             </div>
 
-            <div class="row course_boxes impact-box partnership_seminar_research">
+            <div class="row course_boxes impact-box partnership_seminar_research mb-5">
 
                 <div class="border-impact partnership_seminar_research">
                     <h3 class="text-project  p-5">IMPACT</h3>
                 </div>
                 <div class="content-impact p-5" >
-                    {{$research->impact}}
+                    {!!$research->impact !!}
                 </div>
                 <!-- Popular Course Item -->
             </div>
 
-            <div class="row course_boxes learn-more-box partnership_seminar_research">
+            <div class="row course_boxes learn-more-box partnership_seminar_research mt-5" >
 
-                <div class="border-impact">
+                <div class="border-impact mt">
                     <h3 class="text-learn-more  p-5" >LEARN MORE </h3>
                 </div>
 
