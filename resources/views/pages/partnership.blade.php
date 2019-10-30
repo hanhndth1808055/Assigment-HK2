@@ -143,9 +143,9 @@
                                 <input id="search_form_name" name="name" class="input_field search_form_name" type="text" placeholder="Name" required="required" data-error="Course name is required.">
                                 <input id="search_form_category" name="email" class="input_field search_form_category" type="email" placeholder="Email">
                                 <select id="search_form_degree" name="partnership_id" class="input_field search_form_degree mt-4   " type="text" >
-                                    <option value="{{$partnership->partnership_id}}" @if($partnership->partnership_id == old("partnership_id"))selected @endif>
-                                        {{$partnership ->partnership_edu_name}}
-                                    </option>
+                                    @foreach($partnerships as $partnership)
+                                        <option value="{{$partnership->partnership_id}}" >{{$partnership->partnership_edu_name}}</option>
+                                    @endforeach
                                 </select>
                                 <textarea id="contact_form_message" class="text_field contact_form_message" name="partnership_review" placeholder="Review"  required="required" data-error="Please, write us a message."> </textarea>
                                 <button id="search_submit_button" type="submit" class="search_submit_button trans_200" value="Submit">Submit</button>

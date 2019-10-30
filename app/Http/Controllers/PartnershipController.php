@@ -148,8 +148,6 @@ class PartnershipController extends Controller
     }
 
     function saveFeedbackPartnership(Request $request){
-        $partnership = partnership::find($request->get('partnership_id'));
-
         $message = [
             "required" => "Không được để trống",
             "string" => "Vui lòng nhập một chuỗi",
