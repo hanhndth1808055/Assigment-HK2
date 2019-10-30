@@ -21,6 +21,7 @@
                                     <th>Name</th>
                                     <th>Thumbnail</th>
                                     <th>Chairman</th>
+                                    <th>Donation</th>
                                     <th>Short Description</th>
                                     <th>Long Description</th>
                                     <th>Created At</th>
@@ -34,6 +35,7 @@
                                         <th>{{$campaign->name}}</th>
                                         <th><img src="{{$campaign->thumbnail}}" alt="None"></th>
                                         <th>{{$campaign->campaign_chairman}}</th>
+                                        <th>{{$campaign->donation->sum('amount')}}</th>
                                         <th>{!! $campaign->short_description!!}</th>
                                         <th>{!! $campaign->long_description!!}</th>
                                         <th>{{$campaign->created_at->format('d/m/y')}}</th>
